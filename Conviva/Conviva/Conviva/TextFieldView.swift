@@ -31,12 +31,14 @@ class TextFieldView: UIView {
     private func commomInit() {
         Bundle.main.loadNibNamed("TextFieldView", owner: self, options: nil)
         addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.contentView.frame = self.bounds
+        self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.textField.attributedPlaceholder =
             NSAttributedString(string: "placeholder text",
-                               attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "ConvivaPurple")
-                                                                                    ?? UIColor.systemPurple])
+                               attributes: [NSAttributedString.Key.font: UIFont(name: "Ubuntu", size: 16)
+                                                                        ?? UIFont.systemFont(ofSize: 16),
+                                NSAttributedString.Key.foregroundColor: UIColor(named: "ConvivaTextColor")
+                                                                        ?? UIColor.systemPurple])
     }
 
 }

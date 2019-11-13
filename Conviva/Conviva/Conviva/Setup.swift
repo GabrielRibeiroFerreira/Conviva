@@ -18,4 +18,15 @@ class Setup {
         
         viewController.view.backgroundColor = UIColor(named: "ConvivaBackground")
     }
+    
+    static func setupButton(_ button : UIButton){
+        button.backgroundColor = UIColor(named: "ConvivaPink")
+        button.setAttributedTitle(NSAttributedString(string: button.titleLabel?.text ?? "",
+                                                    attributes: [NSAttributedString.Key.font: UIFont(name: "Ubuntu-bold", size: 18)
+                                                                                            ?? UIFont.systemFont(ofSize: 18),
+                                                                NSAttributedString.Key.foregroundColor: UIColor.white]), for: .normal)
+        button.contentEdgeInsets = UIEdgeInsets(top: 5.0, left: 20.0, bottom: 5.0, right: 20.0)
+//        button.frame.height = 55.0
+        
+    }
 }

@@ -28,7 +28,7 @@
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igq-5Z-8ab">
                     <rect key="frame" x="0.0" y="38" width="414" height="2"/>
-                    <color key="backgroundColor" name="ConvivaPurple"/>
+                    <color key="backgroundColor" name="ConvivaTextColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="8US-UN-dxx"/>
                     </constraints>
@@ -56,10 +56,13 @@
     </objects>
     <resources>
         <namedColor name="ConvivaBackground">
-            <color red="0.14509931209999999" green="0.1450957954" blue="0.14509814979999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPurple">
-            <color red="0.44828742739999999" green="0.29824739690000002" blue="0.61571449040000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.44800001382827759" green="0.29800000786781311" blue="0.61599999666213989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ConvivaTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -14,17 +14,20 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var timeIniciative: TextFieldView!
     @IBOutlet weak var localIniciative: TextFieldView!
     @IBOutlet weak var descriptionIniciative: TextFieldView!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Setup.setupViewController(self)
+        Setup.setupButton(self.nextButton)
         
         self.titleIniciative.textField.placeholder = "O que é a iniciativa? (Título)"
         self.dateIniciative.textField.placeholder = "Em qual data?"
         self.timeIniciative.textField.placeholder = "Em qual horário?"
         self.localIniciative.textField.placeholder = "Onde irá acontecer?"
         self.descriptionIniciative.textField.placeholder = "Descreva a iniciativa"
+        
     }
 
     /*
