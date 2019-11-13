@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="xjI-KD-O2a"/>
+                <outlet property="textField" destination="iSA-cb-0Kb" id="ung-uH-yqn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iSA-cb-0Kb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                    <color key="backgroundColor" name="ConvivaBackground"/>
+                    <color key="textColor" name="ConvivaPurple"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igq-5Z-8ab">
+                    <rect key="frame" x="0.0" y="38" width="414" height="2"/>
+                    <color key="backgroundColor" name="ConvivaPurple"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="8US-UN-dxx"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="ConvivaBackground"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iSA-cb-0Kb" secondAttribute="trailing" id="3q4-rD-nOP"/>
+                <constraint firstItem="igq-5Z-8ab" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="4YT-BQ-0Du"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iSA-cb-0Kb" secondAttribute="bottom" id="Pbx-Pl-OqF"/>
+                <constraint firstItem="iSA-cb-0Kb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ShN-tS-D6O"/>
+                <constraint firstItem="igq-5Z-8ab" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="hed-uR-d6O"/>
+                <constraint firstItem="igq-5Z-8ab" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kj1-nb-ewn"/>
+                <constraint firstItem="iSA-cb-0Kb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nkA-qK-kH5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ConvivaBackground">
+            <color red="0.14509931209999999" green="0.1450957954" blue="0.14509814979999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ConvivaPurple">
+            <color red="0.44828742739999999" green="0.29824739690000002" blue="0.61571449040000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

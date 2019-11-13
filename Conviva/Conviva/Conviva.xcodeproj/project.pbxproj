@@ -19,6 +19,20 @@
 		2AB180E92379D1F100E914C0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB180E82379D1F100E914C0 /* Item.swift */; };
 		2AB180EB2379D2EC00E914C0 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB180EA2379D2EC00E914C0 /* ItemType.swift */; };
 		2AB180ED2379D6EF00E914C0 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB180EC2379D6EF00E914C0 /* Report.swift */; };
+		2AB54339237AF47D00852E7F /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54331237AF47D00852E7F /* Roboto-Regular.ttf */; };
+		2AB5433A237AF47D00852E7F /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54332237AF47D00852E7F /* Ubuntu-Regular.ttf */; };
+		2AB5433B237AF47D00852E7F /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54333237AF47D00852E7F /* Ubuntu-Bold.ttf */; };
+		2AB5433C237AF47D00852E7F /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54334237AF47D00852E7F /* Roboto-BoldItalic.ttf */; };
+		2AB5433D237AF47D00852E7F /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54335237AF47D00852E7F /* Roboto-Italic.ttf */; };
+		2AB5433E237AF47D00852E7F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54336237AF47D00852E7F /* Roboto-Bold.ttf */; };
+		2AB5433F237AF47D00852E7F /* Ubuntu-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54337237AF47D00852E7F /* Ubuntu-BoldItalic.ttf */; };
+		2AB54340237AF47D00852E7F /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54338237AF47D00852E7F /* Ubuntu-Italic.ttf */; };
+		2AB54342237AF64700852E7F /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB54341237AF64700852E7F /* TextFieldView.xib */; };
+		2AB54344237AFD2400852E7F /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB54343237AFD2400852E7F /* TextFieldView.swift */; };
+		2AB54346237B260C00852E7F /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB54345237B260C00852E7F /* CreateEventViewController.swift */; };
+		2AB54348237B32B300852E7F /* CreateEvent2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB54347237B32B300852E7F /* CreateEvent2ViewController.swift */; };
+		2AB5434A237B4F0700852E7F /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB54349237B4F0700852E7F /* Setup.swift */; };
+		2AB5434C237C31A100852E7F /* IniciativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5434B237C31A100852E7F /* IniciativesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +50,20 @@
 		2AB180E82379D1F100E914C0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2AB180EA2379D2EC00E914C0 /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		2AB180EC2379D6EF00E914C0 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		2AB54331237AF47D00852E7F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		2AB54332237AF47D00852E7F /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		2AB54333237AF47D00852E7F /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		2AB54334237AF47D00852E7F /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2AB54335237AF47D00852E7F /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		2AB54336237AF47D00852E7F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		2AB54337237AF47D00852E7F /* Ubuntu-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2AB54338237AF47D00852E7F /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
+		2AB54341237AF64700852E7F /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
+		2AB54343237AFD2400852E7F /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		2AB54345237B260C00852E7F /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		2AB54347237B32B300852E7F /* CreateEvent2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent2ViewController.swift; sourceTree = "<group>"; };
+		2AB54349237B4F0700852E7F /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		2AB5434B237C31A100852E7F /* IniciativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciativesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +96,7 @@
 		2A6DEBE52369D84500AAE7EA /* Conviva */ = {
 			isa = PBXGroup;
 			children = (
+				2AB54330237AF47D00852E7F /* Fonts */,
 				2A6DEBE62369D84500AAE7EA /* AppDelegate.swift */,
 				2A6DEBE82369D84500AAE7EA /* SceneDelegate.swift */,
 				2A6DEBEA2369D84500AAE7EA /* ViewController.swift */,
@@ -76,13 +105,34 @@
 				2A6DEBF42369D84800AAE7EA /* LaunchScreen.storyboard */,
 				2A6DEBF72369D84800AAE7EA /* Info.plist */,
 				2A6DEBEF2369D84500AAE7EA /* Conviva.xcdatamodeld */,
+				2AB54341237AF64700852E7F /* TextFieldView.xib */,
+				2AB54343237AFD2400852E7F /* TextFieldView.swift */,
+				2AB54345237B260C00852E7F /* CreateEventViewController.swift */,
+				2AB54347237B32B300852E7F /* CreateEvent2ViewController.swift */,
 				2AB180E42379B7D800E914C0 /* Profile.swift */,
 				2AB180E62379CD0700E914C0 /* Event.swift */,
 				2AB180E82379D1F100E914C0 /* Item.swift */,
 				2AB180EA2379D2EC00E914C0 /* ItemType.swift */,
 				2AB180EC2379D6EF00E914C0 /* Report.swift */,
+				2AB54349237B4F0700852E7F /* Setup.swift */,
+				2AB5434B237C31A100852E7F /* IniciativesViewController.swift */,
 			);
 			path = Conviva;
+			sourceTree = "<group>";
+		};
+		2AB54330237AF47D00852E7F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2AB54331237AF47D00852E7F /* Roboto-Regular.ttf */,
+				2AB54332237AF47D00852E7F /* Ubuntu-Regular.ttf */,
+				2AB54333237AF47D00852E7F /* Ubuntu-Bold.ttf */,
+				2AB54334237AF47D00852E7F /* Roboto-BoldItalic.ttf */,
+				2AB54335237AF47D00852E7F /* Roboto-Italic.ttf */,
+				2AB54336237AF47D00852E7F /* Roboto-Bold.ttf */,
+				2AB54337237AF47D00852E7F /* Ubuntu-BoldItalic.ttf */,
+				2AB54338237AF47D00852E7F /* Ubuntu-Italic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +193,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB54340237AF47D00852E7F /* Ubuntu-Italic.ttf in Resources */,
 				2A6DEBF62369D84800AAE7EA /* LaunchScreen.storyboard in Resources */,
 				2A6DEBF32369D84800AAE7EA /* Assets.xcassets in Resources */,
+				2AB5433B237AF47D00852E7F /* Ubuntu-Bold.ttf in Resources */,
+				2AB54342237AF64700852E7F /* TextFieldView.xib in Resources */,
+				2AB54339237AF47D00852E7F /* Roboto-Regular.ttf in Resources */,
+				2AB5433A237AF47D00852E7F /* Ubuntu-Regular.ttf in Resources */,
+				2AB5433E237AF47D00852E7F /* Roboto-Bold.ttf in Resources */,
+				2AB5433F237AF47D00852E7F /* Ubuntu-BoldItalic.ttf in Resources */,
+				2AB5433D237AF47D00852E7F /* Roboto-Italic.ttf in Resources */,
+				2AB5433C237AF47D00852E7F /* Roboto-BoldItalic.ttf in Resources */,
 				2A6DEBEE2369D84500AAE7EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,10 +218,15 @@
 				2A6DEBEB2369D84500AAE7EA /* ViewController.swift in Sources */,
 				2AB180E52379B7D800E914C0 /* Profile.swift in Sources */,
 				2AB180EB2379D2EC00E914C0 /* ItemType.swift in Sources */,
+				2AB5434C237C31A100852E7F /* IniciativesViewController.swift in Sources */,
 				2A6DEBE72369D84500AAE7EA /* AppDelegate.swift in Sources */,
 				2A6DEBF12369D84500AAE7EA /* Conviva.xcdatamodeld in Sources */,
 				2AB180ED2379D6EF00E914C0 /* Report.swift in Sources */,
+				2AB54344237AFD2400852E7F /* TextFieldView.swift in Sources */,
+				2AB54346237B260C00852E7F /* CreateEventViewController.swift in Sources */,
+				2AB54348237B32B300852E7F /* CreateEvent2ViewController.swift in Sources */,
 				2AB180E92379D1F100E914C0 /* Item.swift in Sources */,
+				2AB5434A237B4F0700852E7F /* Setup.swift in Sources */,
 				2AB180E72379CD0700E914C0 /* Event.swift in Sources */,
 				2A6DEBE92369D84500AAE7EA /* SceneDelegate.swift in Sources */,
 			);

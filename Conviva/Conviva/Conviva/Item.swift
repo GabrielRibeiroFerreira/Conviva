@@ -9,13 +9,13 @@
 import Foundation
 
 class Item {
-    var name : String
-    var amount : Int
-    
-    var type : ItemType
-    
-    var event : Event
-    var helper : [(person : Profile, amount : Int)]?
+//    var name : String
+//    var amount : Int
+//    
+//    var type : ItemType
+//    
+//    var event : Event
+//    var helper : [(person : Profile, amount : Int)]?
     
     init() {
         

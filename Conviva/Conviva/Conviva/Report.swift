@@ -9,7 +9,7 @@
 import Foundation
 
 class Report {
-    var event : Event
-//    var type : ReportType
-    var text : String?
+//    var event : Event
+////    var type : ReportType
+//    var text : String?
 }
