@@ -9,18 +9,18 @@
 import Foundation
 
 class Event {
-    var name : String
-    var local : String
-    var description : String
-    var image : String
-    var custo : Double
-    var justification : String
-    var date : Date
-    var region : (latitude : String, longitude : String)
-    
-    var manager : Profile
-    var interested : [Profile]?
-    var items : [Item]?
+//    var name : String
+//    var local : String
+//    var description : String
+//    var image : String
+//    var custo : Double
+//    var justification : String
+//    var date : Date
+//    var region : (latitude : String, longitude : String)
+//    
+//    var manager : Profile
+//    var interested : [Profile]?
+//    var items : [Item]?
     
     init() {
         
