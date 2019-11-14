@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="210" id="KGk-i7-Jjw" customClass="EventsTableViewCell" customModule="Conviva" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="425" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="425" height="210"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pq4-B2-l73">
+                        <rect key="frame" x="99" y="15" width="306" height="180"/>
+                        <color key="backgroundColor" name="ConvivaPurple"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdR-HF-vmT">
+                        <rect key="frame" x="16" y="0.0" width="67" height="79"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5f-es-geE">
+                                <rect key="frame" x="5" y="15" width="57" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" name="ConvivaOrange"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-qi-2OZ">
+                                <rect key="frame" x="18" y="49" width="31" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="ConvivaOrange"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kzb-qi-2OZ" secondAttribute="bottom" constant="15" id="0zw-5N-abZ"/>
+                            <constraint firstAttribute="trailing" secondItem="w5f-es-geE" secondAttribute="trailing" constant="5" id="6Xd-x3-Uq0"/>
+                            <constraint firstItem="w5f-es-geE" firstAttribute="leading" secondItem="fdR-HF-vmT" secondAttribute="leading" constant="5" id="QIM-RZ-niN"/>
+                            <constraint firstItem="w5f-es-geE" firstAttribute="centerX" secondItem="fdR-HF-vmT" secondAttribute="centerX" id="YT4-MN-4J5"/>
+                            <constraint firstItem="kzb-qi-2OZ" firstAttribute="centerX" secondItem="fdR-HF-vmT" secondAttribute="centerX" id="gRO-gz-894"/>
+                            <constraint firstItem="kzb-qi-2OZ" firstAttribute="top" secondItem="w5f-es-geE" secondAttribute="bottom" constant="5" id="lnQ-Zt-Xwx"/>
+                            <constraint firstItem="w5f-es-geE" firstAttribute="top" secondItem="fdR-HF-vmT" secondAttribute="top" constant="15" id="wDo-mJ-7fk"/>
+                        </constraints>
+                    </view>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-Km-G8B">
+                        <rect key="frame" x="49" y="0.0" width="1" height="210"/>
+                        <color key="backgroundColor" name="ConvivaPink"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="kqV-YQ-4gZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fdR-HF-vmT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="18q-db-gA8"/>
+                    <constraint firstItem="dXG-Km-G8B" firstAttribute="centerX" secondItem="fdR-HF-vmT" secondAttribute="centerX" id="8ph-l1-mUa"/>
+                    <constraint firstItem="dXG-Km-G8B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Fds-WX-oSX"/>
+                    <constraint firstAttribute="bottom" secondItem="pq4-B2-l73" secondAttribute="bottom" constant="15" id="HcI-kK-lS2"/>
+                    <constraint firstItem="pq4-B2-l73" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="RVn-Oc-ndp"/>
+                    <constraint firstItem="pq4-B2-l73" firstAttribute="leading" secondItem="fdR-HF-vmT" secondAttribute="trailing" constant="16" id="Uak-Fa-oLs"/>
+                    <constraint firstAttribute="bottom" secondItem="dXG-Km-G8B" secondAttribute="bottom" id="e9U-By-suy"/>
+                    <constraint firstItem="fdR-HF-vmT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ggy-mG-kdV"/>
+                    <constraint firstAttribute="trailing" secondItem="pq4-B2-l73" secondAttribute="trailing" constant="20" id="syG-FL-pQS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="213.768115942029" y="155.35714285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="ConvivaOrange">
+            <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ConvivaPink">
+            <color red="0.8880000114440918" green="0.25200000405311584" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ConvivaPurple">
+            <color red="0.44800001382827759" green="0.29800000786781311" blue="0.61599999666213989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
