@@ -21,6 +21,13 @@
                         <rect key="frame" x="99" y="15" width="306" height="180"/>
                         <color key="backgroundColor" name="ConvivaPurple"/>
                     </view>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-Km-G8B">
+                        <rect key="frame" x="49" y="0.0" width="1" height="210"/>
+                        <color key="backgroundColor" name="ConvivaPink"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="kqV-YQ-4gZ"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdR-HF-vmT">
                         <rect key="frame" x="16" y="0.0" width="67" height="79"/>
                         <subviews>
@@ -46,13 +53,6 @@
                             <constraint firstItem="kzb-qi-2OZ" firstAttribute="centerX" secondItem="fdR-HF-vmT" secondAttribute="centerX" id="gRO-gz-894"/>
                             <constraint firstItem="kzb-qi-2OZ" firstAttribute="top" secondItem="w5f-es-geE" secondAttribute="bottom" constant="5" id="lnQ-Zt-Xwx"/>
                             <constraint firstItem="w5f-es-geE" firstAttribute="top" secondItem="fdR-HF-vmT" secondAttribute="top" constant="15" id="wDo-mJ-7fk"/>
-                        </constraints>
-                    </view>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-Km-G8B">
-                        <rect key="frame" x="49" y="0.0" width="1" height="210"/>
-                        <color key="backgroundColor" name="ConvivaPink"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="1" id="kqV-YQ-4gZ"/>
                         </constraints>
                     </view>
                 </subviews>
