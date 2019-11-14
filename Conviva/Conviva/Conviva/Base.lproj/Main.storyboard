@@ -291,7 +291,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" name="ConvivaBackground"/>
                                         <constraints>
                                             <constraint firstItem="hsk-gj-zey" firstAttribute="leading" secondItem="FOP-lA-VdI" secondAttribute="leading" constant="20" id="3fE-Pg-osm"/>
                                             <constraint firstItem="Mjk-C9-NLG" firstAttribute="top" secondItem="hsk-gj-zey" secondAttribute="bottom" constant="24" id="GuI-Ke-t6p"/>
