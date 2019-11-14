@@ -9,7 +9,42 @@
 import UIKit
 
 class EventsTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var dayEvent: UILabel!
+    @IBOutlet weak var weekdayEvent: UILabel!
+    @IBOutlet weak var titleEvent: UILabel!
+    @IBOutlet weak var descriptionEvent: UILabel!
+    @IBOutlet weak var addressEvent: UILabel!
+    
+    var isFirstInSection : Bool = true
+    var isFirstCall : Bool = true
+    
+    override func draw(_ rect: CGRect) {
+        self.dayEvent.font = UIFont(name: "Ubuntu-bold", size: 24)
+        self.weekdayEvent.font = UIFont(name: "Ubuntu-bold", size: 12)
+        self.titleEvent.font = UIFont(name: "Ubuntu-bold", size: 24)
+        self.descriptionEvent.font = UIFont(name: "Roboto", size: 14)
+        self.addressEvent.font = UIFont(name: "Ubuntu-bold", size: 16)
+    }
+    
+    func setEvent(_ event : Event) {
+        let calanderDate = Calendar.current.dateComponents([.day, .year, .month, .weekday], from: event.date!)
+        self.dayEvent.text = String(calanderDate.day!)
+        self.weekdayEvent.text = Setup.setupWeekday(calanderDate.weekday!)
+        self.titleEvent.text = event.name
+        self.descriptionEvent.text = event.description
+        self.addressEvent.text = event.local
+    }
+    
+    func setDateView(isFirstInSection : Bool){
+        if self.isFirstCall {
+            self.isFirstInSection = isFirstInSection
+            self.isFirstCall = false
+        }
+        
+        self.dateView.isHidden = self.isFirstInSection ? true : false
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

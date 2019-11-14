@@ -124,7 +124,23 @@
                     <view key="view" contentMode="scaleToFill" id="0hj-Rx-887">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gcs-nr-kkV">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" name="ConvivaBackground"/>
+                                <color key="sectionIndexColor" name="ConvivaPink"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MDa-Vy-9PE" firstAttribute="bottom" secondItem="gcs-nr-kkV" secondAttribute="bottom" id="UvH-Nv-fKi"/>
+                            <constraint firstItem="MDa-Vy-9PE" firstAttribute="trailing" secondItem="gcs-nr-kkV" secondAttribute="trailing" id="gkq-0j-7nX"/>
+                            <constraint firstItem="gcs-nr-kkV" firstAttribute="leading" secondItem="MDa-Vy-9PE" secondAttribute="leading" id="kVP-9Q-D15"/>
+                            <constraint firstItem="gcs-nr-kkV" firstAttribute="top" secondItem="MDa-Vy-9PE" secondAttribute="top" id="yTS-ko-B2k"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MDa-Vy-9PE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Iniciativas" id="mLs-Dv-25a">
@@ -134,10 +150,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="eventTable" destination="gcs-nr-kkV" id="6fR-dB-Tyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcn-x2-9fW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-123" y="242"/>
+            <point key="canvasLocation" x="-123.18840579710145" y="241.74107142857142"/>
         </scene>
         <!--Criar Iniciativa-->
         <scene sceneID="F7T-4r-NHx">
@@ -372,6 +391,9 @@
     <resources>
         <namedColor name="ConvivaBackground">
             <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ConvivaPink">
+            <color red="0.8880000114440918" green="0.25200000405311584" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPurple">
             <color red="0.44800001382827759" green="0.29800000786781311" blue="0.61599999666213989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

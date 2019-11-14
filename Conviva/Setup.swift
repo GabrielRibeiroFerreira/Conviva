@@ -30,4 +30,29 @@ class Setup {
         button.layer.cornerRadius = button.frame.height/2
         
     }
+    
+    static func setupWeekday(_ weekday : Int) -> String{
+        var day : String
+        
+        switch weekday {
+        case 1:
+            day = "Dom."
+        case 2:
+            day = "Seg."
+        case 3:
+            day = "Ter."
+        case 4:
+            day = "Qua."
+        case 5:
+            day = "Qui."
+        case 6:
+            day = "Sex."
+        case 7:
+            day = "Sáb."
+        default:
+            day = "fail"
+        }
+        
+        return day
+    }
 }
