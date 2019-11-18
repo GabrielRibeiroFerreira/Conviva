@@ -9,11 +9,26 @@
 import UIKit
 
 class IniciativesViewController: UIViewController {
+    
+    var events: [Event] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         Setup.setupViewController(self)
+        
+        let getRequest = APIRequest(endpoint: "events")
+        getRequest.getAllEvents() { result in
+            switch result {
+            case .success(let eventsData):
+                print("Lista de eventos: \(String(describing: eventsData))")
+                self.events = eventsData
+            case .failure(let error):
+                print("Ocorreu um erro \(error)")
+                
+            }
+        }
+       
     }
     
 
