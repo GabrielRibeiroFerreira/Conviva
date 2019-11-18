@@ -13,7 +13,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     let eventCell : String = "EventsTableViewCell"
     var eventList : [Event] = []
     var months : [(month : String, number : Int)] = [("Novembro", 3), ("Dezembro", 1)]
-    var actualDate : Date?
+    var actualDate : String?
     
     
     var events: [Event] = []
@@ -44,28 +44,26 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         
         let event : Event = Event()
         event.name = "Vamo Grande 28/11"
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        event.date = formatter.date(from: "28/11/2019 22:31")
+        event.date = "28/11/2019 22:31"
 //        self.actualDate = event.date
         event.description = "vamo ver se essa coisa funfa, ia ser bom demais se funcionasse de primeira"
-        event.local = "Av. Vai Rolar, 161"
+        event.address = "Av. Vai Rolar, 161"
         
         self.eventList.append(event)
         self.eventList.append(event)
         
         let event1 : Event = Event()
         event1.name = "Vamo Grande 29/11"
-        event1.date = formatter.date(from: "29/11/2019 22:31")
+        event1.date = "29/11/2019 22:31"
         event1.description = "vamo ver se essa coisa funfa, ia ser bom demais se funcionasse de primeira"
-        event1.local = "Av. Vai Rolar, 161"
+        event1.address = "Av. Vai Rolar, 161"
         self.eventList.append(event1)
         
         let event2 : Event = Event()
         event2.name = "Vamo Grande 29/12"
-        event2.date = formatter.date(from: "29/12/2019 22:31")
+        event2.date = "29/12/2019 22:31"
         event2.description = "vamo ver se essa coisa funfa, ia ser bom demais se funcionasse de primeira"
-        event2.local = "Av. Vai Rolar, 161"
+        event2.address = "Av. Vai Rolar, 161"
         self.eventList.append(event2)
         
     }

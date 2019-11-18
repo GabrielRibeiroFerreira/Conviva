@@ -28,12 +28,15 @@ class EventsTableViewCell: UITableViewCell {
     }
     
     func setEvent(_ event : Event) {
-        let calanderDate = Calendar.current.dateComponents([.day, .year, .month, .weekday], from: event.date!)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let date = formatter.date(from: event.date!)
+        let calanderDate = Calendar.current.dateComponents([.day, .year, .month, .weekday], from: date!)
         self.dayEvent.text = String(calanderDate.day!)
         self.weekdayEvent.text = Setup.setupWeekday(calanderDate.weekday!)
         self.titleEvent.text = event.name
         self.descriptionEvent.text = event.description
-        self.addressEvent.text = event.local
+        self.addressEvent.text = event.address
     }
     
     func setDateView(isFirstInSection : Bool){
