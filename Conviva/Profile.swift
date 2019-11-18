@@ -15,7 +15,10 @@ class Profile {
 //    var contact : String
 //    var address : String?
 //    var descrition : String?
-//    var region : (latitude : String, longitude : String, radius : Double)
+//    var latitude: Double?
+//    var longitude: Double?
+//    var radius: Double?
+    
 //    
 //    var managedEvents : [Event]?
 //    var interestedEvents : [Event]?

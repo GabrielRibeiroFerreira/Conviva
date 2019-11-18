@@ -38,7 +38,7 @@ class CreateEventViewController: UIViewController {
         self.event.name = self.timeIniciative.textField.text
 //        self.event.date = self.dateIniciative.textField.text //Passar o valor para data
 //        self.event.date = self.timeIniciative.textField.text //Passar o valor para horario
-        self.event.local = self.localIniciative.textField.text
+        self.event.address = self.localIniciative.textField.text
         self.event.description = self.descriptionIniciative.textField.text
     }
     

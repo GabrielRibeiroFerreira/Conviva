@@ -31,9 +31,25 @@ class CreateEvent2ViewController: UIViewController {
     // MARK: - Navigation
     
     @IBAction func confirmeClick(_ sender: Any) {
-        self.event.cost = Double(self.costIniciative.textField.text ?? "0")
+        self.event.cost = Int(self.costIniciative.textField.text ?? "0")
         self.event.helpers = self.helpersIniciative.textField.text
         self.event.items = self.itemsIniciative.textField.text
+
+   
+        //Criação de um evento de teste, mas aqui passaria as informações dos textFields
+        let eventTestPOST = Event(name: "Festa Junina", description: "Festa da Igreja", address: "Avenida 2", cost: 200 , justification: "Recolher fundoa para abrigo", date: "2019-11-01 21:14:23", complaint: 0, adm: 23, latitude: -20.7865, longitude: 34.7654)
+
+        //Chamada do método POST para evento
+        let postRequest = APIRequest(endpoint: "events")
+        postRequest.saveEvent(eventTestPOST) { result in
+            switch result {
+            case .success(let eventTestPOST):
+                print("O evento foi salvo \(String(describing: eventTestPOST.name))")
+            case .failure(let error):
+                print("Ocorreu um erro \(error)")
+                
+            }
+        }
     }
 
     /*

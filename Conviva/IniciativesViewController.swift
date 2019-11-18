@@ -15,6 +15,9 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     var months : [(month : String, number : Int)] = [("Novembro", 3), ("Dezembro", 1)]
     var actualDate : Date?
     
+    
+    var events: [Event] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +28,19 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
         
         Setup.setupViewController(self)
+        
+        let getRequest = APIRequest(endpoint: "events")
+        getRequest.getAllEvents() { result in
+            switch result {
+            case .success(let eventsData):
+                print("Lista de eventos: \(String(describing: eventsData))")
+                self.events = eventsData
+            case .failure(let error):
+                print("Ocorreu um erro \(error)")
+                
+            }
+        }
+       
         
         let event : Event = Event()
         event.name = "Vamo Grande 28/11"
