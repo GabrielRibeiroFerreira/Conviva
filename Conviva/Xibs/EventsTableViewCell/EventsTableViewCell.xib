@@ -93,7 +93,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="ConvivaBackground"/>
                 <constraints>
                     <constraint firstItem="fdR-HF-vmT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="18q-db-gA8"/>
                     <constraint firstItem="dXG-Km-G8B" firstAttribute="centerX" secondItem="fdR-HF-vmT" secondAttribute="centerX" id="8ph-l1-mUa"/>

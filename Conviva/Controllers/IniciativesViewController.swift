@@ -10,6 +10,7 @@ import UIKit
 
 class IniciativesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var eventTable: UITableView!
+    
     let eventCell : String = "EventsTableViewCell"
     var eventList : [Event] = []
     var months : [(month : String, number : Int)] = [("Novembro", 3), ("Dezembro", 1)]
@@ -17,12 +18,14 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     var events: [Event] = []
+    var selectEvent : Event?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.eventTable.delegate = self
         self.eventTable.dataSource = self
+        self.eventTable.indexDisplayMode = .alwaysHidden
         
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
@@ -68,20 +71,14 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        Setup.setupViewController(self)
+    }
+    
     // MARK: - TableView
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.months.count
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        var months : [String] = []
-        for i in self.months{
-            if !months.contains(i.month){
-                months.append(i.month)
-            }
-        }
-        return months
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -120,14 +117,17 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         return 240
     }
     
-    /*
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectEvent = self.eventList[0]
+        performSegue(withIdentifier: "toEventSegue", sender: self)
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toEventSegue" {
+            let destination = segue.destination as! EventViewController
+            destination.event = self.selectEvent!
+        }
     }
-    */
-
 }

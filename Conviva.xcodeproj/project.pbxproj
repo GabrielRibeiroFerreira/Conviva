@@ -10,9 +10,9 @@
 		156F73C72381BA02009631C0 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F73C62381BA02009631C0 /* APIRequest.swift */; };
 		2A67D9C6237DB01700DBF095 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A67D9C4237DB01700DBF095 /* EventsTableViewCell.xib */; };
 		2A67D9C7237DB01700DBF095 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67D9C5237DB01700DBF095 /* EventsTableViewCell.swift */; };
+		2A67D9D1238431FB00DBF095 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67D9D0238431FB00DBF095 /* EventViewController.swift */; };
 		2A6DEBE72369D84500AAE7EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6DEBE62369D84500AAE7EA /* AppDelegate.swift */; };
 		2A6DEBE92369D84500AAE7EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6DEBE82369D84500AAE7EA /* SceneDelegate.swift */; };
-		2A6DEBEB2369D84500AAE7EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6DEBEA2369D84500AAE7EA /* ViewController.swift */; };
 		2A6DEBEE2369D84500AAE7EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A6DEBEC2369D84500AAE7EA /* Main.storyboard */; };
 		2A6DEBF12369D84500AAE7EA /* Conviva.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A6DEBEF2369D84500AAE7EA /* Conviva.xcdatamodeld */; };
 		2A6DEBF32369D84800AAE7EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6DEBF22369D84800AAE7EA /* Assets.xcassets */; };
@@ -42,10 +42,10 @@
 		156F73C62381BA02009631C0 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		2A67D9C4237DB01700DBF095 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 		2A67D9C5237DB01700DBF095 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		2A67D9D0238431FB00DBF095 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		2A6DEBE32369D84500AAE7EA /* Conviva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conviva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6DEBE62369D84500AAE7EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A6DEBE82369D84500AAE7EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A6DEBEA2369D84500AAE7EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A6DEBED2369D84500AAE7EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A6DEBF02369D84500AAE7EA /* Conviva.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Conviva.xcdatamodel; sourceTree = "<group>"; };
 		2A6DEBF22369D84800AAE7EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +83,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A67D9C823833B3F00DBF095 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AB54345237B260C00852E7F /* CreateEventViewController.swift */,
+				2AB54347237B32B300852E7F /* CreateEvent2ViewController.swift */,
+				2AB5434B237C31A100852E7F /* IniciativesViewController.swift */,
+				2A67D9D0238431FB00DBF095 /* EventViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2A67D9C923833B7300DBF095 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2AB54349237B4F0700852E7F /* Setup.swift */,
+				2AB180E42379B7D800E914C0 /* Profile.swift */,
+				2AB180E62379CD0700E914C0 /* Event.swift */,
+				2AB180E82379D1F100E914C0 /* Item.swift */,
+				2AB180EA2379D2EC00E914C0 /* ItemType.swift */,
+				2AB180EC2379D6EF00E914C0 /* Report.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A67D9CA23833C1C00DBF095 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A6DEBEC2369D84500AAE7EA /* Main.storyboard */,
+				2A6DEBF42369D84800AAE7EA /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A67D9CB23833C9900DBF095 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				2A67D9CD23833CC000DBF095 /* EventsTableViewCell */,
+				2A67D9CC23833CA000DBF095 /* TextFieldView */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		2A67D9CC23833CA000DBF095 /* TextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				2AB54341237AF64700852E7F /* TextFieldView.xib */,
+				2AB54343237AFD2400852E7F /* TextFieldView.swift */,
+			);
+			path = TextFieldView;
+			sourceTree = "<group>";
+		};
+		2A67D9CD23833CC000DBF095 /* EventsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2A67D9C4237DB01700DBF095 /* EventsTableViewCell.xib */,
+				2A67D9C5237DB01700DBF095 /* EventsTableViewCell.swift */,
+			);
+			path = EventsTableViewCell;
+			sourceTree = "<group>";
+		};
+		2A67D9CE23833CF700DBF095 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				156F73C62381BA02009631C0 /* APIRequest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		2A6DEBDA2369D84500AAE7EA = {
 			isa = PBXGroup;
 			children = (
@@ -102,29 +170,17 @@
 		2A6DEBE52369D84500AAE7EA /* Conviva */ = {
 			isa = PBXGroup;
 			children = (
+				2A67D9CE23833CF700DBF095 /* Service */,
+				2A67D9CB23833C9900DBF095 /* Xibs */,
+				2A67D9CA23833C1C00DBF095 /* Views */,
+				2A67D9C923833B7300DBF095 /* Models */,
+				2A67D9C823833B3F00DBF095 /* Controllers */,
 				2AB54330237AF47D00852E7F /* Fonts */,
 				2A6DEBE62369D84500AAE7EA /* AppDelegate.swift */,
 				2A6DEBE82369D84500AAE7EA /* SceneDelegate.swift */,
-				2A6DEBEA2369D84500AAE7EA /* ViewController.swift */,
-				2A6DEBEC2369D84500AAE7EA /* Main.storyboard */,
 				2A6DEBF22369D84800AAE7EA /* Assets.xcassets */,
-				2A6DEBF42369D84800AAE7EA /* LaunchScreen.storyboard */,
 				2A6DEBF72369D84800AAE7EA /* Info.plist */,
 				2A6DEBEF2369D84500AAE7EA /* Conviva.xcdatamodeld */,
-				2AB54341237AF64700852E7F /* TextFieldView.xib */,
-				2AB54343237AFD2400852E7F /* TextFieldView.swift */,
-				2AB54345237B260C00852E7F /* CreateEventViewController.swift */,
-				2AB54347237B32B300852E7F /* CreateEvent2ViewController.swift */,
-				2AB5434B237C31A100852E7F /* IniciativesViewController.swift */,
-				2AB180E42379B7D800E914C0 /* Profile.swift */,
-				2AB180E62379CD0700E914C0 /* Event.swift */,
-				2AB180E82379D1F100E914C0 /* Item.swift */,
-				2AB180EA2379D2EC00E914C0 /* ItemType.swift */,
-				2AB180EC2379D6EF00E914C0 /* Report.swift */,
-				2AB54349237B4F0700852E7F /* Setup.swift */,
-				2A67D9C5237DB01700DBF095 /* EventsTableViewCell.swift */,
-				2A67D9C4237DB01700DBF095 /* EventsTableViewCell.xib */,
-				156F73C62381BA02009631C0 /* APIRequest.swift */,
 			);
 			path = Conviva;
 			sourceTree = "<group>";
@@ -225,12 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A6DEBEB2369D84500AAE7EA /* ViewController.swift in Sources */,
 				2AB180E52379B7D800E914C0 /* Profile.swift in Sources */,
 				2AB180EB2379D2EC00E914C0 /* ItemType.swift in Sources */,
 				2AB5434C237C31A100852E7F /* IniciativesViewController.swift in Sources */,
 				2A6DEBE72369D84500AAE7EA /* AppDelegate.swift in Sources */,
 				2A6DEBF12369D84500AAE7EA /* Conviva.xcdatamodeld in Sources */,
+				2A67D9D1238431FB00DBF095 /* EventViewController.swift in Sources */,
 				2AB180ED2379D6EF00E914C0 /* Report.swift in Sources */,
 				2A67D9C7237DB01700DBF095 /* EventsTableViewCell.swift in Sources */,
 				2AB54344237AFD2400852E7F /* TextFieldView.swift in Sources */,

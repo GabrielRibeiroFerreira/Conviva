@@ -17,6 +17,7 @@ class Setup {
             NSAttributedString.Key.font: UIFont(name: "Ubuntu-bold", size: 37)!]
         
         viewController.view.backgroundColor = UIColor(named: "ConvivaBackground")
+        viewController.navigationController?.navigationBar.backgroundColor = UIColor(named: "ConvivaBackground")
     }
     
     static func setupButton(_ button : UIButton, withText title : String){
