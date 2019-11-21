@@ -16,66 +16,39 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     var months : [(month : String, number : Int)] = [("Novembro", 3), ("Dezembro", 1)]
     var actualDate : String?
     
-    
     var events: [Event] = []
+    
     var selectEvent : Event?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Setup.setupViewController(self)
         
         self.eventTable.delegate = self
         self.eventTable.dataSource = self
         self.eventTable.indexDisplayMode = .alwaysHidden
-        
+           
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
-        
-        Setup.setupViewController(self)
-        
+    
+        makeAPIRequest()
+    }
+    
+    func makeAPIRequest() {
         let getRequest = APIRequest(endpoint: "events")
         getRequest.getAllEvents() { result in
             switch result {
             case .success(let eventsData):
                 print("Lista de eventos: \(String(describing: eventsData))")
-                self.events = eventsData
+                DispatchQueue.main.async{
+                    self.events = eventsData
+                    self.eventTable.reloadData()
+                }
             case .failure(let error):
                 print("Ocorreu um erro \(error)")
-                
             }
         }
-       
-        
-        let event : Event = Event()
-        event.name = "Vamo Grande 28/11"
-        event.date = "28/11/2019 22:31"
-//        self.actualDate = event.date
-        event.description = "Lorem Ipsum é que nem os comportamentos machistas dentro da criação. Você não presta atenção, só sai reproduzindo por aí. Mas também, pra que levar a sério um texto que não diz nada ou mulheres que são minoria? Afinal, elas somam só 20% da criação. Um número inversamente proporcional a todas as piadas de cunho machista e sexual que elas escutam todos os dias. Sim, todos os dias."
-        event.address = "Av. Vai Rolar, 161"
-        event.items = "3 panelas, 20 garfos, 20 facas, 1 pa, 2 vassouras"
-        event.helpers = "1 fotografo, 3 cozinheiros"
-        event.cost = 500
-        
-        self.eventList.append(event)
-        self.eventList.append(event)
-        
-        let event1 : Event = Event()
-        event1.name = "Vamo Grande 29/11"
-        event1.date = "29/11/2019 22:31"
-        event1.description = "vamo ver se essa coisa funfa, ia ser bom demais se funcionasse de primeira"
-        event1.address = "Av. Vai Rolar, 161"
-        self.eventList.append(event1)
-        
-        let event2 : Event = Event()
-        event2.name = "Vamo Grande 29/12"
-        event2.date = "29/12/2019 22:31"
-        event2.description = "vamo ver se essa coisa funfa, ia ser bom demais se funcionasse de primeira"
-        event2.address = "Av. Vai Rolar, 161"
-        self.eventList.append(event2)
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        Setup.setupViewController(self)
     }
     
     // MARK: - TableView
@@ -96,12 +69,13 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.months[section].number
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: eventCell, for: indexPath) as! EventsTableViewCell
-        let event : Event = self.eventList[indexPath.row]
+        
+        let event : Event = self.events[indexPath.row]
         
         cell.setEvent(event)
         cell.backgroundColor = UIColor.clear
@@ -121,7 +95,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectEvent = self.eventList[0]
+        self.selectEvent = self.events[0]
         performSegue(withIdentifier: "toEventSegue", sender: self)
     }
     
