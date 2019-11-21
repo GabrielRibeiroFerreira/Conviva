@@ -49,8 +49,11 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         event.name = "Vamo Grande 28/11"
         event.date = "28/11/2019 22:31"
 //        self.actualDate = event.date
-        event.description = "vamo ver se essa coisa funfa, ia ser bom demais se funcionasse de primeira"
+        event.description = "Lorem Ipsum é que nem os comportamentos machistas dentro da criação. Você não presta atenção, só sai reproduzindo por aí. Mas também, pra que levar a sério um texto que não diz nada ou mulheres que são minoria? Afinal, elas somam só 20% da criação. Um número inversamente proporcional a todas as piadas de cunho machista e sexual que elas escutam todos os dias. Sim, todos os dias."
         event.address = "Av. Vai Rolar, 161"
+        event.items = "3 panelas, 20 garfos, 20 facas, 1 pa, 2 vassouras"
+        event.helpers = "1 fotografo, 3 cozinheiros"
+        event.cost = 500
         
         self.eventList.append(event)
         self.eventList.append(event)

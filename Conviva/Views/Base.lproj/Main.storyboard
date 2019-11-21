@@ -376,15 +376,185 @@
                     <view key="view" contentMode="scaleToFill" id="AMm-6v-xYw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcj-H7-dew">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yk4-pE-TY9" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="623.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlN-9s-3Ff">
+                                                <rect key="frame" x="24" y="120" width="42" height="20"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
+                                                <color key="textColor" name="ConvivaPurple"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-SW-LGv">
+                                                <rect key="frame" x="20" y="420.5" width="374" height="19"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
+                                                <color key="textColor" name="ConvivaPurple"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lle-Cy-Yzc">
+                                                <rect key="frame" x="20" y="487.5" width="374" height="19"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
+                                                <color key="textColor" name="ConvivaPurple"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-f8-bur">
+                                                <rect key="frame" x="20" y="264" width="374" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                <color key="textColor" name="ConvivaPurple"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDq-Yf-go0">
+                                                <rect key="frame" x="20" y="148" width="49" height="24"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Label">
+                                                        <attributes>
+                                                            <color key="NSColor" name="ConvivaOrange"/>
+                                                            <font key="NSFont" size="20" name="Ubuntu-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Itens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn6-pc-JAx">
+                                                <rect key="frame" x="20" y="388.5" width="43.5" height="24"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                                <color key="textColor" name="ConvivaOrange"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pessoas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-VS-33X">
+                                                <rect key="frame" x="20" y="455.5" width="76" height="24"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                                <color key="textColor" name="ConvivaOrange"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P6-kf-cvR">
+                                                <rect key="frame" x="20" y="522.5" width="44.5" height="24"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
+                                                <color key="textColor" name="ConvivaOrange"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm4-Au-Zbn">
+                                                <rect key="frame" x="20" y="212" width="46" height="20"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Sobre">
+                                                        <attributes>
+                                                            <color key="NSColor" name="ConvivaOrange"/>
+                                                            <font key="NSFont" size="16" name="HelveticaNeue-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que é necessário" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K6-ce-dF7">
+                                                <rect key="frame" x="20" y="345.5" width="138.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="16"/>
+                                                <color key="textColor" name="ConvivaOrange"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xr-DD-RfK">
+                                                <rect key="frame" x="20" y="312.5" width="374" height="1"/>
+                                                <color key="backgroundColor" name="ConvivaPurple"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Dwu-i6-zgz"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-QI-rys">
+                                                <rect key="frame" x="20" y="554.5" width="374" height="19"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
+                                                <color key="textColor" name="ConvivaPurple"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91z-3U-3kL" userLabel="NavView">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                                <color key="backgroundColor" name="ConvivaPurple"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="tTM-px-oL2"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" name="ConvivaBackground"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DlN-9s-3Ff" secondAttribute="trailing" constant="20" symbolic="YES" id="0PK-PO-zOo"/>
+                                            <constraint firstItem="Tgk-QI-rys" firstAttribute="top" secondItem="0P6-kf-cvR" secondAttribute="bottom" constant="8" id="4Pa-Ia-sSk"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0P6-kf-cvR" secondAttribute="trailing" constant="20" symbolic="YES" id="4zp-bo-lCz"/>
+                                            <constraint firstItem="gYS-VS-33X" firstAttribute="top" secondItem="6PE-SW-LGv" secondAttribute="bottom" constant="16" id="5tr-DS-gHs"/>
+                                            <constraint firstItem="8Xr-DD-RfK" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="7WB-1K-sLh"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tgk-QI-rys" secondAttribute="trailing" constant="20" id="8wW-dK-fGq"/>
+                                            <constraint firstItem="YDq-Yf-go0" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="9tD-Lw-ikQ"/>
+                                            <constraint firstItem="8Xr-DD-RfK" firstAttribute="top" secondItem="bSh-f8-bur" secondAttribute="bottom" constant="32" id="AB9-n1-kgg"/>
+                                            <constraint firstItem="bSh-f8-bur" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="CkU-GM-NNW"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gYS-VS-33X" secondAttribute="trailing" constant="20" symbolic="YES" id="DGW-ny-OLc"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Xr-DD-RfK" secondAttribute="trailing" constant="20" id="H34-mL-1fA"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pm4-Au-Zbn" secondAttribute="trailing" constant="20" symbolic="YES" id="HaX-EN-fmi"/>
+                                            <constraint firstItem="Gn6-pc-JAx" firstAttribute="top" secondItem="2K6-ce-dF7" secondAttribute="bottom" constant="24" id="Hs6-hQ-mnb"/>
+                                            <constraint firstItem="lle-Cy-Yzc" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="KpR-ZR-9Gi"/>
+                                            <constraint firstItem="6PE-SW-LGv" firstAttribute="top" secondItem="Gn6-pc-JAx" secondAttribute="bottom" constant="8" id="Ksa-3c-eUI"/>
+                                            <constraint firstItem="91z-3U-3kL" firstAttribute="top" secondItem="Yk4-pE-TY9" secondAttribute="top" id="KtG-Qc-EB2"/>
+                                            <constraint firstItem="lle-Cy-Yzc" firstAttribute="top" secondItem="gYS-VS-33X" secondAttribute="bottom" constant="8" id="LCl-6l-DnU"/>
+                                            <constraint firstItem="91z-3U-3kL" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" id="N5O-2U-vue"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2K6-ce-dF7" secondAttribute="trailing" constant="20" symbolic="YES" id="OYu-Rd-SyI"/>
+                                            <constraint firstItem="2K6-ce-dF7" firstAttribute="top" secondItem="8Xr-DD-RfK" secondAttribute="bottom" constant="32" id="QY5-de-q0t"/>
+                                            <constraint firstAttribute="trailing" secondItem="lle-Cy-Yzc" secondAttribute="trailing" constant="20" id="Rhq-5w-YWO"/>
+                                            <constraint firstItem="DlN-9s-3Ff" firstAttribute="top" secondItem="91z-3U-3kL" secondAttribute="bottom" constant="20" id="VGm-MI-RK4"/>
+                                            <constraint firstItem="YDq-Yf-go0" firstAttribute="top" secondItem="DlN-9s-3Ff" secondAttribute="bottom" constant="8" id="Xgv-ac-gDa"/>
+                                            <constraint firstItem="gYS-VS-33X" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="bii-Oq-l3I"/>
+                                            <constraint firstItem="Pm4-Au-Zbn" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="crc-LD-3dc"/>
+                                            <constraint firstItem="Pm4-Au-Zbn" firstAttribute="top" secondItem="YDq-Yf-go0" secondAttribute="bottom" constant="40" id="dg1-dE-3Gy"/>
+                                            <constraint firstAttribute="trailing" secondItem="6PE-SW-LGv" secondAttribute="trailing" constant="20" id="e0e-k7-KH8"/>
+                                            <constraint firstItem="Tgk-QI-rys" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="eeW-R4-1Ps"/>
+                                            <constraint firstItem="0P6-kf-cvR" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="fOW-sp-DSI"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gn6-pc-JAx" secondAttribute="trailing" constant="20" symbolic="YES" id="gnF-Ka-Lvq"/>
+                                            <constraint firstItem="0P6-kf-cvR" firstAttribute="top" secondItem="lle-Cy-Yzc" secondAttribute="bottom" constant="16" id="hOw-cW-UKj"/>
+                                            <constraint firstAttribute="trailing" secondItem="91z-3U-3kL" secondAttribute="trailing" id="k1y-g0-sWm"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YDq-Yf-go0" secondAttribute="trailing" constant="20" symbolic="YES" id="lwR-JW-zwt"/>
+                                            <constraint firstItem="Gn6-pc-JAx" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="qXq-sb-oWT"/>
+                                            <constraint firstAttribute="trailing" secondItem="bSh-f8-bur" secondAttribute="trailing" constant="20" id="s3O-Q0-GXD"/>
+                                            <constraint firstItem="bSh-f8-bur" firstAttribute="top" secondItem="Pm4-Au-Zbn" secondAttribute="bottom" constant="32" id="uQJ-Aw-iWv"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tgk-QI-rys" secondAttribute="bottom" constant="50" id="uXU-V5-iks"/>
+                                            <constraint firstItem="2K6-ce-dF7" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="w6S-fB-iXB"/>
+                                            <constraint firstItem="DlN-9s-3Ff" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="24" id="wmw-7z-p7R"/>
+                                            <constraint firstItem="6PE-SW-LGv" firstAttribute="leading" secondItem="Yk4-pE-TY9" secondAttribute="leading" constant="20" id="zoL-wE-RqR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Yk4-pE-TY9" firstAttribute="leading" secondItem="gyS-CZ-hxa" secondAttribute="leading" id="A1v-i7-N0a"/>
+                                    <constraint firstItem="Yk4-pE-TY9" firstAttribute="trailing" secondItem="gyS-CZ-hxa" secondAttribute="trailing" id="HG9-9Y-m2E"/>
+                                    <constraint firstItem="Yk4-pE-TY9" firstAttribute="bottom" secondItem="gyS-CZ-hxa" secondAttribute="bottom" id="OBb-ab-bhB"/>
+                                    <constraint firstItem="gyS-CZ-hxa" firstAttribute="top" secondItem="Yk4-pE-TY9" secondAttribute="top" id="Tku-We-e1C"/>
+                                    <constraint firstItem="Yk4-pE-TY9" firstAttribute="width" secondItem="qcj-H7-dew" secondAttribute="width" id="xK0-qu-MFN"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="gyS-CZ-hxa"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="69w-F8-gxX"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PK0-1e-xko" firstAttribute="bottom" secondItem="qcj-H7-dew" secondAttribute="bottom" id="8Zp-05-oGW"/>
+                            <constraint firstItem="PK0-1e-xko" firstAttribute="trailing" secondItem="qcj-H7-dew" secondAttribute="trailing" id="Kfq-c0-jWA"/>
+                            <constraint firstItem="qcj-H7-dew" firstAttribute="leading" secondItem="PK0-1e-xko" secondAttribute="leading" id="U6x-N8-5TY"/>
+                            <constraint firstItem="qcj-H7-dew" firstAttribute="top" secondItem="AMm-6v-xYw" secondAttribute="top" id="sPi-RS-613"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PK0-1e-xko"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ehq-KY-1sF"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="DlN-9s-3Ff" id="u3q-P6-0JL"/>
+                        <outlet property="costLabel" destination="Tgk-QI-rys" id="JMe-PB-QeE"/>
+                        <outlet property="dateLabel" destination="YDq-Yf-go0" id="mou-A1-5mm"/>
+                        <outlet property="descriptionLabel" destination="bSh-f8-bur" id="Ndy-6x-0Jj"/>
+                        <outlet property="helpersLabel" destination="lle-Cy-Yzc" id="28x-AM-lIF"/>
+                        <outlet property="itemsLabel" destination="6PE-SW-LGv" id="KEg-Aw-SED"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zR-A3-QMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="544"/>
+            <point key="canvasLocation" x="905.79710144927549" y="543.75"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RSv-Fr-dbj">
@@ -409,6 +579,9 @@
     <resources>
         <namedColor name="ConvivaBackground">
             <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ConvivaOrange">
+            <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPink">
             <color red="0.8880000114440918" green="0.25200000405311584" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

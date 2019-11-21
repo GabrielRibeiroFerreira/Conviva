@@ -9,8 +9,15 @@
 import UIKit
 
 class EventViewController: UIViewController {
-    var event : Event!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var itemsLabel: UILabel!
+    @IBOutlet weak var helpersLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
     
+    var event : Event!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,10 +25,14 @@ class EventViewController: UIViewController {
         
         self.navigationItem.title = event.name
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "ConvivaPurple")
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "CEM"), for: .defaultPrompt)
-        
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
   
+        self.addressLabel.text = self.event.address
+        self.dateLabel.text = self.event.date
+        self.descriptionLabel.text = self.event.description
+        self.itemsLabel.text = self.event.items
+        self.helpersLabel.text = self.event.helpers
+        self.costLabel.text = self.event.cost?.description
+        
     }
     
 
