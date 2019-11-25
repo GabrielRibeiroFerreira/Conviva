@@ -35,7 +35,7 @@ class CreateEventViewController: UIViewController {
     // MARK: - Navigation
     
     @IBAction func nextClick(_ sender: Any) {
-        self.event.name = self.timeIniciative.textField.text
+        self.event.name = self.titleIniciative.textField.text
 //        self.event.date = self.dateIniciative.textField.text //Passar o valor para data
 //        self.event.date = self.timeIniciative.textField.text //Passar o valor para horario
         self.event.address = self.localIniciative.textField.text

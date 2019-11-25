@@ -11,12 +11,13 @@ import UIKit
 class IniciativesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var eventTable: UITableView!
     
+    var events: [Event] = []
     let eventCell : String = "EventsTableViewCell"
-    var eventList : [Event] = []
-    var months : [(month : String, number : Int)] = [("Novembro", 3), ("Dezembro", 1)]
+    
+    var months : [(month : String, year: Int,  freq : Int)] = []
     var actualDate : String?
     
-    var events: [Event] = []
+    
     
     var selectEvent : Event?
     
@@ -32,7 +33,25 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
     
-        makeAPIRequest()
+//        Mockado por enquanto para evitar mtas requests
+//        makeAPIRequest()
+        mockData()
+        
+        
+    }
+    
+    func mockData() {
+        let event = Event(name: "Festa Junina", description: "Canjica TOP", address: "Maloca", cost: 500, justification: "Vamo comer canjica", date: "2019-11-01 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
+        self.events.append(event)
+        
+        let event0 = Event(name: "Bazar", description: "Roupinhas", address: "Malloca", cost: 500, justification: "Doação", date: "2019-11-22 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
+        self.events.append(event0)
+        
+        let event1 = Event(name: "Churrasco na praça", description: "Comer pao de alho", address: "Praça", cost: 500, justification: "To com fome", date: "2019-12-01 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
+        self.events.append(event1)
+        
+        
+        
     }
     
     func makeAPIRequest() {
@@ -41,6 +60,8 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
             switch result {
             case .success(let eventsData):
                 print("Lista de eventos: \(String(describing: eventsData))")
+                //Dispatch the call to update the label text to the main thread.
+                //Reload must only be called on the main thread
                 DispatchQueue.main.async{
                     self.events = eventsData
                     self.eventTable.reloadData()
@@ -51,9 +72,48 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    // MARK: - TableView
+    
+    func getEventsByMonth() {
+        var calendar = Calendar.current
+        calendar.locale = NSLocale(localeIdentifier: "pt_BR") as Locale
+        
+        if self.events.isEmpty {
+            return
+        }
 
+        //Considerando o array de evento já ordenado por data
+        
+        let calendarDate = getDateComponents(date: self.events[0].dateFormatted!)
+        let month = (calendar.monthSymbols[calendarDate.month!-1].capitalized, calendarDate.year!, 1)
+        self.months = [month]
+        var index = 0
+
+        for (prevDate, nextDate) in zip(self.events, self.events.dropFirst()) {
+            let calendarDate = getDateComponents(date: nextDate.dateFormatted!)
+            let elem = (calendar.monthSymbols[calendarDate.month!-1].capitalized, calendarDate.year!, 1)
+            
+            //Se o mes é o mesmo do já anterior incrementa o contador
+            if !calendar.isDate(prevDate.dateFormatted!, equalTo: nextDate.dateFormatted!, toGranularity: .month) {
+                self.months.append(elem) // Start new row
+                index += 1
+            }
+            //Se é um mes já existente no array months então adiciona com contador inicial de 1
+            else {
+                self.months[index].freq+=1
+            }
+        }
+    }
+    
+    func getDateComponents(date: Date) -> DateComponents{
+        let calendarDate = Calendar.current.dateComponents([.day, .month, .year, .weekday], from: date)
+        return calendarDate
+    }
+    
+    
+    
+    // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
+        getEventsByMonth()
         return self.months.count
     }
     
@@ -69,7 +129,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.events.count
+        return self.months[section].freq
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +140,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         cell.setEvent(event)
         cell.backgroundColor = UIColor.clear
         
+        // Salva a data atual do bloco, se for diferente exibe a nova data
         if event.date == self.actualDate {
             cell.setDateView(isFirstInSection: true)
         }else{

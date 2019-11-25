@@ -23,6 +23,10 @@ class Event: Codable {
     var longitude: Double?
     var adm: Int?
     
+    public var dateFormatted: Date? {
+        return getDateFormatted(dateStr: date!)
+    }
+    
 // Não pode conter um array para cumprir o protocolo Codable
 // Acho que existe uma forma de conter array mas não me preocupei no inicio
 //    var manager : Profile?
@@ -45,5 +49,12 @@ class Event: Codable {
     
     init() {
         
+    }
+    
+   func getDateFormatted(dateStr: String) -> Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = formatter.date(from: dateStr)
+        return date!
     }
 }
