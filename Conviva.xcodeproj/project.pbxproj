@@ -36,6 +36,8 @@
 		2AB54348237B32B300852E7F /* CreateEvent2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB54347237B32B300852E7F /* CreateEvent2ViewController.swift */; };
 		2AB5434A237B4F0700852E7F /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB54349237B4F0700852E7F /* Setup.swift */; };
 		2AB5434C237C31A100852E7F /* IniciativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5434B237C31A100852E7F /* IniciativesViewController.swift */; };
+		2AB81A44238733F5000A87C2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB81A43238733F5000A87C2 /* RegisterViewController.swift */; };
+		2AB81A46238C23E6000A87C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB81A45238C23E6000A87C2 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		2AB54347237B32B300852E7F /* CreateEvent2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent2ViewController.swift; sourceTree = "<group>"; };
 		2AB54349237B4F0700852E7F /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 		2AB5434B237C31A100852E7F /* IniciativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciativesViewController.swift; sourceTree = "<group>"; };
+		2AB81A43238733F5000A87C2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2AB81A45238C23E6000A87C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				2AB54347237B32B300852E7F /* CreateEvent2ViewController.swift */,
 				2AB5434B237C31A100852E7F /* IniciativesViewController.swift */,
 				2A67D9D0238431FB00DBF095 /* EventViewController.swift */,
+				2AB81A43238733F5000A87C2 /* RegisterViewController.swift */,
+				2AB81A45238C23E6000A87C2 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB81A46238C23E6000A87C2 /* LoginViewController.swift in Sources */,
 				2AB180E52379B7D800E914C0 /* Profile.swift in Sources */,
 				2AB180EB2379D2EC00E914C0 /* ItemType.swift in Sources */,
 				2AB5434C237C31A100852E7F /* IniciativesViewController.swift in Sources */,
@@ -294,6 +301,7 @@
 				2AB54348237B32B300852E7F /* CreateEvent2ViewController.swift in Sources */,
 				2AB180E92379D1F100E914C0 /* Item.swift in Sources */,
 				2AB5434A237B4F0700852E7F /* Setup.swift in Sources */,
+				2AB81A44238733F5000A87C2 /* RegisterViewController.swift in Sources */,
 				2AB180E72379CD0700E914C0 /* Event.swift in Sources */,
 				156F73C72381BA02009631C0 /* APIRequest.swift in Sources */,
 				2A6DEBE92369D84500AAE7EA /* SceneDelegate.swift in Sources */,

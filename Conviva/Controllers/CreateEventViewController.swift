@@ -14,6 +14,7 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var timeIniciative: TextFieldView!
     @IBOutlet weak var localIniciative: TextFieldView!
     @IBOutlet weak var descriptionIniciative: TextFieldView!
+    @IBOutlet weak var justificativeIniciative: TextFieldView!
     @IBOutlet weak var nextButton: UIButton!
     
     var event: Event = Event()
@@ -29,6 +30,7 @@ class CreateEventViewController: UIViewController {
         self.timeIniciative.textField.placeholder = "Em qual horário?"
         self.localIniciative.textField.placeholder = "Onde irá acontecer?"
         self.descriptionIniciative.textField.placeholder = "Descreva a iniciativa"
+        self.justificativeIniciative.textField.placeholder = "Justificativa"
         
     }
 
