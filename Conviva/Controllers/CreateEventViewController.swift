@@ -51,5 +51,6 @@ class CreateEventViewController: UIViewController {
             destination.event = event
         }
     }
+    
 
 }
