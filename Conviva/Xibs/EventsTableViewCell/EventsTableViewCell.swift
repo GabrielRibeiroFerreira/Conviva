@@ -29,7 +29,7 @@ class EventsTableViewCell: UITableViewCell {
     
     func setEvent(_ event : Event) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = formatter.date(from: event.date!)
         let calanderDate = Calendar.current.dateComponents([.day, .year, .month, .weekday], from: date!)
         self.dayEvent.text = String(calanderDate.day!)
