@@ -341,7 +341,7 @@
                 <navigationController id="ZTp-lC-BKU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="OTy-6R-7e7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nkD-x0-bQq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -375,7 +375,7 @@
                 <navigationController id="ive-t7-QbP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="f5e-jG-1uA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ggm-iO-Ped">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -606,7 +606,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufy-6G-8ZO">
-                                        <rect key="frame" x="137" y="337" width="46" height="30"/>
+                                        <rect key="frame" x="137" y="331" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="confirmeClick:" destination="iZo-g3-A80" eventType="touchUpInside" id="om8-2G-ZvC"/>
