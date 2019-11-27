@@ -9,11 +9,18 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    @IBOutlet weak var emailProfile: TextFieldView!
+    @IBOutlet weak var passwordProfile: TextFieldView!
+    @IBOutlet weak var signinButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         Setup.setupViewController(self)
+        Setup.setupButton(self.signinButton, withText: "Entrar")
+        
+        self.emailProfile.textField.placeholder = "email"
+        self.passwordProfile.textField.placeholder = "senha"
     }
     
 
