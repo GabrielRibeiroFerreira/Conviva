@@ -36,6 +36,12 @@ class EventViewController: UIViewController {
     }
     
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.navigationController?.navigationBar.backgroundColor = UIColor(named: "ConvivaBackground")
+    }
+    
     /*
     // MARK: - Navigation
 

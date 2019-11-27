@@ -27,16 +27,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="d7k-mo-4EF">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d7k-mo-4EF" id="b4Y-cq-66u">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="9IC-xX-FWw" id="SnS-h2-Ufr"/>
                             <outlet property="delegate" destination="9IC-xX-FWw" id="DQD-jb-ULD"/>
@@ -198,9 +188,8 @@
                                     <constraint firstItem="baw-6Z-V2B" firstAttribute="top" secondItem="zzD-GX-nqf" secondAttribute="top" constant="24" id="ycF-qa-L8E"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIg-jF-Soc">
-                                <rect key="frame" x="137" y="401" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIg-jF-Soc">
+                                <rect key="frame" x="137" y="410" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
@@ -208,6 +197,8 @@
                         <constraints>
                             <constraint firstItem="zzD-GX-nqf" firstAttribute="leading" secondItem="hds-8P-aly" secondAttribute="leading" id="Afn-73-XeZ"/>
                             <constraint firstItem="zzD-GX-nqf" firstAttribute="centerY" secondItem="hds-8P-aly" secondAttribute="centerY" multiplier="0.9" id="BkD-HY-2un"/>
+                            <constraint firstItem="hds-8P-aly" firstAttribute="bottom" secondItem="XIg-jF-Soc" secondAttribute="bottom" constant="40" id="F2H-vb-KDr"/>
+                            <constraint firstItem="XIg-jF-Soc" firstAttribute="centerX" secondItem="hds-8P-aly" secondAttribute="centerX" id="rVh-4e-TD7"/>
                             <constraint firstItem="hds-8P-aly" firstAttribute="trailing" secondItem="zzD-GX-nqf" secondAttribute="trailing" id="s9X-sm-DbY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hds-8P-aly"/>
@@ -341,7 +332,7 @@
                 <navigationController id="ZTp-lC-BKU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="OTy-6R-7e7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nkD-x0-bQq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -358,7 +349,7 @@
                 <navigationController id="fMl-xd-ise" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="pYN-Zf-J4y"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hYQ-MD-MCA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -606,7 +597,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufy-6G-8ZO">
-                                        <rect key="frame" x="137" y="331" width="46" height="30"/>
+                                        <rect key="frame" x="137" y="337" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="confirmeClick:" destination="iZo-g3-A80" eventType="touchUpInside" id="om8-2G-ZvC"/>
@@ -855,7 +846,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+        <image name="person.crop.circle" catalog="system" width="32" height="32"/>
         <namedColor name="ConvivaBackground">
             <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
