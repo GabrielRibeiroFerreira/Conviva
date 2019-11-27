@@ -1,19 +1,26 @@
 //
-//  IniciativesViewController.swift
+//  LoginViewController.swift
 //  Conviva
 //
-//  Created by Gabriel Ferreira on 13/11/19.
+//  Created by Gabriel Ferreira on 25/11/19.
 //  Copyright © 2019 Gabriel Ferreira. All rights reserved.
 //
 
 import UIKit
 
-class IniciativesViewController: UIViewController {
-
+class LoginViewController: UIViewController {
+    @IBOutlet weak var emailProfile: TextFieldView!
+    @IBOutlet weak var passwordProfile: TextFieldView!
+    @IBOutlet weak var signinButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         Setup.setupViewController(self)
+        Setup.setupButton(self.signinButton, withText: "Entrar")
+        
+        self.emailProfile.textField.placeholder = "email"
+        self.passwordProfile.textField.placeholder = "senha"
     }
     
 

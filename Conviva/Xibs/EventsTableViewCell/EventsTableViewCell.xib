@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventsTableViewCell" customModule="Conviva" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="210" id="KGk-i7-Jjw" customClass="EventsTableViewCell" customModule="Conviva" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="425" height="210"/>
@@ -18,44 +18,82 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pq4-B2-l73">
-                        <rect key="frame" x="99" y="15" width="306" height="180"/>
+                        <rect key="frame" x="99.5" y="15" width="305.5" height="180"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anw-YA-d1d">
+                                <rect key="frame" x="24" y="61" width="257.5" height="63"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDX-U1-tMh">
+                                <rect key="frame" x="24" y="132" width="40" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUT-Xm-xos">
+                                <rect key="frame" x="24" y="24" width="257.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" name="ConvivaOrange"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" name="ConvivaPurple"/>
+                        <constraints>
+                            <constraint firstItem="xDX-U1-tMh" firstAttribute="top" relation="lessThanOrEqual" secondItem="anw-YA-d1d" secondAttribute="bottom" constant="8" id="1pq-Nb-DEd"/>
+                            <constraint firstItem="anw-YA-d1d" firstAttribute="leading" secondItem="GUT-Xm-xos" secondAttribute="leading" id="9Es-gb-Raq"/>
+                            <constraint firstItem="GUT-Xm-xos" firstAttribute="leading" secondItem="pq4-B2-l73" secondAttribute="leading" constant="24" id="Pga-Xk-PgK"/>
+                            <constraint firstItem="xDX-U1-tMh" firstAttribute="leading" secondItem="GUT-Xm-xos" secondAttribute="leading" id="QVS-oW-j73"/>
+                            <constraint firstItem="anw-YA-d1d" firstAttribute="top" secondItem="GUT-Xm-xos" secondAttribute="bottom" constant="8" id="gWF-Ul-9sj"/>
+                            <constraint firstItem="anw-YA-d1d" firstAttribute="width" secondItem="GUT-Xm-xos" secondAttribute="width" id="qyI-ne-1ZE"/>
+                            <constraint firstAttribute="trailing" secondItem="GUT-Xm-xos" secondAttribute="trailing" constant="24" id="w5k-2s-KO6"/>
+                            <constraint firstAttribute="bottom" secondItem="xDX-U1-tMh" secondAttribute="bottom" constant="28" id="xjD-ZJ-pbA"/>
+                            <constraint firstItem="GUT-Xm-xos" firstAttribute="top" secondItem="pq4-B2-l73" secondAttribute="top" constant="24" id="xxm-K4-bdf"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-Km-G8B">
-                        <rect key="frame" x="49" y="0.0" width="1" height="210"/>
+                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-Km-G8B">
+                        <rect key="frame" x="49.5" y="0.0" width="1" height="210"/>
                         <color key="backgroundColor" name="ConvivaPink"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="kqV-YQ-4gZ"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdR-HF-vmT">
-                        <rect key="frame" x="16" y="0.0" width="67" height="79"/>
+                        <rect key="frame" x="16" y="0.0" width="67.5" height="79"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5f-es-geE">
-                                <rect key="frame" x="5" y="15" width="57" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5f-es-geE">
+                                <rect key="frame" x="5" y="15" width="57.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" name="ConvivaOrange"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-qi-2OZ">
-                                <rect key="frame" x="18" y="49" width="31" height="15"/>
+                                <rect key="frame" x="18.5" y="49" width="31" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" name="ConvivaOrange"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="ConvivaBackground"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="kzb-qi-2OZ" secondAttribute="bottom" constant="15" id="0zw-5N-abZ"/>
                             <constraint firstAttribute="trailing" secondItem="w5f-es-geE" secondAttribute="trailing" constant="5" id="6Xd-x3-Uq0"/>
                             <constraint firstItem="w5f-es-geE" firstAttribute="leading" secondItem="fdR-HF-vmT" secondAttribute="leading" constant="5" id="QIM-RZ-niN"/>
                             <constraint firstItem="w5f-es-geE" firstAttribute="centerX" secondItem="fdR-HF-vmT" secondAttribute="centerX" id="YT4-MN-4J5"/>
+                            <constraint firstAttribute="width" constant="67.5" id="ab5-7V-rsY"/>
                             <constraint firstItem="kzb-qi-2OZ" firstAttribute="centerX" secondItem="fdR-HF-vmT" secondAttribute="centerX" id="gRO-gz-894"/>
                             <constraint firstItem="kzb-qi-2OZ" firstAttribute="top" secondItem="w5f-es-geE" secondAttribute="bottom" constant="5" id="lnQ-Zt-Xwx"/>
                             <constraint firstItem="w5f-es-geE" firstAttribute="top" secondItem="fdR-HF-vmT" secondAttribute="top" constant="15" id="wDo-mJ-7fk"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="ConvivaBackground"/>
                 <constraints>
                     <constraint firstItem="fdR-HF-vmT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="18q-db-gA8"/>
                     <constraint firstItem="dXG-Km-G8B" firstAttribute="centerX" secondItem="fdR-HF-vmT" secondAttribute="centerX" id="8ph-l1-mUa"/>
@@ -69,10 +107,21 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressEvent" destination="xDX-U1-tMh" id="kkH-uu-scO"/>
+                <outlet property="dateView" destination="fdR-HF-vmT" id="G8b-hd-jx3"/>
+                <outlet property="dayEvent" destination="w5f-es-geE" id="6UK-KW-NVA"/>
+                <outlet property="descriptionEvent" destination="anw-YA-d1d" id="Jhp-dE-A2c"/>
+                <outlet property="titleEvent" destination="GUT-Xm-xos" id="ORh-2h-ea5"/>
+                <outlet property="weekdayEvent" destination="kzb-qi-2OZ" id="ia8-aD-HyH"/>
+            </connections>
             <point key="canvasLocation" x="213.768115942029" y="155.35714285714286"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="ConvivaBackground">
+            <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="ConvivaOrange">
             <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="xjI-KD-O2a"/>
+                <outlet property="emptyTextndicator" destination="KM2-bI-R31" id="9wP-Fq-Rqw"/>
                 <outlet property="textField" destination="iSA-cb-0Kb" id="ung-uH-yqn"/>
             </connections>
         </placeholder>
@@ -38,9 +39,16 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM2-bI-R31">
+                    <rect key="frame" x="401" y="6" width="7" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" name="ConvivaPink"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" name="ConvivaBackground"/>
             <constraints>
+                <constraint firstItem="KM2-bI-R31" firstAttribute="centerY" secondItem="iSA-cb-0Kb" secondAttribute="centerY" id="3Vn-Ue-NgD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iSA-cb-0Kb" secondAttribute="trailing" id="3q4-rD-nOP"/>
                 <constraint firstItem="igq-5Z-8ab" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="4YT-BQ-0Du"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iSA-cb-0Kb" secondAttribute="bottom" id="Pbx-Pl-OqF"/>
@@ -48,15 +56,19 @@
                 <constraint firstItem="igq-5Z-8ab" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="hed-uR-d6O"/>
                 <constraint firstItem="igq-5Z-8ab" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kj1-nb-ewn"/>
                 <constraint firstItem="iSA-cb-0Kb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nkA-qK-kH5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KM2-bI-R31" secondAttribute="trailing" constant="6" id="xRD-g1-bKc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+            <point key="canvasLocation" x="107" y="126"/>
         </view>
     </objects>
     <resources>
         <namedColor name="ConvivaBackground">
             <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ConvivaPink">
+            <color red="0.8880000114440918" green="0.25200000405311584" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPurple">
             <color red="0.44800001382827759" green="0.29800000786781311" blue="0.61599999666213989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

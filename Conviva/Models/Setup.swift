@@ -17,6 +17,7 @@ class Setup {
             NSAttributedString.Key.font: UIFont(name: "Ubuntu-bold", size: 37)!]
         
         viewController.view.backgroundColor = UIColor(named: "ConvivaBackground")
+        viewController.navigationController?.navigationBar.backgroundColor = UIColor(named: "ConvivaBackground")
     }
     
     static func setupButton(_ button : UIButton, withText title : String){
@@ -29,5 +30,30 @@ class Setup {
         button.frame = CGRect(x: button.frame.midX, y: button.frame.midY, width: button.frame.width, height: 60)
         button.layer.cornerRadius = button.frame.height/2
         
+    }
+    
+    static func setupWeekday(_ weekday : Int) -> String{
+        var day : String
+        
+        switch weekday {
+        case 1:
+            day = "Dom."
+        case 2:
+            day = "Seg."
+        case 3:
+            day = "Ter."
+        case 4:
+            day = "Qua."
+        case 5:
+            day = "Qui."
+        case 6:
+            day = "Sex."
+        case 7:
+            day = "Sáb."
+        default:
+            day = "fail"
+        }
+        
+        return day
     }
 }
