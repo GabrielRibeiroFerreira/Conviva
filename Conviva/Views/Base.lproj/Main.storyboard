@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5k5-bb-IkP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyA-vj-tQO" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="406"/>
@@ -122,7 +122,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Pke-a1-ZxU"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBP-B6-ZUr">
-                                <rect key="frame" x="137" y="410" width="46" height="30"/>
+                                <rect key="frame" x="137" y="361" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
@@ -223,7 +223,7 @@
             </objects>
             <point key="canvasLocation" x="-1046.25" y="2957.5"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Perfil-->
         <scene sceneID="cdy-Rl-ANu">
             <objects>
                 <viewController id="mpp-AP-IOr" customClass="ProfileViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,7 +232,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86Z-2k-943">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sq8-hs-pfD" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
@@ -295,7 +295,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-Zf-LuB">
-                                        <rect key="frame" x="137" y="267" width="46" height="30"/>
+                                        <rect key="frame" x="137" y="410" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
@@ -321,7 +321,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JbG-rr-LW2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qSJ-TI-ULu"/>
+                    <navigationItem key="navigationItem" title="Perfil" id="qSJ-TI-ULu"/>
                     <connections>
                         <outlet property="addressProfile" destination="sSg-oL-yJv" id="bdU-JD-6Wo"/>
                         <outlet property="contactProfile" destination="3nn-M3-JWx" id="9kR-pb-g8O"/>
@@ -345,7 +345,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="mpp-AP-IOr" kind="relationship" relationship="rootViewController" id="h4s-G6-ujm"/>
+                        <segue destination="YgD-vQ-N9q" kind="relationship" relationship="rootViewController" id="wdy-C9-ZUi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nq0-gW-fi5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
