@@ -11,7 +11,8 @@ import UIKit
 class TextFieldView: UIView {
     @IBOutlet weak var textField: UITextField!
     
-     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var emptyTextndicator: UILabel!
     
     override func draw(_ rect: CGRect) {
     }
@@ -39,6 +40,7 @@ class TextFieldView: UIView {
                                                                         ?? UIFont.systemFont(ofSize: 16),
                                 NSAttributedString.Key.foregroundColor: UIColor(named: "ConvivaTextColor")
                                                                         ?? UIColor.systemPurple])
+        self.emptyTextndicator.isHidden = true
     }
 
 }

@@ -375,7 +375,7 @@
                 <navigationController id="ive-t7-QbP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="f5e-jG-1uA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ggm-iO-Ped">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

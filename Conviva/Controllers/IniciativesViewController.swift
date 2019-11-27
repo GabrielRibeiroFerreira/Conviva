@@ -14,7 +14,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     var events: [Event] = []
     let eventCell : String = "EventsTableViewCell"
     
-    var months : [(month : String, year: Int,  freq : Int)] = []
+    var months : [(month : String, year: Int,  freq : Int, events: [Event])] = []
     var actualDate : String?
     
     
@@ -72,7 +72,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    
+    //Funcao para agrupar eventos segundo o mês do ano
     func getEventsByMonth() {
         var calendar = Calendar.current
         calendar.locale = NSLocale(localeIdentifier: "pt_BR") as Locale
@@ -84,21 +84,26 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         //Considerando o array de evento já ordenado por data
         
         let calendarDate = getDateComponents(date: self.events[0].dateFormatted!)
-        let month = (calendar.monthSymbols[calendarDate.month!-1].capitalized, calendarDate.year!, 1)
+        let month = (calendar.monthSymbols[calendarDate.month!-1].capitalized, calendarDate.year!, 1, [self.events[0]])
         self.months = [month]
         var index = 0
 
         for (prevDate, nextDate) in zip(self.events, self.events.dropFirst()) {
             let calendarDate = getDateComponents(date: nextDate.dateFormatted!)
-            let elem = (calendar.monthSymbols[calendarDate.month!-1].capitalized, calendarDate.year!, 1)
+            var elem = (calendar.monthSymbols[calendarDate.month!-1].capitalized, calendarDate.year!, 1, [nextDate])
             
-            //Se o mes é o mesmo do já anterior incrementa o contador
+            
+            //Se o mes não existe no array month inclui novo elemento
             if !calendar.isDate(prevDate.dateFormatted!, equalTo: nextDate.dateFormatted!, toGranularity: .month) {
                 self.months.append(elem) // Start new row
                 index += 1
             }
             //Se é um mes já existente no array months então adiciona com contador inicial de 1
             else {
+                var arr = self.months[index].events
+                arr.append(nextDate)
+                elem.3 = arr
+                self.months[index].events = arr
                 self.months[index].freq+=1
             }
         }
@@ -108,10 +113,11 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         let calendarDate = Calendar.current.dateComponents([.day, .month, .year, .weekday], from: date)
         return calendarDate
     }
-    
+
     
     
     // MARK: - TableView
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         getEventsByMonth()
         return self.months.count
@@ -135,7 +141,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: eventCell, for: indexPath) as! EventsTableViewCell
         
-        let event : Event = self.events[indexPath.row]
+        let event : Event = self.months[indexPath.section].events[indexPath.row]
         
         cell.setEvent(event)
         cell.backgroundColor = UIColor.clear
@@ -156,7 +162,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectEvent = self.events[0]
+        self.selectEvent = self.months[indexPath.section].events[indexPath.row]
         performSegue(withIdentifier: "toEventSegue", sender: self)
     }
     

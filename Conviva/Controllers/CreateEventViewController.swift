@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class CreateEventViewController: UIViewController {
     @IBOutlet weak var titleIniciative: TextFieldView!
@@ -17,7 +18,11 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var justificativeIniciative: TextFieldView!
     @IBOutlet weak var nextButton: UIButton!
     
+    let datePicker = UIDatePicker()
+    
     var event: Event = Event()
+    
+    var dateStr: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +37,19 @@ class CreateEventViewController: UIViewController {
         self.descriptionIniciative.textField.placeholder = "Descreva a iniciativa"
         self.justificativeIniciative.textField.placeholder = "Justificativa"
         
+        self.dateIniciative.textField.addTarget(self, action: #selector(self.showDatePicker(_:)), for: UIControl.Event.editingDidBegin)
+        self.timeIniciative.textField.addTarget(self, action: #selector(self.showTimePicker(_:)), for: UIControl.Event.editingDidBegin)
+        
     }
 
     // MARK: - Navigation
     
     @IBAction func nextClick(_ sender: Any) {
+        //Formatação da data no padrão de string do Json - validar bem se textField estao preenchidos
+        self.event.date = (self.dateStr ?? "") + " " + (self.timeIniciative.textField.text ?? "")
         self.event.name = self.titleIniciative.textField.text
-//        self.event.date = self.dateIniciative.textField.text //Passar o valor para data
-//        self.event.date = self.timeIniciative.textField.text //Passar o valor para horario
         self.event.address = self.localIniciative.textField.text
+        getLatLongByAddress(address: self.localIniciative.textField.text ?? "")
         self.event.description = self.descriptionIniciative.textField.text
     }
     
@@ -52,5 +61,100 @@ class CreateEventViewController: UIViewController {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        var returnValue: Bool = true
+        
+        //Checando se todos os campos foram completados
+        returnValue = textFieldEmpty(self.titleIniciative) && returnValue
+        returnValue = textFieldEmpty(self.dateIniciative) && returnValue
+        returnValue = textFieldEmpty(self.timeIniciative) && returnValue
+        returnValue = textFieldEmpty(self.localIniciative) && returnValue
+        returnValue = textFieldEmpty(self.descriptionIniciative) && returnValue
+        returnValue = textFieldEmpty(self.justificativeIniciative) && returnValue
+        
+        return returnValue
+    }
+    
+    func textFieldEmpty(_ textfieldView : TextFieldView) -> Bool{
+        textfieldView.emptyTextndicator.isHidden = textfieldView.textField.text == "" ? false : true
+        return textfieldView.emptyTextndicator.isHidden
+    }
+
+    
+    func getLatLongByAddress(address: String) {
+        CLGeocoder().geocodeAddressString(address) { placemarks, error in
+            let placemark = placemarks?.first
+            let lat = placemark?.location?.coordinate.latitude
+            let lon = placemark?.location?.coordinate.longitude
+            print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
+            
+            self.event.latitude = lat
+            self.event.longitude = lon
+        }
+    }
+    
+    @objc func showDatePicker(_ textField: UITextField){
+        //Formate Date
+        datePicker.datePickerMode = .date
+
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+
+        dateIniciative.textField.inputAccessoryView = toolbar
+        dateIniciative.textField.inputView = datePicker
+
+    }
+    
+    @objc func doneDatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        dateIniciative.textField.text = formatter.string(from: datePicker.date)
+        
+        //String auxiliar para formatacao da data segundo o padrao JSON - "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = "yyyy-MM-dd"
+        self.dateStr = formatter.string(from: datePicker.date)
+        
+        self.view.endEditing(true)
+    }
+
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+     }
+    
+    
+    @objc func showTimePicker(_ textField: UITextField){
+       //Formate Time
+        datePicker.datePickerMode = .time
+
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTimePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+
+        timeIniciative.textField.inputAccessoryView = toolbar
+        timeIniciative.textField.inputView = datePicker
+
+    }
+    
+    @objc func doneTimePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        timeIniciative.textField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+
+    
+
+    
+    
+
 
 }
