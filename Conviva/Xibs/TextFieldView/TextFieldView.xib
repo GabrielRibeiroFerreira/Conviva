@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="xjI-KD-O2a"/>
+                <outlet property="emptyTextndicator" destination="KM2-bI-R31" id="9wP-Fq-Rqw"/>
                 <outlet property="textField" destination="iSA-cb-0Kb" id="ung-uH-yqn"/>
             </connections>
         </placeholder>

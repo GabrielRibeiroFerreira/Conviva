@@ -45,15 +45,8 @@ class CreateEventViewController: UIViewController {
     // MARK: - Navigation
     
     @IBAction func nextClick(_ sender: Any) {
-        //Checando se todos os campos foram completados
-        if self.titleIniciative.textField.text == "" || self.dateIniciative.textField.text == "" || self.timeIniciative.textField.text == "" || self.localIniciative.textField.text == "" || self.descriptionIniciative.textField.text == "" || self.justificativeIniciative.textField.text == "" {
-            print("Ahhhh")
-        }
-        
-        
         //Formatação da data no padrão de string do Json - validar bem se textField estao preenchidos
-        self.event.date = self.dateStr! + " " + self.timeIniciative.textField.text!
-        
+        self.event.date = (self.dateStr ?? "") + " " + (self.timeIniciative.textField.text ?? "")
         self.event.name = self.titleIniciative.textField.text
         self.event.address = self.localIniciative.textField.text
         getLatLongByAddress(address: self.localIniciative.textField.text ?? "")
@@ -67,6 +60,26 @@ class CreateEventViewController: UIViewController {
             destination.event = event
         }
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        var returnValue: Bool = true
+        
+        //Checando se todos os campos foram completados
+        returnValue = textFieldEmpty(self.titleIniciative) && returnValue
+        returnValue = textFieldEmpty(self.dateIniciative) && returnValue
+        returnValue = textFieldEmpty(self.timeIniciative) && returnValue
+        returnValue = textFieldEmpty(self.localIniciative) && returnValue
+        returnValue = textFieldEmpty(self.descriptionIniciative) && returnValue
+        returnValue = textFieldEmpty(self.justificativeIniciative) && returnValue
+        
+        return returnValue
+    }
+    
+    func textFieldEmpty(_ textfieldView : TextFieldView) -> Bool{
+        textfieldView.emptyTextndicator.isHidden = textfieldView.textField.text == "" ? false : true
+        return textfieldView.emptyTextndicator.isHidden
+    }
+
     
     func getLatLongByAddress(address: String) {
         CLGeocoder().geocodeAddressString(address) { placemarks, error in

@@ -35,6 +35,7 @@ class CreateEvent2ViewController: UIViewController {
         self.event.helpers = self.helpersIniciative.textField.text
         self.event.items = self.itemsIniciative.textField.text
 
+        
    
         //Criação de um evento de teste, mas aqui passaria as informações dos textFields
 //        let eventTestPOST = Event(name: "Festa Junina", description: "Festa da Igreja", address: "Avenida 2", cost: 200 , justification: "Recolher fundoa para abrigo", date: "2019-11-01 21:14:23", complaint: 0, adm: 23, latitude: -20.7865, longitude: 34.7654)
@@ -51,14 +52,32 @@ class CreateEvent2ViewController: UIViewController {
 //            }
 //        }
     }
-
-    /*
-     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //Colocar segue para Lista de Eventos
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "nextCreateSegue" {
+//            let destination = segue.destination as! CreateEvent2ViewController
+//            destination.event = event
+//        }
+//    }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        var returnValue: Bool = true
+        
+        //Checando se todos os campos foram completados
+        returnValue = textFieldEmpty(self.costIniciative) && returnValue
+        returnValue = textFieldEmpty(self.helpersIniciative) && returnValue
+        returnValue = textFieldEmpty(self.itemsIniciative) && returnValue
+        
+        return returnValue
     }
-    */
+    
+    func textFieldEmpty(_ textfieldView : TextFieldView) -> Bool{
+        textfieldView.emptyTextndicator.isHidden = textfieldView.textField.text == "" ? false : true
+        return textfieldView.emptyTextndicator.isHidden
+    }
+    
+
 
 }
