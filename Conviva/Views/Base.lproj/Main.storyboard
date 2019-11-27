@@ -235,36 +235,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sq8-hs-pfD" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="558"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VuN-5L-uio">
-                                                <rect key="frame" x="110" y="16.5" width="100" height="99"/>
+                                                <rect key="frame" x="80" y="16.5" width="160" height="159"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="VuN-5L-uio" secondAttribute="height" multiplier="1:1" id="bDP-oA-gje"/>
-                                                    <constraint firstAttribute="width" constant="100" id="pL8-xg-dFF"/>
+                                                    <constraint firstAttribute="width" constant="160" id="pL8-xg-dFF"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLh-tq-rc8" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="132" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="192" width="280" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="EXZ-Y0-qeP"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J82-IT-27o" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="196" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="256" width="280" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSg-oL-yJv" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="260" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="320" width="280" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-M3-JWx" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="324" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="384" width="280" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oc-7w-Rdm" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="388" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="448" width="280" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
