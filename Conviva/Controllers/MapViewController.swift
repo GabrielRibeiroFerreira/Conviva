@@ -16,11 +16,13 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var radiusView: UIImageView!
     @IBOutlet weak var radiusLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
     
     let locationManager = CLLocationManager()
     let maxSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     
+    var resultSearchController: UISearchController? = nil
     var userLocation: CLLocation? = nil
     
     override func viewDidLoad() {
@@ -29,6 +31,39 @@ class MapViewController: UIViewController {
         self.mapView.delegate = self
         self.locationManager.delegate = self
         self.checkAuthorizationStatus()
+        
+        Setup.setupButton(self.nextButton, withText: "Entrar")
+        
+        // MARK: Adress Search configuration
+        
+        // CREATES SEARCH CONTROLLER AN m D INSTANTIATES A TABLEVIEWCONTROLLER TO HANDLE THE RESULTS
+        // Instantiates the TableViewController that will show the adress results
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTableViewController
+        // Instantiates our search controller and displays its results on the TableView instantiated above
+        self.resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        // Sets the TableView as the results updater as well
+        self.resultSearchController?.searchResultsUpdater = locationSearchTable
+        // Sets this ViewController mapView as the results table mapView
+        locationSearchTable.mapView = mapView
+        
+        // CREATES AND CONFIGURES THE SEARCHBAR
+        // Make  searchBar from the searchController created above
+        let searchBar = self.resultSearchController!.searchBar
+        // Defines searchBar appearence
+        searchBar.sizeToFit()
+        searchBar.placeholder =  "Entre seu endereço..."
+        self.navigationItem.searchController =  self.resultSearchController!
+        
+        // PREVENTS THE TABLEVIEW FROM VANISHING WITH OTHER ELEMENTS
+        // Prevents the NavigationBar from being  hidden when  showing the TableView
+        self.resultSearchController?.hidesNavigationBarDuringPresentation = false
+        // Sets recults table background transparency
+        // self.resultSearchController?.dimsBackgroundDuringPresentation = true
+        // Makes this ViewController the presentation context for the results table, preventing it from overlapping the searchBar
+        self.definesPresentationContext = true
+        
+        // Sets delegate to handle map search with the HandleMapSearch protocol
+        locationSearchTable.handleMapSearchDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -158,5 +193,30 @@ extension MapViewController: CLLocationManagerDelegate {
     // Shows error message
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error:: \(error.localizedDescription)")
+    }
+}
+
+// MARK: HandleMapSearch extension
+// Instantiates the protocol to pass address search information
+extension MapViewController: HandleMapSearch {
+    
+    func dropPinZoomIn(placemark: MKPlacemark) {
+        
+//        selectedPin = placemark
+//        // Removes all previous annotations
+//        mapView.removeAnnotations(mapView.annotations)
+//
+//        // Adds annotation in the  given placemark
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = placemark.coordinate
+//        annotation.title = placemark.name
+//        if let city = placemark.locality, let state = placemark.administrativeArea {
+//            annotation.subtitle = "\(city) \(state)"
+//        }
+//        mapView.addAnnotation(annotation)
+        
+        // Shows corresponding map region
+        let region = MKCoordinateRegion(center: placemark.coordinate, span: self.defaultSpan)
+        mapView.setRegion(region, animated: true)
     }
 }
