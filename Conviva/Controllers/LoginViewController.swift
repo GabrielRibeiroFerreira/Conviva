@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordProfile: TextFieldView!
     @IBOutlet weak var signinButton: UIButton!
     
+    var profileData: Profile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,17 +23,56 @@ class LoginViewController: UIViewController {
         
         self.emailProfile.textField.placeholder = "email"
         self.passwordProfile.textField.placeholder = "senha"
+        
+        self.passwordProfile.textField.isSecureTextEntry = true
+            
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func makeAPIRequest() {
+        let email = emailProfile.textField.text!
+        let password = passwordProfile.textField.text!
+        let endpoind = "profiles/\(email)/\(password)"
+        let getRequest = APIRequest(endpoint: endpoind)
+        getRequest.getLoginResponse() { result in
+            switch result {
+            case .success(let profileData):
+                print("Perfil logado: \(String(describing: profileData))")
+                //Dispatch the call to update the label text to the main thread.
+                //Reload must only be called on the main thread
+                DispatchQueue.main.async{
+                    self.profileData = profileData
+                    UserDefaults.standard.set(self.emailProfile.textField.text!, forKey: "Email")
+                    self.dismiss(animated: true)
+                }
+            case .failure(let error):
+                print("Ocorreu um erro \(error)")
+                //UIALERT
+            }
+        }
     }
-    */
 
+    
+    func checkForEmptyTextField() -> Bool {
+        var returnValue: Bool = true
+        
+        //Checando se todos os campos foram completados
+        returnValue = textFieldEmpty(self.emailProfile) && returnValue
+        returnValue = textFieldEmpty(self.passwordProfile) && returnValue
+        
+        return returnValue
+    }
+    
+    func textFieldEmpty(_ textfieldView : TextFieldView) -> Bool{
+        textfieldView.emptyTextndicator.isHidden = textfieldView.textField.text == "" ? false : true
+        return textfieldView.emptyTextndicator.isHidden
+    }
+
+    
+    @IBAction func login(_ sender: Any) {
+        if checkForEmptyTextField() {
+            makeAPIRequest()
+        }
+    }
+    
+    
 }

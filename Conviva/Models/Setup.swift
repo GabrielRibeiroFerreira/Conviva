@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class Setup {
+    
     static func setupViewController(_ viewController : UIViewController){
         viewController.navigationController?.navigationBar.prefersLargeTitles = true
         viewController.navigationController?.navigationBar.largeTitleTextAttributes =
@@ -31,6 +32,9 @@ class Setup {
         button.layer.cornerRadius = button.frame.height/2
         
     }
+    
+    
+    
     
     static func setupWeekday(_ weekday : Int) -> String{
         var day : String

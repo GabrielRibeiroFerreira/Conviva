@@ -35,7 +35,7 @@ class CreateEventViewController: UIViewController {
         self.timeIniciative.textField.placeholder = "Em qual horário?"
         self.localIniciative.textField.placeholder = "Onde irá acontecer?"
         self.descriptionIniciative.textField.placeholder = "Descreva a iniciativa"
-        self.justificativeIniciative.textField.placeholder = "Justificativa"
+        self.justificativeIniciative.textField.placeholder = "Justificativa para a iniciativa"
         
         self.dateIniciative.textField.addTarget(self, action: #selector(self.showDatePicker(_:)), for: UIControl.Event.editingDidBegin)
         self.timeIniciative.textField.addTarget(self, action: #selector(self.showTimePicker(_:)), for: UIControl.Event.editingDidBegin)
@@ -51,6 +51,7 @@ class CreateEventViewController: UIViewController {
         self.event.address = self.localIniciative.textField.text
         getLatLongByAddress(address: self.localIniciative.textField.text ?? "")
         self.event.description = self.descriptionIniciative.textField.text
+        self.event.justification = self.justificativeIniciative.textField.text
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -150,11 +151,5 @@ class CreateEventViewController: UIViewController {
         timeIniciative.textField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-
-    
-
-    
-    
-
-
+                             
 }
