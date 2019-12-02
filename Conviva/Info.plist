@@ -71,5 +71,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Usamos sua localização para melhor determinar a região na qual mostrar iniciativas</string>
 </dict>
 </plist>

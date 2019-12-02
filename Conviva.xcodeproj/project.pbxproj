@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153BEB5B23954AEF0034675C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BEB5A23954AEF0034675C /* TabBarViewController.swift */; };
 		156F73C72381BA02009631C0 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F73C62381BA02009631C0 /* APIRequest.swift */; };
 		2A67D9C6237DB01700DBF095 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A67D9C4237DB01700DBF095 /* EventsTableViewCell.xib */; };
 		2A67D9C7237DB01700DBF095 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67D9C5237DB01700DBF095 /* EventsTableViewCell.swift */; };
@@ -39,9 +40,14 @@
 		2AB5434C237C31A100852E7F /* IniciativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5434B237C31A100852E7F /* IniciativesViewController.swift */; };
 		2AB81A44238733F5000A87C2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB81A43238733F5000A87C2 /* RegisterViewController.swift */; };
 		2AB81A46238C23E6000A87C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB81A45238C23E6000A87C2 /* LoginViewController.swift */; };
+		8DEE0DCE23904B3700BA34D1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */; };
+		8DEE0DD22391932800BA34D1 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */; };
+		8DEE0DD7239199E700BA34D1 /* AdressResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEE0DD6239199E700BA34D1 /* AdressResultTableViewCell.xib */; };
+		8DEE0DD923919A5F00BA34D1 /* AdressResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE0DD823919A5F00BA34D1 /* AdressResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		153BEB5A23954AEF0034675C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		156F73C62381BA02009631C0 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		2A67D9C4237DB01700DBF095 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 		2A67D9C5237DB01700DBF095 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -76,6 +82,10 @@
 		2AB5434B237C31A100852E7F /* IniciativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciativesViewController.swift; sourceTree = "<group>"; };
 		2AB81A43238733F5000A87C2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2AB81A45238C23E6000A87C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
+		8DEE0DD6239199E700BA34D1 /* AdressResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdressResultTableViewCell.xib; sourceTree = "<group>"; };
+		8DEE0DD823919A5F00BA34D1 /* AdressResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,9 @@
 				2AB81A43238733F5000A87C2 /* RegisterViewController.swift */,
 				2AB81A45238C23E6000A87C2 /* LoginViewController.swift */,
 				2A8D0AE7238EB3B500B89216 /* ProfileViewController.swift */,
+				153BEB5A23954AEF0034675C /* TabBarViewController.swift */,
+				8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */,
+				8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +141,7 @@
 		2A67D9CB23833C9900DBF095 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				8DEE0DD3239195C700BA34D1 /* AdressResultTableViewCell */,
 				2A67D9CD23833CC000DBF095 /* EventsTableViewCell */,
 				2A67D9CC23833CA000DBF095 /* TextFieldView */,
 			);
@@ -209,6 +223,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8DEE0DD3239195C700BA34D1 /* AdressResultTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE0DD6239199E700BA34D1 /* AdressResultTableViewCell.xib */,
+				8DEE0DD823919A5F00BA34D1 /* AdressResultTableViewCell.swift */,
+			);
+			path = AdressResultTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -267,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEE0DD7239199E700BA34D1 /* AdressResultTableViewCell.xib in Resources */,
 				2AB54340237AF47D00852E7F /* Ubuntu-Italic.ttf in Resources */,
 				2A6DEBF62369D84800AAE7EA /* LaunchScreen.storyboard in Resources */,
 				2A6DEBF32369D84800AAE7EA /* Assets.xcassets in Resources */,
@@ -290,14 +314,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEE0DD923919A5F00BA34D1 /* AdressResultTableViewCell.swift in Sources */,
 				2AB81A46238C23E6000A87C2 /* LoginViewController.swift in Sources */,
 				2AB180E52379B7D800E914C0 /* Profile.swift in Sources */,
 				2AB180EB2379D2EC00E914C0 /* ItemType.swift in Sources */,
+				8DEE0DCE23904B3700BA34D1 /* MapViewController.swift in Sources */,
+				8DEE0DD22391932800BA34D1 /* LocationSearchTableViewController.swift in Sources */,
 				2AB5434C237C31A100852E7F /* IniciativesViewController.swift in Sources */,
 				2A6DEBE72369D84500AAE7EA /* AppDelegate.swift in Sources */,
 				2A6DEBF12369D84500AAE7EA /* Conviva.xcdatamodeld in Sources */,
 				2A67D9D1238431FB00DBF095 /* EventViewController.swift in Sources */,
 				2AB180ED2379D6EF00E914C0 /* Report.swift in Sources */,
+				153BEB5B23954AEF0034675C /* TabBarViewController.swift in Sources */,
 				2A67D9C7237DB01700DBF095 /* EventsTableViewCell.swift in Sources */,
 				2A8D0AE8238EB3B500B89216 /* ProfileViewController.swift in Sources */,
 				2AB54344237AFD2400852E7F /* TextFieldView.swift in Sources */,
@@ -453,7 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7CS39R779;
+				DEVELOPMENT_TEAM = 54KAL6GMBX;
 				INFOPLIST_FILE = Conviva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -471,7 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7CS39R779;
+				DEVELOPMENT_TEAM = 54KAL6GMBX;
 				INFOPLIST_FILE = Conviva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

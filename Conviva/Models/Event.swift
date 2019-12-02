@@ -53,7 +53,7 @@ class Event: Codable {
     
    func getDateFormatted(dateStr: String) -> Date{
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
         let date = formatter.date(from: dateStr)
         return date!
     }

@@ -9,6 +9,7 @@
 import UIKit
 
 class IniciativesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var eventTable: UITableView!
     
     var events: [Event] = []
@@ -34,8 +35,8 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
     
 //        Mockado por enquanto para evitar mtas requests
-//        makeAPIRequest()
-        mockData()
+        makeAPIRequest()
+//        mockData()
         
         
     }
@@ -49,9 +50,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         
         let event1 = Event(name: "Churrasco na praça", description: "Comer pao de alho", address: "Praça", cost: 500, justification: "To com fome", date: "2019-12-01 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
         self.events.append(event1)
-        
-        
-        
+         
     }
     
     func makeAPIRequest() {
@@ -83,6 +82,8 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
 
         //Considerando o array de evento já ordenado por data
         
+        
+        // Formato do array months: [(month : String, year: Int,  freq : Int, events: [Event])]
         let calendarDate = getDateComponents(date: self.events[0].dateFormatted!)
         let month = (calendar.monthSymbols[calendarDate.month!-1].capitalized, calendarDate.year!, 1, [self.events[0]])
         self.months = [month]
@@ -117,7 +118,6 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     // MARK: - TableView
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         getEventsByMonth()
         return self.months.count
@@ -167,11 +167,27 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // MARK: - Navigation
-
+    @IBAction func createIniciative(_ sender: Any) {
+        let email = UserDefaults.standard.string(forKey: "Email")
+        if email == "" {
+            if let storyboard = self.storyboard {
+                let vc  = storyboard.instantiateViewController(identifier: "loginStoryboard")
+                self.present(vc, animated: true)
+            }
+        } else {
+            performSegue(withIdentifier: "createSegue", sender: self)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEventSegue" {
+        if segue.identifier == "toEventSegue"{
             let destination = segue.destination as! EventViewController
             destination.event = self.selectEvent!
         }
     }
+
+    @IBAction func unwindToIniciatives(segue:UIStoryboardSegue) {
+        //reload da tableview
+    }
+    
 }
