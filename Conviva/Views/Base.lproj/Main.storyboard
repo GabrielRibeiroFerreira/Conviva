@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TfO-4A-6c8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tfz-VQ-UJC">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -739,28 +739,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yk4-pE-TY9" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="616.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlN-9s-3Ff">
-                                                <rect key="frame" x="23.999999999999996" y="120" width="41.666666666666657" height="20"/>
+                                                <rect key="frame" x="24" y="120" width="45" height="20"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-SW-LGv">
-                                                <rect key="frame" x="20" y="418" width="335" height="18.666666666666686"/>
+                                                <rect key="frame" x="20" y="418.33333333333331" width="335" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lle-Cy-Yzc">
-                                                <rect key="frame" x="20" y="484" width="335" height="18.666666666666686"/>
+                                                <rect key="frame" x="20" y="483.66666666666669" width="335" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-f8-bur">
-                                                <rect key="frame" x="20" y="264" width="335" height="16.333333333333314"/>
+                                                <rect key="frame" x="20" y="264" width="335" height="16.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
@@ -778,19 +778,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Itens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn6-pc-JAx">
-                                                <rect key="frame" x="19.999999999999996" y="387.33333333333331" width="43.666666666666657" height="22.666666666666686"/>
+                                                <rect key="frame" x="20" y="387.66666666666669" width="48" height="22.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                                 <color key="textColor" name="ConvivaOrange"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pessoas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-VS-33X">
-                                                <rect key="frame" x="20" y="452.66666666666669" width="76" height="23.333333333333314"/>
+                                                <rect key="frame" x="20" y="452.33333333333331" width="76" height="23.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                                 <color key="textColor" name="ConvivaOrange"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P6-kf-cvR">
-                                                <rect key="frame" x="19.999999999999996" y="518.66666666666663" width="44.666666666666657" height="22.666666666666629"/>
+                                                <rect key="frame" x="19.999999999999996" y="517.66666666666663" width="51.666666666666657" height="22.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="20"/>
                                                 <color key="textColor" name="ConvivaOrange"/>
                                                 <nil key="highlightedColor"/>
@@ -808,20 +808,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que é necessário" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K6-ce-dF7">
-                                                <rect key="frame" x="20" y="345.33333333333331" width="138.66666666666666" height="18"/>
+                                                <rect key="frame" x="20" y="345.66666666666669" width="143.33333333333334" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="16"/>
                                                 <color key="textColor" name="ConvivaOrange"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xr-DD-RfK">
-                                                <rect key="frame" x="20" y="312.33333333333331" width="335" height="1"/>
+                                                <rect key="frame" x="20" y="312.66666666666669" width="335" height="1"/>
                                                 <color key="backgroundColor" name="ConvivaPurple"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Dwu-i6-zgz"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-QI-rys">
-                                                <rect key="frame" x="20" y="549.33333333333337" width="335" height="18.666666666666629"/>
+                                                <rect key="frame" x="20" y="548.33333333333337" width="335" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
@@ -962,7 +962,7 @@
             <color red="0.9309999942779541" green="0.61500000953674316" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaOrange">
-            <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.9309999942779541" green="0.61500000953674316" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPink">
             <color red="0.81000000238418579" green="0.082999996840953827" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
