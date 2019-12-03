@@ -9,7 +9,7 @@
 import Foundation
 
 //Tipos de erros possíveis gerados pela API - Resposta HTTP
-enum APIError:Error {
+enum APIError: Error {
     case responseProblem
     case decodingProblem
     case encodingProblem
@@ -23,7 +23,7 @@ struct APIRequest {
     // Inicializador tem como parametro o endpoint da url
     init(endpoint: String){
         let resourceString = "https://vast-brushlands-94838.herokuapp.com/\(endpoint)"
-        guard let resourceURL = URL(string: resourceString) else {fatalError()}
+        guard let resourceURL = URL(string: resourceString) else { fatalError() }
         self.resourceURL = resourceURL
     }
     
@@ -59,8 +59,12 @@ struct APIRequest {
     func getAllEvents(completion: @escaping(Result<[Event], APIError>) -> Void){
         var urlRequest = URLRequest(url: resourceURL)
         urlRequest.httpMethod = "GET"
+        decodeEventServerResponse(urlRequest: urlRequest, completion: completion)
+    }
+    
+    // Verifica se houve resposata válida do servidor
+    func decodeEventServerResponse(urlRequest: URLRequest, completion: @escaping(Result<[Event], APIError>) -> Void) {
         
-        // Verifica se houve resposata válida do servidor
         let dataTask = URLSession.shared.dataTask(with: urlRequest){ data, _, _ in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))
@@ -78,6 +82,49 @@ struct APIRequest {
         dataTask.resume()
     }
     
+    // Get all events created by an user
+    func getEventsFromAdm(userId: Int, completion: @escaping(Result<[Event], APIError>) -> Void) {
+        
+        let paramNames = ["adm"]
+        let paramValues = [String(userId)]
+        
+        let queryRequest = buildQueryURL(method: "from_adm", paramNames: paramNames, paramValues: paramValues)
+        
+        var urlRequest = URLRequest(url: queryRequest)
+        urlRequest.httpMethod = "GET"
+        
+        decodeEventServerResponse(urlRequest: urlRequest, completion: completion)
+    }
+    
+    // Método para pegar eventos por região
+    func getEventsByRegion(longitude: Double, latitude: Double, radius: Double, completion: @escaping(Result<[Event], APIError>) -> Void) {
+        
+        let paramNames = ["longitude", "latitude", "radius"]
+        let paramValues = [String(longitude), String(latitude), String(radius)]
+        
+        let queryRequest = buildQueryURL(method: "region", paramNames: paramNames, paramValues: paramValues)
+        
+        var urlRequest = URLRequest(url: queryRequest)
+        urlRequest.httpMethod = "GET"
+        
+        decodeEventServerResponse(urlRequest: urlRequest, completion: completion)
+    }
+    
+    // Make URL of a REST query
+    func buildQueryURL(method: String, paramNames: [String], paramValues: [String]) -> URL {
+        
+        var queryString = self.resourceURL.absoluteString + "/" + method + "?"
+        
+        for i in 0...paramNames.count {
+            queryString = queryString + paramNames[i] + "=" + paramValues[i]
+            if i < (paramNames.count - 1) {
+                queryString = queryString + "&"
+            }
+        }
+        guard let queryURL = URL(string: queryString) else { fatalError() }
+        
+        return queryURL
+    }
     
     //Metodo POST cadastro de perfil
     func saveProfile(_ profileToBeSave: Profile, completion: @escaping(Result<Profile, APIError>) -> Void){

@@ -17,6 +17,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var radiusView: UIImageView!
     @IBOutlet weak var radiusLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var auxView: UIView!
     
     let locationManager = CLLocationManager()
     let maxSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -33,6 +34,9 @@ class MapViewController: UIViewController {
         self.checkAuthorizationStatus()
         
         Setup.setupButton(self.nextButton, withText: "Entrar")
+        self.radiusView.isUserInteractionEnabled = false
+        self.auxView.isUserInteractionEnabled = false
+        
         
         // MARK: Adress Search configuration
         
@@ -201,19 +205,6 @@ extension MapViewController: CLLocationManagerDelegate {
 extension MapViewController: HandleMapSearch {
     
     func dropPinZoomIn(placemark: MKPlacemark) {
-        
-//        selectedPin = placemark
-//        // Removes all previous annotations
-//        mapView.removeAnnotations(mapView.annotations)
-//
-//        // Adds annotation in the  given placemark
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = placemark.coordinate
-//        annotation.title = placemark.name
-//        if let city = placemark.locality, let state = placemark.administrativeArea {
-//            annotation.subtitle = "\(city) \(state)"
-//        }
-//        mapView.addAnnotation(annotation)
         
         // Shows corresponding map region
         let region = MKCoordinateRegion(center: placemark.coordinate, span: self.defaultSpan)

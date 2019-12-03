@@ -18,7 +18,9 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     var months : [(month : String, year: Int,  freq : Int, events: [Event])] = []
     var actualDate : String?
     
-    
+    var longitude: Double = -50.0
+    var latitude: Double = -20.0
+    var radius: Double = 10000.0
     
     var selectEvent : Event?
     
@@ -33,12 +35,6 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
            
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
-    
-//        Mockado por enquanto para evitar mtas requests
-        makeAPIRequest()
-//        mockData()
-        
-        
     }
     
     func mockData() {
@@ -53,9 +49,28 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
          
     }
     
-    func makeAPIRequest() {
+//    func makeAPIRequest() {
+//        let getRequest = APIRequest(endpoint: "events")
+//        getRequest.getAllEvents() { result in
+//            switch result {
+//            case .success(let eventsData):
+//                print("Lista de eventos: \(String(describing: eventsData))")
+//                //Dispatch the call to update the label text to the main thread.
+//                //Reload must only be called on the main thread
+//                DispatchQueue.main.async{
+//                    self.events = eventsData
+//                    self.eventTable.reloadData()
+//                }
+//            case .failure(let error):
+//                print("Ocorreu um erro \(error)")
+//            }
+//        }
+//    }
+    
+    func makeAPIrequest() {
         let getRequest = APIRequest(endpoint: "events")
-        getRequest.getAllEvents() { result in
+        
+        getRequest.getEventsByRegion(longitude: self.longitude, latitude: self.latitude, radius: self.radius) { result in
             switch result {
             case .success(let eventsData):
                 print("Lista de eventos: \(String(describing: eventsData))")
@@ -81,7 +96,6 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         //Considerando o array de evento já ordenado por data
-        
         
         // Formato do array months: [(month : String, year: Int,  freq : Int, events: [Event])]
         let calendarDate = getDateComponents(date: self.events[0].dateFormatted!)
@@ -114,8 +128,6 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         let calendarDate = Calendar.current.dateComponents([.day, .month, .year, .weekday], from: date)
         return calendarDate
     }
-
-    
     
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -166,6 +178,13 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         performSegue(withIdentifier: "toEventSegue", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEventSegue"{
+            let destination = segue.destination as! EventViewController
+            destination.event = self.selectEvent!
+        }
+    }
+    
     // MARK: - Navigation
     @IBAction func createIniciative(_ sender: Any) {
         let email = UserDefaults.standard.string(forKey: "Email")
@@ -179,13 +198,6 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEventSegue"{
-            let destination = segue.destination as! EventViewController
-            destination.event = self.selectEvent!
-        }
-    }
-
     @IBAction func unwindToIniciatives(segue:UIStoryboardSegue) {
         //reload da tableview
     }
