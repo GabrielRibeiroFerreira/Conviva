@@ -29,7 +29,6 @@ class CreateEvent2ViewController: UIViewController {
     
 
     // MARK: - Navigation
-    
     @IBAction func confirmeClick(_ sender: Any) {
         self.event.cost = Int(self.costIniciative.textField.text ?? "0")
         self.event.helpers = self.helpersIniciative.textField.text

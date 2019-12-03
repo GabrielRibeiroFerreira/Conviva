@@ -8,21 +8,26 @@
 
 import UIKit
 
+
+
 class TabBarViewController: UITabBarController {
     
-    //Ainda não esta funcionando
-    @IBSegueAction func profileSegue(_ coder: NSCoder) -> ProfileViewController? {
-        let email = UserDefaults.standard.string(forKey: "Email")
-        if email == "" {
-            if let storyboard = self.storyboard {
-                let vc  = storyboard.instantiateViewController(identifier: "loginStoryboard")
-                self.present(vc, animated: true)
-            }
-        } else {
-             return ProfileViewController(coder: coder)
-        }
-        return nil
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
     
+    @IBAction func unwindToTabBar(segue:UIStoryboardSegue) {
+        
+    }
     
 }
+
+extension TabBarViewController: UITabBarControllerDelegate {
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.title = "" {
+            print("Oi")
+        }
+    }
+}
+
