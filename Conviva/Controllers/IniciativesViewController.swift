@@ -11,7 +11,7 @@ import UIKit
 class IniciativesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var eventTable: UITableView!
-    
+
     var events: [Event] = []
     let eventCell : String = "EventsTableViewCell"
     

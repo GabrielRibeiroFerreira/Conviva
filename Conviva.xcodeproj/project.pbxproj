@@ -41,6 +41,8 @@
 		2AB81A44238733F5000A87C2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB81A43238733F5000A87C2 /* RegisterViewController.swift */; };
 		2AB81A46238C23E6000A87C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB81A45238C23E6000A87C2 /* LoginViewController.swift */; };
 		8D0E36222396C0C50021C79B /* MyInitiativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E36212396C0C50021C79B /* MyInitiativesViewController.swift */; };
+		8D0E362423982AD80021C79B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E362323982AD80021C79B /* Alert.swift */; };
+		8D0E362623983AAE0021C79B /* MapCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E362523983AAE0021C79B /* MapCalls.swift */; };
 		8DEE0DCE23904B3700BA34D1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */; };
 		8DEE0DD22391932800BA34D1 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */; };
 		8DEE0DD7239199E700BA34D1 /* AdressResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEE0DD6239199E700BA34D1 /* AdressResultTableViewCell.xib */; };
@@ -84,6 +86,8 @@
 		2AB81A43238733F5000A87C2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2AB81A45238C23E6000A87C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8D0E36212396C0C50021C79B /* MyInitiativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInitiativesViewController.swift; sourceTree = "<group>"; };
+		8D0E362323982AD80021C79B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		8D0E362523983AAE0021C79B /* MapCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCalls.swift; sourceTree = "<group>"; };
 		8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		8DEE0DD6239199E700BA34D1 /* AdressResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdressResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				2AB180E82379D1F100E914C0 /* Item.swift */,
 				2AB180EA2379D2EC00E914C0 /* ItemType.swift */,
 				2AB180EC2379D6EF00E914C0 /* Report.swift */,
+				8D0E362323982AD80021C79B /* Alert.swift */,
+				8D0E362523983AAE0021C79B /* MapCalls.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,10 +334,12 @@
 				2A6DEBF12369D84500AAE7EA /* Conviva.xcdatamodeld in Sources */,
 				2A67D9D1238431FB00DBF095 /* EventViewController.swift in Sources */,
 				2AB180ED2379D6EF00E914C0 /* Report.swift in Sources */,
+				8D0E362423982AD80021C79B /* Alert.swift in Sources */,
 				153BEB5B23954AEF0034675C /* TabBarViewController.swift in Sources */,
 				2A67D9C7237DB01700DBF095 /* EventsTableViewCell.swift in Sources */,
 				2A8D0AE8238EB3B500B89216 /* ProfileViewController.swift in Sources */,
 				8D0E36222396C0C50021C79B /* MyInitiativesViewController.swift in Sources */,
+				8D0E362623983AAE0021C79B /* MapCalls.swift in Sources */,
 				2AB54344237AFD2400852E7F /* TextFieldView.swift in Sources */,
 				2AB54346237B260C00852E7F /* CreateEventViewController.swift in Sources */,
 				2AB54348237B32B300852E7F /* CreateEvent2ViewController.swift in Sources */,

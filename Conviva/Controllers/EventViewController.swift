@@ -15,6 +15,7 @@ class EventViewController: UIViewController {
     @IBOutlet weak var itemsLabel: UILabel!
     @IBOutlet weak var helpersLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var colabButton: UIButton!
     
     var event : Event!
 
@@ -34,7 +35,6 @@ class EventViewController: UIViewController {
         self.costLabel.text = self.event.cost?.description
         
     }
-    
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -42,14 +42,24 @@ class EventViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "ConvivaBackground")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getAdmPhoneNumber() -> String {
+        return "05535991341301"
     }
-    */
 
+    @IBAction func colaborationButton(_ sender: Any) {
+        
+        let admPhoneNumber = getAdmPhoneNumber()
+        let whatsappStringURL = "https://api.whatsapp.com/send?phone=" + admPhoneNumber + "&text=Estou+interessado+em+colaborar+com+sua+iniciativa!"
+        
+        let whatsappURL = URL(string: whatsappStringURL)
+        let appStoreWhatsappURL = URL(string: "https://apps.apple.com/us/app/whatsapp-messenger/id310633997")
+        
+        if UIApplication.shared.canOpenURL(whatsappURL!) {
+            UIApplication.shared.open(whatsappURL!, completionHandler: { (sucess) in
+            })
+        } else {
+            UIApplication.shared.open(appStoreWhatsappURL!, completionHandler: { (sucess) in
+            })
+        }
+    }
 }

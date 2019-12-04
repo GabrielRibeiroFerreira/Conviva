@@ -13,6 +13,7 @@ import MapKit
 // Delegate the interaction between the MapViewController and the search adress table
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark: MKPlacemark)
+    func getAdress(adress: String)
 }
 
 class LocationSearchTableViewController: UITableViewController {
@@ -146,6 +147,7 @@ extension LocationSearchTableViewController {
         
         // Manual Delegate Function
         handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
+        handleMapSearchDelegate?.getAdress(adress: selectedItem.name!)
         
         dismiss(animated: true, completion: nil)
     }

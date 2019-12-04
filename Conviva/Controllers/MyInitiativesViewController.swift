@@ -148,4 +148,10 @@ class MyInitiativesViewController: UIViewController, UITableViewDelegate, UITabl
         performSegue(withIdentifier: "toMyEventSegue", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMyEventSegue"{
+            let destination = segue.destination as! EventViewController
+            destination.event = self.selectEvent!
+        }
+    }
 }
