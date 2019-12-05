@@ -1,17 +1,17 @@
 //
-//  IniciativesViewController.swift
+//  MyInitiativesViewController.swift
 //  Conviva
 //
-//  Created by Gabriel Ferreira on 13/11/19.
+//  Created by Joyce Simão Clímaco on 03/12/19.
 //  Copyright © 2019 Gabriel Ferreira. All rights reserved.
 //
 
 import UIKit
 
-class IniciativesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet weak var eventTable: UITableView!
+class MyInitiativesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var myEventsTable: UITableView!
+    
     var events: [Event] = []
     let eventCell : String = "EventsTableViewCell"
     
@@ -29,49 +29,20 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         
         Setup.setupViewController(self)
         
-        self.eventTable.delegate = self
-        self.eventTable.dataSource = self
-        self.eventTable.indexDisplayMode = .alwaysHidden
+        self.myEventsTable.delegate = self
+        self.myEventsTable.dataSource = self
+        self.myEventsTable.indexDisplayMode = .alwaysHidden
            
         let nib = UINib.init(nibName: eventCell, bundle: nil)
-        self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
-        makeAPIRequest()
+        self.myEventsTable.register(nib, forCellReuseIdentifier: eventCell)
     }
     
-    func mockData() {
-        let event = Event(name: "Festa Junina", description: "Canjica TOP", address: "Maloca", cost: 500, justification: "Vamo comer canjica", date: "2019-11-01 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
-        self.events.append(event)
-        
-        let event0 = Event(name: "Bazar", description: "Roupinhas", address: "Malloca", cost: 500, justification: "Doação", date: "2019-11-22 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
-        self.events.append(event0)
-        
-        let event1 = Event(name: "Churrasco na praça", description: "Comer pao de alho", address: "Praça", cost: 500, justification: "To com fome", date: "2019-12-01 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
-        self.events.append(event1)
-         
-    }
-    
-//    func makeAPIRequest() {
-//        let getRequest = APIRequest(endpoint: "events")
-//        getRequest.getAllEvents() { result in
-//            switch result {
-//            case .success(let eventsData):
-//                print("Lista de eventos: \(String(describing: eventsData))")
-//                //Dispatch the call to update the label text to the main thread.
-//                //Reload must only be called on the main thread
-//                DispatchQueue.main.async{
-//                    self.events = eventsData
-//                    self.eventTable.reloadData()
-//                }
-//            case .failure(let error):
-//                print("Ocorreu um erro \(error)")
-//            }
-//        }
-//    }
-    
+    // PEGAR O USER ID DA PESSOA QUE TA LOGADA
     func makeAPIrequest() {
         let getRequest = APIRequest(endpoint: "events")
         
-        getRequest.getEventsByRegion(longitude: self.longitude, latitude: self.latitude, radius: self.radius) { result in
+        // USER ID AQUI
+        getRequest.getEventsFromAdm(userId: 1) { result in
             switch result {
             case .success(let eventsData):
                 print("Lista de eventos: \(String(describing: eventsData))")
@@ -79,7 +50,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
                 //Reload must only be called on the main thread
                 DispatchQueue.main.async{
                     self.events = eventsData
-                    self.eventTable.reloadData()
+                    self.myEventsTable.reloadData()
                 }
             case .failure(let error):
                 print("Ocorreu um erro \(error)")
@@ -132,7 +103,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
-        getEventsByMonth()
+        // getEventsByMonth()
         return self.months.count
     }
     
@@ -176,31 +147,13 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectEvent = self.months[indexPath.section].events[indexPath.row]
-        performSegue(withIdentifier: "toEventSegue", sender: self)
+        performSegue(withIdentifier: "toMyEventSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEventSegue"{
+        if segue.identifier == "toMyEventSegue"{
             let destination = segue.destination as! EventViewController
             destination.event = self.selectEvent!
         }
     }
-    
-    // MARK: - Navigation
-    @IBAction func createIniciative(_ sender: Any) {
-        let email = UserDefaults.standard.string(forKey: "Email")
-        if email == "" {
-            if let storyboard = self.storyboard {
-                let vc  = storyboard.instantiateViewController(identifier: "loginStoryboard")
-                self.present(vc, animated: true)
-            }
-        } else {
-            performSegue(withIdentifier: "createSegue", sender: self)
-        }
-    }
-    
-    @IBAction func unwindToIniciatives(segue:UIStoryboardSegue) {
-        makeAPIRequest()
-    }
-    
 }

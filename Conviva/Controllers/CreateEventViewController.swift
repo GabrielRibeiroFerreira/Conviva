@@ -37,6 +37,9 @@ class CreateEventViewController: UIViewController {
         self.descriptionIniciative.textField.placeholder = "Descreva a iniciativa"
         self.justificativeIniciative.textField.placeholder = "Justificativa para a iniciativa"
         
+        self.localIniciative.isUserInteractionEnabled = false
+        self.event.address = self.localIniciative.textField.text
+        
         self.dateIniciative.textField.addTarget(self, action: #selector(self.showDatePicker(_:)), for: UIControl.Event.editingDidBegin)
         self.timeIniciative.textField.addTarget(self, action: #selector(self.showTimePicker(_:)), for: UIControl.Event.editingDidBegin)
         
@@ -48,14 +51,13 @@ class CreateEventViewController: UIViewController {
         //Formatação da data no padrão de string do Json - validar bem se textField estao preenchidos
         self.event.date = (self.dateStr ?? "") + " " + (self.timeIniciative.textField.text ?? "")
         self.event.name = self.titleIniciative.textField.text
-        self.event.address = self.localIniciative.textField.text
-        getLatLongByAddress(address: self.localIniciative.textField.text ?? "")
         self.event.description = self.descriptionIniciative.textField.text
         self.event.justification = self.justificativeIniciative.textField.text
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "nextCreateSegue" {
             let destination = segue.destination as! CreateEvent2ViewController
             destination.event = event
@@ -80,19 +82,18 @@ class CreateEventViewController: UIViewController {
         textfieldView.emptyTextndicator.isHidden = textfieldView.textField.text == "" ? false : true
         return textfieldView.emptyTextndicator.isHidden
     }
-
     
-    func getLatLongByAddress(address: String) {
-        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-            let placemark = placemarks?.first
-            let lat = placemark?.location?.coordinate.latitude
-            let lon = placemark?.location?.coordinate.longitude
-            print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
-            
-            self.event.latitude = lat
-            self.event.longitude = lon
-        }
-    }
+//    func getLatLongByAddress(address: String) {
+//        CLGeocoder().geocodeAddressString(address) { placemarks, error in
+//            let placemark = placemarks?.first
+//            let lat = placemark?.location?.coordinate.latitude
+//            let lon = placemark?.location?.coordinate.longitude
+//            print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
+//
+//            self.event.latitude = lat
+//            self.event.longitude = lon
+//        }
+//    }
     
     @objc func showDatePicker(_ textField: UITextField){
         //Formate Date
