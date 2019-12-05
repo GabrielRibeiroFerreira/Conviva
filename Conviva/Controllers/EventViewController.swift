@@ -42,6 +42,8 @@ class EventViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "ConvivaBackground")
     }
     
+    // BUSCAR NUMERO DE TELEFONE DO ADM
+    // LEMBRANDO QUE event.adm É O ID DO ADM
     func getAdmPhoneNumber() -> String {
         return "05535991341301"
     }

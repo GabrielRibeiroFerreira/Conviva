@@ -9,8 +9,7 @@
 import Foundation
 
 enum MapCalls {
-    case initialScreen
+    case initialScreen // qd pessoa está deslogada
     case createEvent
     case createProfile
-    case eventLocation
 }

@@ -37,9 +37,11 @@ class MyInitiativesViewController: UIViewController, UITableViewDelegate, UITabl
         self.myEventsTable.register(nib, forCellReuseIdentifier: eventCell)
     }
     
+    // PEGAR O USER ID DA PESSOA QUE TA LOGADA
     func makeAPIrequest() {
         let getRequest = APIRequest(endpoint: "events")
         
+        // USER ID AQUI
         getRequest.getEventsFromAdm(userId: 1) { result in
             switch result {
             case .success(let eventsData):

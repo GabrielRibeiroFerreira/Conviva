@@ -31,7 +31,7 @@ class MapViewController: UIViewController {
     var longitude: Double = -25.0
     var latitude: Double = -40.0
     var radius: Double = 10000.0
-    var address: String = "Rua"
+    var address: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +47,19 @@ class MapViewController: UIViewController {
         switch self.isCalledIn {
         case .initialScreen:
             Setup.setupButton(self.nextButton, withText: "Entrar")
+            radiusView.image = UIImage(named: "pinAndCircle")
+            navigationItem.title = "Escolha sua região"
+        case .createEvent:
+            radiusView.image = UIImage(named: "pin")
+            navigationItem.title = "Local da iniciativa"
+            Setup.setupButton(self.nextButton, withText: "Avançar")
+        case .createProfile:
+            navigationItem.title = "Sua região"
+            radiusView.image = UIImage(named: "pinAndCircle")
+            Setup.setupButton(self.nextButton, withText: "Avançar")
         default:
             Setup.setupButton(self.nextButton, withText: "Avançar")
+            radiusView.image = UIImage(named: "pinAndCircle")
         }
         
         // MARK: Adress Search configuration
@@ -89,30 +100,48 @@ class MapViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         
-        switch self.isCalledIn {
-        case .createEvent:
-            performSegue(withIdentifier: "mapToFinishCreateEvent", sender: self)
-        case .createProfile:
-            performSegue(withIdentifier: "mapToProfileRegistration", sender: self)
-        default:
-            performSegue(withIdentifier: "mapToTabBar", sender: self)
+        getCurrentCircularRegion()
+        getAdress(latitude: self.latitude, longitude: self.longitude) { (parsedAddress) in
+            
+            OperationQueue.main.addOperation {
+                
+                self.address = parsedAddress
+                print(self.address)
+                print("latitude: " + String(self.latitude))
+                print("longitude: " + String(self.longitude))
+                print("radius: " + String(self.radius))
+                
+                switch self.isCalledIn {
+                case .createEvent:
+                    self.performSegue(withIdentifier: "mapToCreateEvent", sender: self)
+                case .createProfile:
+                    self.performSegue(withIdentifier: "mapToProfileRegistration", sender: self)
+                default:
+                    self.performSegue(withIdentifier: "mapToTabBar", sender: self)
+                }
+            }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        getCurrentCircularRegion()
+        
+        let radius = self.radius < 20000 ? 20000 : self.radius
         
         if segue.identifier == "mapToProfileRegistration" {
             let destination = segue.destination as! RegisterViewController
             destination.addressProfile.textField.text = self.address
             destination.latitude = self.latitude
             destination.longitude = self.longitude
-            destination.radius = self.radius
+            destination.radius = radius
         }
-        
-        
+        else if segue.identifier == "mapToCreateEvent" {
+            let destination = segue.destination as! CreateEventViewController
+            destination.event.latitude = self.latitude
+            destination.event.longitude = self.longitude
+            destination.event.address = self.address
+            destination.localIniciative.textField.text = self.address
+        }
     }
-    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -140,6 +169,36 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: CLLocationManagerDelegate {
     
+    func getAdress(latitude: Double,longitude: Double, completion: @escaping (String) -> Void) {
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude , longitude: longitude)
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            var placemark: CLPlacemark!
+            placemark = placemarks?[0]
+            
+            var addressList: [String?] = []
+            addressList.append(placemark.name) // name
+            addressList.append(placemark.thoroughfare) // street
+            addressList.append(placemark.subThoroughfare) // number
+            addressList.append(placemark.subAdministrativeArea) // city
+            addressList.append(placemark.administrativeArea) // state
+            addressList.append(placemark.country) // country
+            
+            var parsedAddress: String = ""
+            for element in addressList {
+                if let adressElement = element {
+                    if parsedAddress != "" {
+                        parsedAddress = parsedAddress + ", "
+                    }
+                    parsedAddress = parsedAddress + adressElement
+                }
+            }
+            completion(parsedAddress)
+        })
+    }
+    
     // Checks if Location Services are enabled and if not asks for authorization
     func checkAuthorizationStatus() {
         
@@ -151,7 +210,8 @@ extension MapViewController: CLLocationManagerDelegate {
                 locationManager.startUpdatingLocation()
             }
             else if status == .denied || status == .restricted {
-                self.alert.presentLocationAlert()
+                let alertController = self.alert.presentLocationAlert()
+                present(alertController, animated: true, completion: nil)
             }
             else {
                 self.locationManager.requestWhenInUseAuthorization()
@@ -200,9 +260,5 @@ extension MapViewController: HandleMapSearch {
         // Shows corresponding map region
         let region = MKCoordinateRegion(center: placemark.coordinate, span: self.defaultSpan)
         mapView.setRegion(region, animated: true)
-    }
-    
-    func getAdress(adress: String) {
-        self.address = adress
     }
 }

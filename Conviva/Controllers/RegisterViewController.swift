@@ -29,14 +29,13 @@ class RegisterViewController: UIViewController {
         
         self.nameProfile.textField.placeholder = "Nome Completo"
         self.emailProfile.textField.placeholder = "Email"
-        self.addressProfile.textField.placeholder = "Endereço"
         self.contactProfile.textField.placeholder = "Contato"
         self.skillsProfile.textField.placeholder = "Habilidades"
         self.passwordProfile.textField.placeholder = "Senha"
-        self.addressProfile.isUserInteractionEnabled = false
         
+        self.addressProfile.isUserInteractionEnabled = false
+        self.addressProfile.textField.placeholder = "Endereço"
     }
-    
 
     func checkForEmptyTextField() -> Bool {
         var returnValue: Bool = true

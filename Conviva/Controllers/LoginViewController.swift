@@ -54,7 +54,8 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "profileAdressSegue" {
-            let destination = segue.destination as! MapViewController
+            let navigation = segue.destination as! UINavigationController
+            let destination = navigation.viewControllers.first as! MapViewController
             destination.isCalledIn = .createProfile
         }
     }
