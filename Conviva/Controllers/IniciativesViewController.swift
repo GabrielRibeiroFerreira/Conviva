@@ -33,10 +33,8 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
            
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
-    
-//        Mockado por enquanto para evitar mtas requests
+        
         makeAPIRequest()
-//        mockData()
         
         
     }
@@ -187,7 +185,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     @IBAction func unwindToIniciatives(segue:UIStoryboardSegue) {
-        //reload da tableview
+        makeAPIRequest()
     }
     
 }

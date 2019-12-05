@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordProfile: TextFieldView!
     @IBOutlet weak var signinButton: UIButton!
     
-    var profileData: Profile?
+    var profile: Profile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,20 +28,21 @@ class LoginViewController: UIViewController {
             
     }
     
-    func makeAPIRequest() {
+    func makeLoginRequest() {
         let email = emailProfile.textField.text!
         let password = passwordProfile.textField.text!
         let endpoind = "profiles/\(email)/\(password)"
         let getRequest = APIRequest(endpoint: endpoind)
-        getRequest.getLoginResponse() { result in
+        getRequest.getProfileResponse() { result in
             switch result {
             case .success(let profileData):
                 print("Perfil logado: \(String(describing: profileData))")
                 //Dispatch the call to update the label text to the main thread.
                 //Reload must only be called on the main thread
                 DispatchQueue.main.async{
-                    self.profileData = profileData
+                    self.profile = profileData
                     UserDefaults.standard.set(self.emailProfile.textField.text!, forKey: "Email")
+                    UserDefaults.standard.set(profileData.id, forKey:"ID")
                     self.dismiss(animated: true)
                 }
             case .failure(let error):
@@ -50,6 +51,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
 
     
     func checkForEmptyTextField() -> Bool {
@@ -70,7 +72,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         if checkForEmptyTextField() {
-            makeAPIRequest()
+            makeLoginRequest()
         }
     }
     
