@@ -35,6 +35,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
            
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
+        makeAPIRequest()
     }
     
     func mockData() {
@@ -199,7 +200,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func unwindToIniciatives(segue:UIStoryboardSegue) {
-        //reload da tableview
+        makeAPIRequest()
     }
     
 }

@@ -67,7 +67,7 @@ class RegisterViewController: UIViewController {
               postRequest.saveProfile(newProfile) { result in
                 switch result {
                   case .success(let newProfile):
-                     print("O evento foi salvo \(String(describing: newProfile.name))")
+                     print("O perfil foi salvo \(String(describing: newProfile.name))")
                      self.dismiss(animated: true)
                   case .failure(let error):
                      print("Ocorreu um erro \(error)")

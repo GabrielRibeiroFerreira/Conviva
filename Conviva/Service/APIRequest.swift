@@ -136,10 +136,21 @@ struct APIRequest {
             
             // Verifica se houve resposta válida do servidor
             let dataTask = URLSession.shared.dataTask(with: urlRequest){ data, response, _ in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data else {
-                    completion(.failure(.responseProblem))
+                
+                guard let jsonData = data else {
+                    completion(.failure(.noDataAvailable))
                     return
                 }
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    if httpResponse.statusCode != 200 {
+                        let strData = String(data: jsonData, encoding: .utf8)
+                        print(strData ?? "Erro de resposta")
+                        completion(.failure(.responseProblem))
+                        return
+                    }
+                }
+                
                 //Método de decode da classe evento para JSON
                 do {
                     let profileData = try JSONDecoder().decode(Profile.self, from: jsonData)
@@ -156,16 +167,26 @@ struct APIRequest {
     
     
     //Metodo para login, conexão com metodo GET da API
-    func getLoginResponse(completion: @escaping(Result<Profile, APIError>) -> Void){
+    func getProfileResponse(completion: @escaping(Result<Profile, APIError>) -> Void){
         var urlRequest = URLRequest(url: resourceURL)
         urlRequest.httpMethod = "GET"
         
         // Verifica se houve resposata válida do servidor
-        let dataTask = URLSession.shared.dataTask(with: urlRequest){ data, _, _ in
+        let dataTask = URLSession.shared.dataTask(with: urlRequest){ (data, response, error) in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))
                 return
             }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200{
+                    let strData = String(data: jsonData, encoding: .utf8)
+                    print(strData ?? "Erro de resposta")
+                    completion(.failure(.responseProblem))
+                    return
+                }
+            }
+
             //Método de decode da classe evento para JSON
             do {
                 let decoder = JSONDecoder()
@@ -177,5 +198,7 @@ struct APIRequest {
         }
         dataTask.resume()
     }
+
+    
 
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		153BEB5B23954AEF0034675C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153BEB5A23954AEF0034675C /* TabBarViewController.swift */; };
 		156F73C72381BA02009631C0 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F73C62381BA02009631C0 /* APIRequest.swift */; };
+		1595326C2396CA7B002F09E4 /* InterestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1595326B2396CA7B002F09E4 /* InterestTableViewController.swift */; };
 		2A67D9C6237DB01700DBF095 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A67D9C4237DB01700DBF095 /* EventsTableViewCell.xib */; };
 		2A67D9C7237DB01700DBF095 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67D9C5237DB01700DBF095 /* EventsTableViewCell.swift */; };
 		2A67D9D1238431FB00DBF095 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A67D9D0238431FB00DBF095 /* EventViewController.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		153BEB5A23954AEF0034675C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		156F73C62381BA02009631C0 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		1595326B2396CA7B002F09E4 /* InterestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestTableViewController.swift; sourceTree = "<group>"; };
 		2A67D9C4237DB01700DBF095 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
 		2A67D9C5237DB01700DBF095 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		2A67D9D0238431FB00DBF095 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */,
 				8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */,
 				8D0E36212396C0C50021C79B /* MyInitiativesViewController.swift */,
+				1595326B2396CA7B002F09E4 /* InterestTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				8DEE0DD923919A5F00BA34D1 /* AdressResultTableViewCell.swift in Sources */,
 				2AB81A46238C23E6000A87C2 /* LoginViewController.swift in Sources */,
 				2AB180E52379B7D800E914C0 /* Profile.swift in Sources */,
+				1595326C2396CA7B002F09E4 /* InterestTableViewController.swift in Sources */,
 				2AB180EB2379D2EC00E914C0 /* ItemType.swift in Sources */,
 				8DEE0DCE23904B3700BA34D1 /* MapViewController.swift in Sources */,
 				8DEE0DD22391932800BA34D1 /* LocationSearchTableViewController.swift in Sources */,
