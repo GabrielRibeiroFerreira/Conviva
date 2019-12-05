@@ -51,6 +51,13 @@ class LoginViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "profileAdressSegue" {
+            let destination = segue.destination as! MapViewController
+            destination.isCalledIn = .createProfile
+        }
+    }
     
     func checkForEmptyTextField() -> Bool {
         var returnValue: Bool = true

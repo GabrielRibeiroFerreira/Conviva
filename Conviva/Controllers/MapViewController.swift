@@ -101,6 +101,16 @@ class MapViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         getCurrentCircularRegion()
+        
+        if segue.identifier == "mapToProfileRegistration" {
+            let destination = segue.destination as! RegisterViewController
+            destination.addressProfile.textField.text = self.address
+            destination.latitude = self.latitude
+            destination.longitude = self.longitude
+            destination.radius = self.radius
+        }
+        
+        
     }
     
 }

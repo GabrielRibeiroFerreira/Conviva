@@ -17,6 +17,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordProfile: TextFieldView!
     @IBOutlet weak var registerButton: UIButton!
     
+    var longitude: Double = -25.0
+    var latitude: Double = -40.0
+    var radius: Double = 10000.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +33,7 @@ class RegisterViewController: UIViewController {
         self.contactProfile.textField.placeholder = "Contato"
         self.skillsProfile.textField.placeholder = "Habilidades"
         self.passwordProfile.textField.placeholder = "Senha"
+        self.addressProfile.isUserInteractionEnabled = false
         
     }
     
@@ -56,7 +61,7 @@ class RegisterViewController: UIViewController {
     func makeAPIRequest() {
         if checkForEmptyTextField() {
             //Ver forma de pegar lat/long/rad da seleção inicial
-            let newProfile = Profile(name: self.nameProfile.textField.text!, email: self.emailProfile.textField.text!, password: self.passwordProfile.textField.text!, contact: self.contactProfile.textField.text!, address: self.addressProfile.textField.text!, description: self.skillsProfile.textField.text!, latitude: -20.7865, longitude: 34.7654, radius: 10000)
+            let newProfile = Profile(name: self.nameProfile.textField.text!, email: self.emailProfile.textField.text!, password: self.passwordProfile.textField.text!, contact: self.contactProfile.textField.text!, address: self.addressProfile.textField.text!, description: self.skillsProfile.textField.text!, latitude: self.latitude, longitude: self.longitude, radius: self.radius)
 
               //Chamada do método POST para profile
               let postRequest = APIRequest(endpoint: "profiles")
