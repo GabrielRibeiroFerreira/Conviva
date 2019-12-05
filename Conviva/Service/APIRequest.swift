@@ -115,7 +115,7 @@ struct APIRequest {
         
         var queryString = self.resourceURL.absoluteString + "/" + method + "?"
         
-        for i in 0...paramNames.count {
+        for i in 0...(paramNames.count - 1) {
             queryString = queryString + paramNames[i] + "=" + paramValues[i]
             if i < (paramNames.count - 1) {
                 queryString = queryString + "&"
