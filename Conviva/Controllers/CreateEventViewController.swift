@@ -24,8 +24,16 @@ class CreateEventViewController: UIViewController {
     
     var dateStr: String?
     
+    //String para passar endereço por segue, sem depender do textField
+    //Problema se a view ainda não tiver sido carregada
+    var address: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let address = self.address {
+            self.localIniciative.textField.text = address
+        }
         
         Setup.setupViewController(self)
         Setup.setupButton(self.nextButton, withText: "Avançar")

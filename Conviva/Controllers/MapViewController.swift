@@ -129,7 +129,7 @@ class MapViewController: UIViewController {
         
         if segue.identifier == "mapToProfileRegistration" {
             let destination = segue.destination as! RegisterViewController
-            destination.addressProfile.textField.text = self.address
+            destination.address = self.address
             destination.latitude = self.latitude
             destination.longitude = self.longitude
             destination.radius = radius

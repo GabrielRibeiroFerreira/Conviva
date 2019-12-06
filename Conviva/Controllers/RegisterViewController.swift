@@ -21,12 +21,17 @@ class RegisterViewController: UIViewController {
     var latitude: Double = -40.0
     var radius: Double = 10000.0
     
+    var address: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         Setup.setupViewController(self)
         Setup.setupButton(self.registerButton, withText: "Finalizar")
         
+        if let address = self.address {
+            self.addressProfile.textField.text = address
+        }
         self.nameProfile.textField.placeholder = "Nome Completo"
         self.emailProfile.textField.placeholder = "Email"
         self.contactProfile.textField.placeholder = "Contato"
@@ -62,13 +67,15 @@ class RegisterViewController: UIViewController {
             //Ver forma de pegar lat/long/rad da seleção inicial
             let newProfile = Profile(name: self.nameProfile.textField.text!, email: self.emailProfile.textField.text!, password: self.passwordProfile.textField.text!, contact: self.contactProfile.textField.text!, address: self.addressProfile.textField.text!, description: self.skillsProfile.textField.text!, latitude: self.latitude, longitude: self.longitude, radius: self.radius)
 
-              //Chamada do método POST para profile
-              let postRequest = APIRequest(endpoint: "profiles")
-              postRequest.saveProfile(newProfile) { result in
+            //Chamada do método POST para profile
+            let postRequest = APIRequest(endpoint: "profiles")
+            postRequest.saveProfile(newProfile) { result in
                 switch result {
-                  case .success(let newProfile):
-                     print("O perfil foi salvo \(String(describing: newProfile.name))")
-                     self.dismiss(animated: true)
+                    case .success(let newProfile):
+                    DispatchQueue.main.async {
+                        print("O perfil foi salvo \(String(describing: newProfile.name))")
+                        self.dismiss(animated: true)
+                    }
                   case .failure(let error):
                      print("Ocorreu um erro \(error)")
                      //UIALERT
