@@ -44,6 +44,12 @@ class MapViewController: UIViewController {
         self.radiusView.isUserInteractionEnabled = false
         self.auxView.isUserInteractionEnabled = false
         
+        //Se usuario estiver logado email esta salvo no UserDefaults
+        let email = UserDefaults.standard.string(forKey: "Email")
+        if email != "" {
+            self.isCalledIn = .createEvent
+        }
+        
         switch self.isCalledIn {
         case .initialScreen:
             Setup.setupButton(self.nextButton, withText: "Entrar")
@@ -139,7 +145,6 @@ class MapViewController: UIViewController {
             destination.event.latitude = self.latitude
             destination.event.longitude = self.longitude
             destination.event.address = self.address
-            destination.localIniciative.textField.text = self.address
         }
     }
 }

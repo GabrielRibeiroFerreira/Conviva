@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "placeLight.png"
+      "filename" : "place-light.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "placeDark.png",
+      "filename" : "place-dark.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
