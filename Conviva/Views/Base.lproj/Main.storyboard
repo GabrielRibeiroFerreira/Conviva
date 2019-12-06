@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TfO-4A-6c8">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQT-Xo-1oR">
+    <device id="retina3_5" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -297,7 +297,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-Zf-LuB">
-                                        <rect key="frame" x="137" y="355" width="46" height="30"/>
+                                        <rect key="frame" x="137" y="349" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
@@ -700,7 +700,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufy-6G-8ZO">
-                                        <rect key="frame" x="137" y="337" width="46" height="30"/>
+                                        <rect key="frame" x="137" y="331" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="confirmeClick:" destination="iZo-g3-A80" eventType="touchUpInside" id="om8-2G-ZvC"/>
@@ -930,6 +930,162 @@
             </objects>
             <point key="canvasLocation" x="578" y="433"/>
         </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="RIa-u4-kPX">
+            <objects>
+                <viewController id="DQT-Xo-1oR" customClass="TutorialViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EZa-ML-cFf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E3-eL-gJf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yk-wo-vti" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4o-N0-GlS" userLabel="Page1">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Boarding" translatesAutoresizingMaskIntoConstraints="NO" id="6el-fG-Bxn">
+                                                        <rect key="frame" x="24" y="128" width="272" height="272"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="6el-fG-Bxn" secondAttribute="height" multiplier="1:1" id="F1e-2Y-gAC"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9d-2u-avR">
+                                                        <rect key="frame" x="137" y="430" width="46" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="nextPage:" destination="DQT-Xo-1oR" eventType="touchUpInside" id="BZo-Tq-Qfv"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCc-ab-yqf">
+                                                        <rect key="frame" x="23" y="26" width="274" height="28"/>
+                                                        <color key="tintColor" name="ConvivaTextColor"/>
+                                                        <string key="text">Bem vindo(a) ao Conviva,
+</string>
+                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                                                        <color key="textColor" name="ConvivaTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui queremos que você se conecte com os vizinhos próximos a você através de iniciativas em espaços públicos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O37-qq-MdT">
+                                                        <rect key="frame" x="20" y="70" width="280" height="75"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <color key="textColor" name="ConvivaTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="ConvivaBackground"/>
+                                                <constraints>
+                                                    <constraint firstItem="m9d-2u-avR" firstAttribute="centerX" secondItem="V4o-N0-GlS" secondAttribute="centerX" id="3tc-3B-z4a"/>
+                                                    <constraint firstItem="O37-qq-MdT" firstAttribute="centerX" secondItem="V4o-N0-GlS" secondAttribute="centerX" id="7bt-as-lOB"/>
+                                                    <constraint firstItem="TCc-ab-yqf" firstAttribute="centerX" secondItem="V4o-N0-GlS" secondAttribute="centerX" id="7ra-gU-JFr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="m9d-2u-avR" secondAttribute="bottom" constant="20" id="8vg-IX-p3u"/>
+                                                    <constraint firstItem="6el-fG-Bxn" firstAttribute="centerX" secondItem="V4o-N0-GlS" secondAttribute="centerX" id="JFc-XR-mu0"/>
+                                                    <constraint firstItem="O37-qq-MdT" firstAttribute="top" secondItem="TCc-ab-yqf" secondAttribute="bottom" constant="16" id="cHl-Nr-1VS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="O37-qq-MdT" secondAttribute="trailing" constant="20" id="cqH-FX-hfh"/>
+                                                    <constraint firstItem="6el-fG-Bxn" firstAttribute="centerY" secondItem="V4o-N0-GlS" secondAttribute="centerY" multiplier="1.1" id="eh7-vP-IRw"/>
+                                                    <constraint firstItem="O37-qq-MdT" firstAttribute="leading" secondItem="V4o-N0-GlS" secondAttribute="leading" constant="20" id="hqc-OM-E3c"/>
+                                                    <constraint firstItem="TCc-ab-yqf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="V4o-N0-GlS" secondAttribute="top" constant="24" id="jKR-9O-vf0"/>
+                                                    <constraint firstItem="6el-fG-Bxn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V4o-N0-GlS" secondAttribute="leading" constant="24" id="kHt-o7-gZW"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6el-fG-Bxn" secondAttribute="trailing" constant="24" id="pA5-n1-i5f"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRs-yz-C35" userLabel="Page2">
+                                                <rect key="frame" x="320" y="0.0" width="320" height="480"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Boarding" translatesAutoresizingMaskIntoConstraints="NO" id="GWO-T6-5SS">
+                                                        <rect key="frame" x="24" y="128" width="272" height="272"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="GWO-T6-5SS" secondAttribute="height" multiplier="1:1" id="Nd7-Na-bFj"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qo-p9-Nxa">
+                                                        <rect key="frame" x="137" y="430" width="46" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="nextPage:" destination="DQT-Xo-1oR" eventType="touchUpInside" id="FAh-yQ-fuI"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajude a unir seu bairro, apoie e colabore com vizinhos e compartilhe suas ideias" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M30-Mw-erP">
+                                                        <rect key="frame" x="20" y="70" width="280" height="56"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                        <color key="textColor" name="ConvivaTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crie, Colabore e Compartilhe!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="884-pu-Z8K">
+                                                        <rect key="frame" x="1" y="26" width="318.5" height="28"/>
+                                                        <color key="tintColor" name="ConvivaTextColor"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                                                        <color key="textColor" name="ConvivaTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="ConvivaBackground"/>
+                                                <constraints>
+                                                    <constraint firstItem="GWO-T6-5SS" firstAttribute="centerY" secondItem="TRs-yz-C35" secondAttribute="centerY" multiplier="1.1" id="0tY-Co-myW"/>
+                                                    <constraint firstItem="884-pu-Z8K" firstAttribute="centerX" secondItem="TRs-yz-C35" secondAttribute="centerX" id="44O-WR-O58"/>
+                                                    <constraint firstItem="GWO-T6-5SS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TRs-yz-C35" secondAttribute="leading" constant="24" id="4vx-i1-b8D"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1qo-p9-Nxa" secondAttribute="bottom" constant="20" id="Fzk-mp-JqL"/>
+                                                    <constraint firstItem="M30-Mw-erP" firstAttribute="centerX" secondItem="TRs-yz-C35" secondAttribute="centerX" id="L5k-6W-cNt"/>
+                                                    <constraint firstItem="M30-Mw-erP" firstAttribute="top" secondItem="TRs-yz-C35" secondAttribute="top" constant="70" id="TWh-f1-Nqv"/>
+                                                    <constraint firstItem="M30-Mw-erP" firstAttribute="top" secondItem="884-pu-Z8K" secondAttribute="bottom" constant="16" id="XQ2-1p-eQJ"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GWO-T6-5SS" secondAttribute="trailing" constant="24" id="ajU-u1-6pv"/>
+                                                    <constraint firstItem="1qo-p9-Nxa" firstAttribute="centerX" secondItem="TRs-yz-C35" secondAttribute="centerX" id="jZw-Dr-1fH"/>
+                                                    <constraint firstItem="GWO-T6-5SS" firstAttribute="centerX" secondItem="TRs-yz-C35" secondAttribute="centerX" id="m2d-5V-GyD"/>
+                                                    <constraint firstItem="M30-Mw-erP" firstAttribute="leading" secondItem="TRs-yz-C35" secondAttribute="leading" constant="20" id="uvy-CN-m2a"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="884-pu-Z8K" firstAttribute="centerY" secondItem="TCc-ab-yqf" secondAttribute="centerY" id="E5p-zl-HaQ"/>
+                                            <constraint firstItem="TRs-yz-C35" firstAttribute="leading" secondItem="V4o-N0-GlS" secondAttribute="trailing" id="HIr-9u-hQg"/>
+                                            <constraint firstItem="V4o-N0-GlS" firstAttribute="leading" secondItem="1Yk-wo-vti" secondAttribute="leading" id="IL0-Gf-0Eh"/>
+                                            <constraint firstItem="TRs-yz-C35" firstAttribute="height" secondItem="V4o-N0-GlS" secondAttribute="height" id="NGk-yt-wUj"/>
+                                            <constraint firstItem="TRs-yz-C35" firstAttribute="centerY" secondItem="V4o-N0-GlS" secondAttribute="centerY" id="YNf-El-b5Z"/>
+                                            <constraint firstItem="TRs-yz-C35" firstAttribute="width" secondItem="V4o-N0-GlS" secondAttribute="width" id="wFf-sS-tMJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1Yk-wo-vti" firstAttribute="trailing" secondItem="gEd-mv-9a7" secondAttribute="trailing" id="8ns-G2-pCx"/>
+                                    <constraint firstItem="1Yk-wo-vti" firstAttribute="leading" secondItem="gEd-mv-9a7" secondAttribute="leading" id="Wfr-kT-UCd"/>
+                                    <constraint firstItem="1Yk-wo-vti" firstAttribute="bottom" secondItem="gEd-mv-9a7" secondAttribute="bottom" constant="269" id="dXg-XG-3Zl"/>
+                                    <constraint firstItem="1Yk-wo-vti" firstAttribute="top" secondItem="gEd-mv-9a7" secondAttribute="top" constant="141" id="pmN-Rb-Nod"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="gEd-mv-9a7"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="gHw-6c-REC"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="V4o-N0-GlS" firstAttribute="centerY" secondItem="KuX-AY-IHA" secondAttribute="centerY" id="3mY-49-bR4"/>
+                            <constraint firstItem="V4o-N0-GlS" firstAttribute="top" secondItem="KuX-AY-IHA" secondAttribute="top" id="554-6R-hkR"/>
+                            <constraint firstItem="KuX-AY-IHA" firstAttribute="bottom" secondItem="V4o-N0-GlS" secondAttribute="bottom" id="6a5-N5-egj"/>
+                            <constraint firstItem="KuX-AY-IHA" firstAttribute="trailing" secondItem="3E3-eL-gJf" secondAttribute="trailing" id="A1Z-nS-Dpy"/>
+                            <constraint firstItem="V4o-N0-GlS" firstAttribute="width" secondItem="KuX-AY-IHA" secondAttribute="width" id="EtO-Gx-8aS"/>
+                            <constraint firstItem="1Yk-wo-vti" firstAttribute="height" secondItem="KuX-AY-IHA" secondAttribute="height" id="Gf7-u3-o0F"/>
+                            <constraint firstItem="1Yk-wo-vti" firstAttribute="centerY" secondItem="KuX-AY-IHA" secondAttribute="centerY" id="Ias-hc-6nA"/>
+                            <constraint firstItem="3E3-eL-gJf" firstAttribute="top" secondItem="KuX-AY-IHA" secondAttribute="top" id="Omx-u8-dkO"/>
+                            <constraint firstItem="3E3-eL-gJf" firstAttribute="leading" secondItem="KuX-AY-IHA" secondAttribute="leading" id="ca5-wl-db0"/>
+                            <constraint firstItem="1Yk-wo-vti" firstAttribute="width" secondItem="KuX-AY-IHA" secondAttribute="width" multiplier="2" id="dXM-KP-mW4"/>
+                            <constraint firstItem="KuX-AY-IHA" firstAttribute="bottom" secondItem="3E3-eL-gJf" secondAttribute="bottom" id="fBb-nv-wHY"/>
+                            <constraint firstItem="V4o-N0-GlS" firstAttribute="height" secondItem="KuX-AY-IHA" secondAttribute="height" id="z8Q-KB-WZ9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KuX-AY-IHA"/>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="m9d-2u-avR" id="aqB-DI-Rhx"/>
+                        <outlet property="button2" destination="1qo-p9-Nxa" id="rPL-Hd-eN5"/>
+                        <outlet property="scrollView" destination="3E3-eL-gJf" id="R9y-vZ-M6P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFV-xD-kVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6005.625" y="1653.75"/>
+        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="RSv-Fr-dbj">
             <objects>
@@ -989,22 +1145,26 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Boarding" width="300" height="300"/>
         <image name="person.crop.circle" catalog="system" width="32" height="32"/>
         <image name="place-light" width="1024" height="1024"/>
         <namedColor name="ConvivaBackground">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaOrange">
-            <color red="0.9309999942779541" green="0.61500000953674316" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaOrange">
-            <color red="0.9309999942779541" green="0.61500000953674316" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPink">
-            <color red="0.81000000238418579" green="0.082999996840953827" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.8880000114440918" green="0.25200000405311584" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPurple">
-            <color red="0.2199999988079071" green="0.0" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.44800001382827759" green="0.29800000786781311" blue="0.61599999666213989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ConvivaTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>

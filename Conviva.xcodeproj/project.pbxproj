@@ -40,6 +40,7 @@
 		2AB5434C237C31A100852E7F /* IniciativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB5434B237C31A100852E7F /* IniciativesViewController.swift */; };
 		2AB81A44238733F5000A87C2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB81A43238733F5000A87C2 /* RegisterViewController.swift */; };
 		2AB81A46238C23E6000A87C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB81A45238C23E6000A87C2 /* LoginViewController.swift */; };
+		2AC9DD27239833D500554C9C /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9DD26239833D500554C9C /* TutorialViewController.swift */; };
 		8D0E36222396C0C50021C79B /* MyInitiativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0E36212396C0C50021C79B /* MyInitiativesViewController.swift */; };
 		8DEE0DCE23904B3700BA34D1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */; };
 		8DEE0DD22391932800BA34D1 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */; };
@@ -83,6 +84,7 @@
 		2AB5434B237C31A100852E7F /* IniciativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciativesViewController.swift; sourceTree = "<group>"; };
 		2AB81A43238733F5000A87C2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2AB81A45238C23E6000A87C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2AC9DD26239833D500554C9C /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		8D0E36212396C0C50021C79B /* MyInitiativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInitiativesViewController.swift; sourceTree = "<group>"; };
 		8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				8DEE0DCD23904B3700BA34D1 /* MapViewController.swift */,
 				8DEE0DD12391932800BA34D1 /* LocationSearchTableViewController.swift */,
 				8D0E36212396C0C50021C79B /* MyInitiativesViewController.swift */,
+				2AC9DD26239833D500554C9C /* TutorialViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				8D0E36222396C0C50021C79B /* MyInitiativesViewController.swift in Sources */,
 				2AB54344237AFD2400852E7F /* TextFieldView.swift in Sources */,
 				2AB54346237B260C00852E7F /* CreateEventViewController.swift in Sources */,
+				2AC9DD27239833D500554C9C /* TutorialViewController.swift in Sources */,
 				2AB54348237B32B300852E7F /* CreateEvent2ViewController.swift in Sources */,
 				2AB180E92379D1F100E914C0 /* Item.swift in Sources */,
 				2AB5434A237B4F0700852E7F /* Setup.swift in Sources */,
@@ -485,7 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54KAL6GMBX;
+				DEVELOPMENT_TEAM = C7CS39R779;
 				INFOPLIST_FILE = Conviva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,7 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54KAL6GMBX;
+				DEVELOPMENT_TEAM = C7CS39R779;
 				INFOPLIST_FILE = Conviva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
