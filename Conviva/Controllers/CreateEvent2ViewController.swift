@@ -21,6 +21,7 @@ class CreateEvent2ViewController: UIViewController {
         
         Setup.setupViewController(self)
         Setup.setupButton(confirme, withText: "Finalizar")
+        Setup.setupDissmiss(self.view)
         
         self.costIniciative.textField.placeholder = "Qual valor necessita para a iniciativa?"
         self.helpersIniciative.textField.placeholder = "De que ajuda a iniciativa irá precisar?"

@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
         
         Setup.setupViewController(self)
         Setup.setupButton(self.saveButton, withText: "Salvar")
+        Setup.setupDissmiss(self.view)
         
         self.nameProfile.textField.placeholder = "Nome"
         self.emailProfile.textField.placeholder = "Email"

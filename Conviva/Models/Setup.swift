@@ -33,8 +33,12 @@ class Setup {
         
     }
     
-    
-    
+    static func setupDissmiss(_ view : UIView) {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
     
     static func setupWeekday(_ weekday : Int) -> String{
         var day : String

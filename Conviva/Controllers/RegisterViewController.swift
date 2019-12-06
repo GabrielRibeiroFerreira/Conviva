@@ -28,6 +28,7 @@ class RegisterViewController: UIViewController {
 
         Setup.setupViewController(self)
         Setup.setupButton(self.registerButton, withText: "Finalizar")
+        Setup.setupDissmiss(self.view)
         
         if let address = self.address {
             self.addressProfile.textField.text = address

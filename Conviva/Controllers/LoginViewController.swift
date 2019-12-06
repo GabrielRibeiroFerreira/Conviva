@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
 
         Setup.setupViewController(self)
         Setup.setupButton(self.signinButton, withText: "Entrar")
+        Setup.setupDissmiss(self.view)
         
         self.emailProfile.textField.placeholder = "email"
         self.passwordProfile.textField.placeholder = "senha"

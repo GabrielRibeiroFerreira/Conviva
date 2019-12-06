@@ -41,6 +41,7 @@ class MapViewController: UIViewController {
         self.checkAuthorizationStatus()
         
         Setup.setupButton(self.nextButton, withText: "Entrar")
+        Setup.setupDissmiss(self.view)
         self.radiusView.isUserInteractionEnabled = false
         self.auxView.isUserInteractionEnabled = false
         

@@ -37,6 +37,7 @@ class CreateEventViewController: UIViewController {
         
         Setup.setupViewController(self)
         Setup.setupButton(self.nextButton, withText: "Avançar")
+        Setup.setupDissmiss(self.view)
         
         self.titleIniciative.textField.placeholder = "O que é a iniciativa? (Título)"
         self.dateIniciative.textField.placeholder = "Em qual data?"
