@@ -11,7 +11,7 @@ import UIKit
 class IniciativesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var eventTable: UITableView!
-    
+
     var events: [Event] = []
     let eventCell : String = "EventsTableViewCell"
     
@@ -37,36 +37,18 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
     }
     
-    func mockData() {
-        let event = Event(name: "Festa Junina", description: "Canjica TOP", address: "Maloca", cost: 500, justification: "Vamo comer canjica", date: "2019-11-01 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
-        self.events.append(event)
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        let event0 = Event(name: "Bazar", description: "Roupinhas", address: "Malloca", cost: 500, justification: "Doação", date: "2019-11-22 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
-        self.events.append(event0)
+        let email = UserDefaults.standard.string(forKey: "Email")
+        if email == "" {
+            self.performSegue(withIdentifier: "toMap", sender: self)
+        }
         
-        let event1 = Event(name: "Churrasco na praça", description: "Comer pao de alho", address: "Praça", cost: 500, justification: "To com fome", date: "2019-12-01 21:14:23", complaint: 0, adm: 1, latitude: -22.907104, longitude: -47.06324)
-        self.events.append(event1)
-         
     }
     
-//    func makeAPIRequest() {
-//        let getRequest = APIRequest(endpoint: "events")
-//        getRequest.getAllEvents() { result in
-//            switch result {
-//            case .success(let eventsData):
-//                print("Lista de eventos: \(String(describing: eventsData))")
-//                //Dispatch the call to update the label text to the main thread.
-//                //Reload must only be called on the main thread
-//                DispatchQueue.main.async{
-//                    self.events = eventsData
-//                    self.eventTable.reloadData()
-//                }
-//            case .failure(let error):
-//                print("Ocorreu um erro \(error)")
-//            }
-//        }
-//    }
-    
+
     func makeAPIrequest() {
         let getRequest = APIRequest(endpoint: "events")
         
@@ -199,7 +181,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func unwindToIniciatives(segue:UIStoryboardSegue) {
-        //reload da tableview
+        makeAPIrequest()
     }
     
 }

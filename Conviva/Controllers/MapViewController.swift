@@ -19,12 +19,19 @@ class MapViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var auxView: UIView!
     
+    let alert = Alert()
     let locationManager = CLLocationManager()
     let maxSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     
+    var isCalledIn: MapCalls = .initialScreen
     var resultSearchController: UISearchController? = nil
     var userLocation: CLLocation? = nil
+    
+    var longitude: Double = -25.0
+    var latitude: Double = -40.0
+    var radius: Double = 10000.0
+    var address: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +44,23 @@ class MapViewController: UIViewController {
         self.radiusView.isUserInteractionEnabled = false
         self.auxView.isUserInteractionEnabled = false
         
+        switch self.isCalledIn {
+        case .initialScreen:
+            Setup.setupButton(self.nextButton, withText: "Entrar")
+            radiusView.image = UIImage(named: "pinAndCircle")
+            navigationItem.title = "Escolha sua região"
+        case .createEvent:
+            radiusView.image = UIImage(named: "pin")
+            navigationItem.title = "Local da iniciativa"
+            Setup.setupButton(self.nextButton, withText: "Avançar")
+        case .createProfile:
+            navigationItem.title = "Sua região"
+            radiusView.image = UIImage(named: "pinAndCircle")
+            Setup.setupButton(self.nextButton, withText: "Avançar")
+        default:
+            Setup.setupButton(self.nextButton, withText: "Avançar")
+            radiusView.image = UIImage(named: "pinAndCircle")
+        }
         
         // MARK: Adress Search configuration
         
@@ -61,8 +85,6 @@ class MapViewController: UIViewController {
         // PREVENTS THE TABLEVIEW FROM VANISHING WITH OTHER ELEMENTS
         // Prevents the NavigationBar from being  hidden when  showing the TableView
         self.resultSearchController?.hidesNavigationBarDuringPresentation = false
-        // Sets recults table background transparency
-        // self.resultSearchController?.dimsBackgroundDuringPresentation = true
         // Makes this ViewController the presentation context for the results table, preventing it from overlapping the searchBar
         self.definesPresentationContext = true
         
@@ -76,33 +98,50 @@ class MapViewController: UIViewController {
         self.centerMapOnUserLocation()
     }
     
-    func presentAlert() {
-        let alertController = UIAlertController (title: "Localização", message: "Seus serviços de localização encontram-se desativados para esse app. Utilizamos  esse serviço para facilitar o encontro da sua região, porém você pode também digitar o endereço desejado. Se desejar, você pode habilitar esse serviço nas suas Configurações.", preferredStyle: .alert)
+    @IBAction func nextButton(_ sender: Any) {
+        
+        getCurrentCircularRegion()
+        getAdress(latitude: self.latitude, longitude: self.longitude) { (parsedAddress) in
             
-        // Adds settings button action
-        let settingsAction = UIAlertAction(title: "Configurações", style: .default) { (_) -> Void in
+            OperationQueue.main.addOperation {
                 
-            // Gets the URL for this app's Settings
-            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                return
-            }
-            // Opens URL when clicking the button
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl, completionHandler: { (sucess) in
-                    print("Settings opened: \(sucess)") // Prints true
-                })
+                self.address = parsedAddress
+                print(self.address)
+                print("latitude: " + String(self.latitude))
+                print("longitude: " + String(self.longitude))
+                print("radius: " + String(self.radius))
+                
+                switch self.isCalledIn {
+                case .createEvent:
+                    self.performSegue(withIdentifier: "mapToCreateEvent", sender: self)
+                case .createProfile:
+                    self.performSegue(withIdentifier: "mapToProfileRegistration", sender: self)
+                default:
+                    self.performSegue(withIdentifier: "mapToTabBar", sender: self)
+                }
             }
         }
-        
-        // Adds Cancel button action
-        alertController.addAction(settingsAction)
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
-        alertController.addAction(cancelAction)
-        
-        // Presents Alert
-        present(alertController, animated: true, completion: nil)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let radius = self.radius < 20000 ? 20000 : self.radius
+        
+        if segue.identifier == "mapToProfileRegistration" {
+            let destination = segue.destination as! RegisterViewController
+            destination.address = self.address
+            destination.latitude = self.latitude
+            destination.longitude = self.longitude
+            destination.radius = radius
+        }
+        else if segue.identifier == "mapToCreateEvent" {
+            let destination = segue.destination as! CreateEventViewController
+            destination.event.latitude = self.latitude
+            destination.event.longitude = self.longitude
+            destination.event.address = self.address
+            destination.localIniciative.textField.text = self.address
+        }
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -113,28 +152,8 @@ extension MapViewController: MKMapViewDelegate {
         mapView.setRegion(region, animated: true)
     }
     
-    // This function is called everytime map region is changed by user interaction
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        
-        var radius = self.getCurrentCircularRegion().radius
-        if radius >= 1000 {
-            radius = Double(round(10 * radius) / 1000)
-            radiusLabel.text = "\(Int(radius))km"
-        } else {
-            radiusLabel.text = "\(Int(radius))m"
-        }
-        
-        // Does not allow a bigger region span than the maximum value allowed
-        if animated == false {
-            if self.mapView.region.span.latitudeDelta > self.maxSpan.latitudeDelta || mapView.region.span.longitudeDelta > self.maxSpan.longitudeDelta {
-                let region =  MKCoordinateRegion(center: mapView.region.center, span: self.maxSpan)
-                self.mapView.setRegion(region, animated: true)
-            }
-        }
-    }
-    
     // MARK: Defining Radius
-    func getCurrentCircularRegion() -> MKCircle {
+    func getCurrentCircularRegion() {
         
         let edge2D: CLLocationCoordinate2D = mapView.convert(CGPoint(x: 0, y: self.radiusView.frame.height / 2), toCoordinateFrom: self.radiusView)
         let center2D: CLLocationCoordinate2D = mapView.convert(CGPoint(x: self.radiusView.frame.width / 2 , y: self.radiusView.frame.height / 2), toCoordinateFrom: self.radiusView)
@@ -142,12 +161,43 @@ extension MapViewController: MKMapViewDelegate {
         let edge = CLLocation(latitude: edge2D.latitude, longitude: edge2D.longitude)
         let center = CLLocation(latitude: center2D.latitude, longitude: center2D.longitude)
         
-        let distance: Double = center.distance(from: edge)
-        return MKCircle(center: center.coordinate, radius: distance)
+        self.radius = center.distance(from: edge)
+        self.latitude = center.coordinate.latitude
+        self.longitude = center.coordinate.longitude
     }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
+    
+    func getAdress(latitude: Double,longitude: Double, completion: @escaping (String) -> Void) {
+        
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude , longitude: longitude)
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            
+            var placemark: CLPlacemark!
+            placemark = placemarks?[0]
+            
+            var addressList: [String?] = []
+            addressList.append(placemark.name) // name
+            addressList.append(placemark.thoroughfare) // street
+            addressList.append(placemark.subThoroughfare) // number
+            addressList.append(placemark.subAdministrativeArea) // city
+            addressList.append(placemark.administrativeArea) // state
+            addressList.append(placemark.country) // country
+            
+            var parsedAddress: String = ""
+            for element in addressList {
+                if let adressElement = element {
+                    if parsedAddress != "" {
+                        parsedAddress = parsedAddress + ", "
+                    }
+                    parsedAddress = parsedAddress + adressElement
+                }
+            }
+            completion(parsedAddress)
+        })
+    }
     
     // Checks if Location Services are enabled and if not asks for authorization
     func checkAuthorizationStatus() {
@@ -160,7 +210,8 @@ extension MapViewController: CLLocationManagerDelegate {
                 locationManager.startUpdatingLocation()
             }
             else if status == .denied || status == .restricted {
-                self.presentAlert()
+                let alertController = self.alert.presentLocationAlert()
+                present(alertController, animated: true, completion: nil)
             }
             else {
                 self.locationManager.requestWhenInUseAuthorization()

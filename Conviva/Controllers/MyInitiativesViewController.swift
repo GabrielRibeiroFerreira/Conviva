@@ -35,24 +35,33 @@ class MyInitiativesViewController: UIViewController, UITableViewDelegate, UITabl
            
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.myEventsTable.register(nib, forCellReuseIdentifier: eventCell)
+        
+        makeAPIrequest()
     }
+    
     
     func makeAPIrequest() {
         let getRequest = APIRequest(endpoint: "events")
         
-        getRequest.getEventsFromAdm(userId: 1) { result in
-            switch result {
-            case .success(let eventsData):
-                print("Lista de eventos: \(String(describing: eventsData))")
-                //Dispatch the call to update the label text to the main thread.
-                //Reload must only be called on the main thread
-                DispatchQueue.main.async{
-                    self.events = eventsData
-                    self.myEventsTable.reloadData()
+        let userID = UserDefaults.standard.integer(forKey: "ID")
+        if userID != 0 {
+            getRequest.getEventsFromAdm(userId: userID) { result in
+                switch result {
+                case .success(let eventsData):
+                    print("Lista de eventos: \(String(describing: eventsData))")
+                    //Dispatch the call to update the label text to the main thread.
+                    //Reload must only be called on the main thread
+                    DispatchQueue.main.async{
+                        self.events = eventsData
+                        self.myEventsTable.reloadData()
+                    }
+                case .failure(let error):
+                    print("Ocorreu um erro \(error)")
                 }
-            case .failure(let error):
-                print("Ocorreu um erro \(error)")
             }
+        }
+        else {
+            print("Não existe usuário logado")
         }
     }
     
@@ -101,7 +110,7 @@ class MyInitiativesViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - TableView
     func numberOfSections(in tableView: UITableView) -> Int {
-        // getEventsByMonth()
+        getEventsByMonth()
         return self.months.count
     }
     
@@ -148,4 +157,10 @@ class MyInitiativesViewController: UIViewController, UITableViewDelegate, UITabl
         performSegue(withIdentifier: "toMyEventSegue", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMyEventSegue"{
+            let destination = segue.destination as! EventViewController
+            destination.event = self.selectEvent!
+        }
+    }
 }
