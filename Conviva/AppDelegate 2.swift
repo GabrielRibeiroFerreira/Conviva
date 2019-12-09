@@ -15,10 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let userDefault = UserDefaults.standard
-        let email = ""
-//        let id = 1
+        let email = "joy@com.br"
+        let id = 1
         userDefault.set(email, forKey: "Email")
-//        userDefault.set(id, forKey: "ID")
+        userDefault.set(id, forKey: "ID")
         userDefault.synchronize()
         return true
     }

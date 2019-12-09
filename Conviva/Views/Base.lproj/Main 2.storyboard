@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQT-Xo-1oR">
-    <device id="retina3_5" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tfz-VQ-UJC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,40 +27,40 @@
             <objects>
                 <viewController id="YgD-vQ-N9q" customClass="RegisterViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d68-4h-gLs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5k5-bb-IkP">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyA-vj-tQO" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="406"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="406"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0L-aP-Dbg" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="40" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="40" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Iz9-ti-mbG"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-kd-RoY" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="104" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="104" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcI-Xr-KDj" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="168" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="168" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArE-J8-LYP" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="232" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="232" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPf-4f-9I2" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="296" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="296" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hna-i8-Kpi" userLabel="Password Profile" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="360" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="360" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
@@ -104,7 +104,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Pke-a1-ZxU"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBP-B6-ZUr">
-                                <rect key="frame" x="137" y="361" width="46" height="30"/>
+                                <rect key="frame" x="184" y="743" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="register:" destination="YgD-vQ-N9q" eventType="touchUpInside" id="JG8-m1-GAb"/>
@@ -130,7 +130,6 @@
                         <outlet property="nameProfile" destination="X0L-aP-Dbg" id="1o7-Lb-KpY"/>
                         <outlet property="passwordProfile" destination="Hna-i8-Kpi" id="I1x-Ob-h10"/>
                         <outlet property="registerButton" destination="aBP-B6-ZUr" id="V2i-P6-B9s"/>
-                        <outlet property="scrollView" destination="5k5-bb-IkP" id="0Jp-OW-tBf"/>
                         <outlet property="skillsProfile" destination="RPf-4f-9I2" id="Emg-hA-iEI"/>
                     </connections>
                 </viewController>
@@ -143,79 +142,65 @@
             <objects>
                 <viewController storyboardIdentifier="loginStoryboard" id="cfB-fP-hFz" customClass="LoginViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4vH-vn-0mA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtD-IZ-F89">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzD-GX-nqf">
+                                <rect key="frame" x="0.0" y="200.5" width="414" height="414"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzD-GX-nqf">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kae-8X-RRG" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="234" width="280" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="sl4-d7-y9V"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54m-bk-8VL" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="170" width="280" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="xPo-4P-8Na"/>
-                                                </constraints>
-                                            </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="baw-6Z-V2B">
-                                                <rect key="frame" x="95" y="24.5" width="130" height="129"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="baw-6Z-V2B" secondAttribute="height" multiplier="1:1" id="FkA-2y-CnC"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwG-Ts-ca7" userLabel="cadastro">
-                                                <rect key="frame" x="117" y="286" width="86" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="IiK-nc-UgB"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
-                                                <state key="normal" title="Cadastre-se">
-                                                    <color key="titleColor" name="ConvivaPink"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="TfO-4A-6c8" kind="show" identifier="profileAdressSegue" id="a92-4h-TSx"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" name="ConvivaBackground"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kae-8X-RRG" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="328" width="374" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="Kae-8X-RRG" firstAttribute="leading" secondItem="zzD-GX-nqf" secondAttribute="leading" constant="20" id="JqC-DO-jrv"/>
-                                            <constraint firstItem="54m-bk-8VL" firstAttribute="top" secondItem="baw-6Z-V2B" secondAttribute="bottom" constant="16" id="NJJ-GG-Pdk"/>
-                                            <constraint firstItem="baw-6Z-V2B" firstAttribute="centerX" secondItem="zzD-GX-nqf" secondAttribute="centerX" id="OdE-dk-G4R"/>
-                                            <constraint firstItem="54m-bk-8VL" firstAttribute="width" secondItem="Kae-8X-RRG" secondAttribute="width" id="Uug-ax-Ccw"/>
-                                            <constraint firstItem="Kae-8X-RRG" firstAttribute="top" secondItem="54m-bk-8VL" secondAttribute="bottom" constant="24" id="bV8-gJ-rbR"/>
-                                            <constraint firstAttribute="bottom" secondItem="iwG-Ts-ca7" secondAttribute="bottom" constant="4" id="dcc-Zv-sdX"/>
-                                            <constraint firstItem="54m-bk-8VL" firstAttribute="height" secondItem="Kae-8X-RRG" secondAttribute="height" id="jZx-tY-e3o"/>
-                                            <constraint firstItem="iwG-Ts-ca7" firstAttribute="top" secondItem="Kae-8X-RRG" secondAttribute="bottom" constant="12" id="mcd-kN-ALW"/>
-                                            <constraint firstAttribute="trailing" secondItem="Kae-8X-RRG" secondAttribute="trailing" constant="20" id="pjQ-LG-fJN"/>
-                                            <constraint firstItem="54m-bk-8VL" firstAttribute="centerX" secondItem="Kae-8X-RRG" secondAttribute="centerX" id="tZM-sx-uFd"/>
-                                            <constraint firstItem="iwG-Ts-ca7" firstAttribute="centerX" secondItem="zzD-GX-nqf" secondAttribute="centerX" id="uIi-gL-ae2"/>
-                                            <constraint firstAttribute="width" secondItem="zzD-GX-nqf" secondAttribute="height" multiplier="1:1" id="v5N-VB-b97"/>
-                                            <constraint firstItem="baw-6Z-V2B" firstAttribute="top" secondItem="zzD-GX-nqf" secondAttribute="top" constant="24" id="ycF-qa-L8E"/>
+                                            <constraint firstAttribute="height" constant="40" id="sl4-d7-y9V"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54m-bk-8VL" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="264" width="374" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="xPo-4P-8Na"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="baw-6Z-V2B">
+                                        <rect key="frame" x="95" y="24.5" width="224" height="223"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="baw-6Z-V2B" secondAttribute="height" multiplier="1:1" id="FkA-2y-CnC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwG-Ts-ca7" userLabel="cadastro">
+                                        <rect key="frame" x="164" y="380" width="86" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="IiK-nc-UgB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
+                                        <state key="normal" title="Cadastre-se">
+                                            <color key="titleColor" name="ConvivaPink"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="TfO-4A-6c8" kind="show" identifier="profileAdressSegue" id="a92-4h-TSx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" name="ConvivaBackground"/>
                                 <constraints>
-                                    <constraint firstItem="Kyx-76-ogc" firstAttribute="top" secondItem="zzD-GX-nqf" secondAttribute="top" id="83D-CR-oVv"/>
-                                    <constraint firstItem="Kyx-76-ogc" firstAttribute="leading" secondItem="zzD-GX-nqf" secondAttribute="leading" id="BYw-Xo-jfH"/>
-                                    <constraint firstItem="zzD-GX-nqf" firstAttribute="bottom" secondItem="Kyx-76-ogc" secondAttribute="bottom" id="cma-Zo-LU3"/>
-                                    <constraint firstItem="zzD-GX-nqf" firstAttribute="trailing" secondItem="Kyx-76-ogc" secondAttribute="trailing" id="hA8-mB-cb8"/>
-                                    <constraint firstItem="zzD-GX-nqf" firstAttribute="width" secondItem="gtD-IZ-F89" secondAttribute="width" id="zBK-s5-cIm"/>
+                                    <constraint firstItem="Kae-8X-RRG" firstAttribute="leading" secondItem="zzD-GX-nqf" secondAttribute="leading" constant="20" id="JqC-DO-jrv"/>
+                                    <constraint firstItem="54m-bk-8VL" firstAttribute="top" secondItem="baw-6Z-V2B" secondAttribute="bottom" constant="16" id="NJJ-GG-Pdk"/>
+                                    <constraint firstItem="baw-6Z-V2B" firstAttribute="centerX" secondItem="zzD-GX-nqf" secondAttribute="centerX" id="OdE-dk-G4R"/>
+                                    <constraint firstItem="54m-bk-8VL" firstAttribute="width" secondItem="Kae-8X-RRG" secondAttribute="width" id="Uug-ax-Ccw"/>
+                                    <constraint firstItem="Kae-8X-RRG" firstAttribute="top" secondItem="54m-bk-8VL" secondAttribute="bottom" constant="24" id="bV8-gJ-rbR"/>
+                                    <constraint firstAttribute="bottom" secondItem="iwG-Ts-ca7" secondAttribute="bottom" constant="4" id="dcc-Zv-sdX"/>
+                                    <constraint firstItem="54m-bk-8VL" firstAttribute="height" secondItem="Kae-8X-RRG" secondAttribute="height" id="jZx-tY-e3o"/>
+                                    <constraint firstItem="iwG-Ts-ca7" firstAttribute="top" secondItem="Kae-8X-RRG" secondAttribute="bottom" constant="12" id="mcd-kN-ALW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kae-8X-RRG" secondAttribute="trailing" constant="20" id="pjQ-LG-fJN"/>
+                                    <constraint firstItem="54m-bk-8VL" firstAttribute="centerX" secondItem="Kae-8X-RRG" secondAttribute="centerX" id="tZM-sx-uFd"/>
+                                    <constraint firstItem="iwG-Ts-ca7" firstAttribute="centerX" secondItem="zzD-GX-nqf" secondAttribute="centerX" id="uIi-gL-ae2"/>
+                                    <constraint firstAttribute="width" secondItem="zzD-GX-nqf" secondAttribute="height" multiplier="1:1" id="v5N-VB-b97"/>
+                                    <constraint firstItem="baw-6Z-V2B" firstAttribute="top" secondItem="zzD-GX-nqf" secondAttribute="top" constant="24" id="ycF-qa-L8E"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Kyx-76-ogc"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="n2S-mb-pos"/>
-                            </scrollView>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIg-jF-Soc">
-                                <rect key="frame" x="137" y="410" width="46" height="30"/>
+                                <rect key="frame" x="184" y="792" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="login:" destination="cfB-fP-hFz" eventType="touchUpInside" id="tVv-Bz-81L"/>
@@ -225,12 +210,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XIg-jF-Soc" firstAttribute="top" secondItem="gtD-IZ-F89" secondAttribute="bottom" id="5ul-Y6-YbJ"/>
-                            <constraint firstItem="gtD-IZ-F89" firstAttribute="top" secondItem="hds-8P-aly" secondAttribute="top" id="9jc-6s-pii"/>
+                            <constraint firstItem="zzD-GX-nqf" firstAttribute="leading" secondItem="hds-8P-aly" secondAttribute="leading" id="Afn-73-XeZ"/>
+                            <constraint firstItem="zzD-GX-nqf" firstAttribute="centerY" secondItem="hds-8P-aly" secondAttribute="centerY" multiplier="0.9" id="BkD-HY-2un"/>
                             <constraint firstItem="hds-8P-aly" firstAttribute="bottom" secondItem="XIg-jF-Soc" secondAttribute="bottom" constant="40" id="F2H-vb-KDr"/>
-                            <constraint firstItem="hds-8P-aly" firstAttribute="trailing" secondItem="gtD-IZ-F89" secondAttribute="trailing" id="haw-yM-aj1"/>
                             <constraint firstItem="XIg-jF-Soc" firstAttribute="centerX" secondItem="hds-8P-aly" secondAttribute="centerX" id="rVh-4e-TD7"/>
-                            <constraint firstItem="gtD-IZ-F89" firstAttribute="leading" secondItem="hds-8P-aly" secondAttribute="leading" id="z9a-e8-3Jf"/>
+                            <constraint firstItem="hds-8P-aly" firstAttribute="trailing" secondItem="zzD-GX-nqf" secondAttribute="trailing" id="s9X-sm-DbY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hds-8P-aly"/>
                     </view>
@@ -238,7 +222,6 @@
                     <connections>
                         <outlet property="emailProfile" destination="54m-bk-8VL" id="faz-gK-7j8"/>
                         <outlet property="passwordProfile" destination="Kae-8X-RRG" id="Crs-Q9-cJ3"/>
-                        <outlet property="scrollView" destination="gtD-IZ-F89" id="59W-ao-SvS"/>
                         <outlet property="signinButton" destination="XIg-jF-Soc" id="fsk-no-9Lx"/>
                     </connections>
                 </viewController>
@@ -252,47 +235,53 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileVC" id="mpp-AP-IOr" customClass="ProfileViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="12h-1v-2Ge">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86Z-2k-943">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sq8-hs-pfD" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="558"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="558"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Boarding" translatesAutoresizingMaskIntoConstraints="NO" id="VuN-5L-uio">
-                                                <rect key="frame" x="80" y="16" width="160" height="160"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZL5-lM-14h">
+                                                <rect key="frame" x="20" y="320" width="374" height="40"/>
+                                                <connections>
+                                                    <segue destination="vkp-ye-u3X" kind="show" identifier="editProfileToMap" id="Sqe-JP-gcZ"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VuN-5L-uio">
+                                                <rect key="frame" x="127" y="16.5" width="160" height="159"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="VuN-5L-uio" secondAttribute="height" multiplier="1:1" id="bDP-oA-gje"/>
                                                     <constraint firstAttribute="width" constant="160" id="pL8-xg-dFF"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLh-tq-rc8" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="192" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="192" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="EXZ-Y0-qeP"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J82-IT-27o" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="256" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="256" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSg-oL-yJv" userLabel="Address Profile" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="320" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="320" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nn-M3-JWx" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="384" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="384" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oc-7w-Rdm" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="448" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="448" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdM-3g-dbc">
-                                                <rect key="frame" x="270" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="364" y="16" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="0Kg-XG-2Pj"/>
                                                     <constraint firstAttribute="width" secondItem="CdM-3g-dbc" secondAttribute="height" multiplier="1:1" id="TTR-7u-g6q"/>
@@ -307,6 +296,7 @@
                                         <color key="backgroundColor" name="ConvivaBackground"/>
                                         <constraints>
                                             <constraint firstItem="CdM-3g-dbc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VuN-5L-uio" secondAttribute="trailing" constant="8" symbolic="YES" id="0Oo-Zj-Daz"/>
+                                            <constraint firstItem="sSg-oL-yJv" firstAttribute="top" secondItem="ZL5-lM-14h" secondAttribute="top" id="0u0-0N-KFY"/>
                                             <constraint firstItem="3nn-M3-JWx" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="1dN-4q-Ded"/>
                                             <constraint firstItem="VuN-5L-uio" firstAttribute="centerX" secondItem="sq8-hs-pfD" secondAttribute="centerX" id="2sP-fA-XT4"/>
                                             <constraint firstItem="sSg-oL-yJv" firstAttribute="height" secondItem="WLh-tq-rc8" secondAttribute="height" id="3Bn-gz-X5F"/>
@@ -314,9 +304,11 @@
                                             <constraint firstItem="J82-IT-27o" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="5mC-Cz-8tX"/>
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="7Z2-xU-B9F"/>
                                             <constraint firstItem="sSg-oL-yJv" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="HNb-Lh-DbX"/>
+                                            <constraint firstItem="sSg-oL-yJv" firstAttribute="bottom" secondItem="ZL5-lM-14h" secondAttribute="bottom" id="MnY-qs-UhK"/>
                                             <constraint firstAttribute="bottom" secondItem="4oc-7w-Rdm" secondAttribute="bottom" constant="70" id="QKV-Cl-IWP"/>
                                             <constraint firstItem="VuN-5L-uio" firstAttribute="top" secondItem="sq8-hs-pfD" secondAttribute="top" constant="16" id="S9O-c9-kuK"/>
                                             <constraint firstItem="WLh-tq-rc8" firstAttribute="top" secondItem="VuN-5L-uio" secondAttribute="bottom" constant="16" id="StK-K0-E7J"/>
+                                            <constraint firstItem="ZL5-lM-14h" firstAttribute="leading" secondItem="sSg-oL-yJv" secondAttribute="leading" id="TLl-IL-A0B"/>
                                             <constraint firstItem="3nn-M3-JWx" firstAttribute="top" secondItem="sSg-oL-yJv" secondAttribute="bottom" constant="24" id="XIT-Zv-6Sa"/>
                                             <constraint firstItem="J82-IT-27o" firstAttribute="height" secondItem="WLh-tq-rc8" secondAttribute="height" id="c33-xE-irL"/>
                                             <constraint firstItem="J82-IT-27o" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="d4H-jw-Mef"/>
@@ -327,15 +319,15 @@
                                             <constraint firstItem="3nn-M3-JWx" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="mxz-wc-cOS"/>
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="qf9-h3-oEK"/>
                                             <constraint firstAttribute="trailing" secondItem="CdM-3g-dbc" secondAttribute="trailing" constant="20" id="r5r-m1-vEw"/>
+                                            <constraint firstItem="ZL5-lM-14h" firstAttribute="trailing" secondItem="sSg-oL-yJv" secondAttribute="trailing" id="rqw-ZP-Tcy"/>
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="top" secondItem="3nn-M3-JWx" secondAttribute="bottom" constant="24" id="sFU-xj-h2g"/>
                                             <constraint firstItem="CdM-3g-dbc" firstAttribute="top" secondItem="sq8-hs-pfD" secondAttribute="top" constant="16" id="tEd-Zd-8Vb"/>
-                                            <constraint firstItem="VuN-5L-uio" firstAttribute="top" secondItem="sq8-hs-pfD" secondAttribute="top" constant="16" id="vu1-e3-tpY"/>
                                             <constraint firstItem="sSg-oL-yJv" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="wVL-3B-8kV"/>
                                             <constraint firstItem="J82-IT-27o" firstAttribute="top" secondItem="WLh-tq-rc8" secondAttribute="bottom" constant="24" id="zWW-fM-nai"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-Zf-LuB">
-                                        <rect key="frame" x="137" y="449" width="46" height="30"/>
+                                        <rect key="frame" x="184" y="605" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="saveEdit:" destination="mpp-AP-IOr" eventType="touchUpInside" id="r6A-GU-lTi"/>
@@ -379,7 +371,6 @@
                         <outlet property="emailProfile" destination="J82-IT-27o" id="4xg-h6-DHk"/>
                         <outlet property="nameProfile" destination="WLh-tq-rc8" id="Djf-fI-dlb"/>
                         <outlet property="saveButton" destination="0WM-Zf-LuB" id="EHU-Hw-zhY"/>
-                        <outlet property="scrollView" destination="86Z-2k-943" id="Li8-oL-E3I"/>
                         <outlet property="skillsProfile" destination="4oc-7w-Rdm" id="usH-Sk-aS6"/>
                     </connections>
                 </viewController>
@@ -393,24 +384,24 @@
             <objects>
                 <viewController title="Mapa" id="vkp-ye-u3X" customClass="MapViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5e7-7g-LAv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3hp-3J-zHy">
-                                <rect key="frame" x="0.0" y="44" width="320" height="402"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDZ-CQ-72T">
-                                <rect key="frame" x="137" y="376" width="46" height="30"/>
+                                <rect key="frame" x="184" y="792" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="nextButton:" destination="vkp-ye-u3X" eventType="touchUpInside" id="VhE-jY-aSe"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbd-Rb-jqo">
-                                <rect key="frame" x="0.0" y="44" width="320" height="332"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="704"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinAndCircle" translatesAutoresizingMaskIntoConstraints="NO" id="t39-5H-3N8">
-                                        <rect key="frame" x="20" y="26" width="280" height="280"/>
+                                        <rect key="frame" x="20" y="165" width="374" height="374"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="t39-5H-3N8" secondAttribute="height" id="fLh-HZ-49L"/>
                                         </constraints>
@@ -461,7 +452,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="LocationSearchTable" id="sxC-W8-GF1" customClass="LocationSearchTableViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WdB-46-8Re">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="ConvivaBackground"/>
                         <color key="sectionIndexBackgroundColor" name="ConvivaBackground"/>
@@ -475,23 +466,20 @@
             </objects>
             <point key="canvasLocation" x="-3039" y="-2404"/>
         </scene>
-        <!--Minhas iniciativas-->
+        <!--Item-->
         <scene sceneID="SCY-tc-Rdf">
             <objects>
                 <viewController id="ndb-09-4m1" customClass="MyInitiativesViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bt4-Os-gvB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KpZ-5E-h2N">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
-                                <color key="backgroundColor" name="ConvivaBackground"/>
-                                <color key="sectionIndexColor" name="ConvivaPink"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KpZ-5E-h2N">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" name="ConvivaBackground"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="KpZ-5E-h2N" firstAttribute="leading" secondItem="6hj-82-BDW" secondAttribute="leading" id="1sv-WW-Xe7"/>
                             <constraint firstItem="KpZ-5E-h2N" firstAttribute="bottom" secondItem="6hj-82-BDW" secondAttribute="bottom" id="O35-G2-4gI"/>
@@ -503,7 +491,7 @@
                     <tabBarItem key="tabBarItem" title="Item" image="HeartStoke" selectedImage="HeartFill" id="O2Q-fT-FuO">
                         <color key="badgeColor" name="ConvivaPink"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Minhas iniciativas" id="rmI-3B-6O5"/>
+                    <navigationItem key="navigationItem" id="rmI-3B-6O5"/>
                     <connections>
                         <outlet property="myEventsTable" destination="KpZ-5E-h2N" id="WL3-2s-kII"/>
                         <segue destination="PrL-Ge-MjY" kind="show" identifier="toMyEventSegue" id="zkS-yc-Kc3"/>
@@ -521,7 +509,7 @@
                         <color key="badgeColor" name="ConvivaPink"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ubt-Ho-IiR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -537,11 +525,11 @@
             <objects>
                 <viewController storyboardIdentifier="iniciativresStoryboard" id="UlV-yc-iFD" customClass="IniciativesViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hj-Rx-887">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gcs-nr-kkV">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" name="ConvivaBackground"/>
                                 <color key="sectionIndexColor" name="ConvivaPink"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -572,8 +560,8 @@
                     <connections>
                         <outlet property="eventTable" destination="gcs-nr-kkV" id="6fR-dB-Tyc"/>
                         <segue destination="PrL-Ge-MjY" kind="show" identifier="toEventSegue" id="6sH-ch-kbJ"/>
-                        <segue destination="vkp-ye-u3X" kind="show" identifier="createEventToMap" id="tfg-0Z-VcM"/>
-                        <segue destination="TfO-4A-6c8" kind="presentation" identifier="toMap" id="UoY-Oe-OfM"/>
+                        <segue destination="vkp-ye-u3X" kind="show" identifier="createSegue" id="tfg-0Z-VcM"/>
+                        <segue destination="TfO-4A-6c8" kind="presentation" identifier="createEventToMap" id="BBF-TP-Vix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcn-x2-9fW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -585,37 +573,37 @@
             <objects>
                 <viewController id="KGp-h4-u9R" customClass="CreateEventViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kqf-KW-OgH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="y62-mK-Tqr">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZf-z8-u3v" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="586"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="586"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EeS-Qw-Cwa" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="40" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="40" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="yCa-GG-slY"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikm-ly-yBW" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="104" width="120" height="40"/>
+                                                <rect key="frame" x="20" y="104" width="167" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaG-ae-Aa5" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="104" width="120" height="40"/>
+                                                <rect key="frame" x="227" y="104" width="167" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ib-Gg-anZ" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="232" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="232" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-hl-Ls9">
-                                                <rect key="frame" x="10" y="356" width="300" height="160"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="10" y="356" width="394" height="160"/>
+                                                <color key="backgroundColor" name="ConvivaPurple"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="wk5-Te-ePy"/>
                                                 </constraints>
@@ -626,11 +614,11 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae7-NQ-YCV" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="168" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="168" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vwa-2v-5h3" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="296" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="296" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
@@ -677,7 +665,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="1ZV-yG-Gl9"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yla-6N-ALv">
-                                <rect key="frame" x="137" y="381" width="46" height="30"/>
+                                <rect key="frame" x="184" y="763" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="nextClick:" destination="KGp-h4-u9R" eventType="touchUpInside" id="wUA-RS-TEX"/>
@@ -703,7 +691,6 @@
                         <outlet property="justificativeIniciative" destination="Vwa-2v-5h3" id="8Pv-gI-9rR"/>
                         <outlet property="localIniciative" destination="ae7-NQ-YCV" id="jz0-j9-4Fk"/>
                         <outlet property="nextButton" destination="yla-6N-ALv" id="WEN-To-CmQ"/>
-                        <outlet property="scrollView" destination="y62-mK-Tqr" id="cO0-l8-Num"/>
                         <outlet property="timeIniciative" destination="uaG-ae-Aa5" id="XE0-jI-nYY"/>
                         <outlet property="titleIniciative" destination="EeS-Qw-Cwa" id="FQY-S8-tcd"/>
                     </connections>
@@ -717,28 +704,28 @@
             <objects>
                 <viewController id="iZo-g3-A80" customClass="CreateEvent2ViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ODo-Jn-Ux8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="VJZ-wU-5ko">
-                                <rect key="frame" x="0.0" y="44" width="320" height="387"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOP-lA-VdI" userLabel="contentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="248"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="248"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkR-BO-fpC" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="40" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="40" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="R0O-Og-573"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsk-gj-zey" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="104" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="104" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mjk-C9-NLG" customClass="TextFieldView" customModule="Conviva" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="168" width="280" height="40"/>
+                                                <rect key="frame" x="20" y="168" width="374" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
@@ -759,7 +746,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufy-6G-8ZO">
-                                        <rect key="frame" x="137" y="337" width="46" height="30"/>
+                                        <rect key="frame" x="184" y="587" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="confirmeClick:" destination="iZo-g3-A80" eventType="touchUpInside" id="om8-2G-ZvC"/>
@@ -794,7 +781,6 @@
                         <outlet property="costIniciative" destination="qkR-BO-fpC" id="oEv-PD-7Ad"/>
                         <outlet property="helpersIniciative" destination="hsk-gj-zey" id="O19-Cb-yHU"/>
                         <outlet property="itemsIniciative" destination="Mjk-C9-NLG" id="ajP-n9-8EL"/>
-                        <outlet property="scrollView" destination="VJZ-wU-5ko" id="6tg-9e-Smm"/>
                         <segue destination="o0b-l7-CM8" kind="unwind" identifier="unwindToIniciatives" unwindAction="unwindToIniciativesWithSegue:" id="ylH-lW-VG5"/>
                     </connections>
                 </viewController>
@@ -808,14 +794,14 @@
             <objects>
                 <viewController id="PrL-Ge-MjY" customClass="EventViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AMm-6v-xYw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcj-H7-dew">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yk4-pE-TY9" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="615"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="615"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlN-9s-3Ff">
                                                 <rect key="frame" x="24" y="120" width="45" height="20"/>
@@ -824,19 +810,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PE-SW-LGv">
-                                                <rect key="frame" x="20" y="418" width="280" height="18"/>
+                                                <rect key="frame" x="20" y="418" width="374" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lle-Cy-Yzc">
-                                                <rect key="frame" x="20" y="482.5" width="280" height="18"/>
+                                                <rect key="frame" x="20" y="482.5" width="374" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-f8-bur">
-                                                <rect key="frame" x="20" y="264" width="280" height="16.5"/>
+                                                <rect key="frame" x="20" y="264" width="374" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
@@ -890,28 +876,28 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xr-DD-RfK">
-                                                <rect key="frame" x="20" y="312.5" width="280" height="1"/>
+                                                <rect key="frame" x="20" y="312.5" width="374" height="1"/>
                                                 <color key="backgroundColor" name="ConvivaPurple"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Dwu-i6-zgz"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-QI-rys">
-                                                <rect key="frame" x="20" y="547" width="280" height="18"/>
+                                                <rect key="frame" x="20" y="547" width="374" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="16"/>
                                                 <color key="textColor" name="ConvivaPurple"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91z-3U-3kL" userLabel="NavView">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                                 <color key="backgroundColor" name="ConvivaPurple"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="tTM-px-oL2"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-jx-v6I">
-                                                <rect key="frame" x="98.5" y="592" width="123" height="10"/>
-                                                <state key="normal" title="Entrar em contato">
+                                                <rect key="frame" x="173" y="585" width="68" height="10"/>
+                                                <state key="normal" title="Colaborar">
                                                     <color key="titleColor" name="ConvivaPink"/>
                                                 </state>
                                                 <connections>
@@ -1010,33 +996,33 @@
             <objects>
                 <viewController id="DQT-Xo-1oR" customClass="TutorialViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EZa-ML-cFf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E3-eL-gJf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yk-wo-vti" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="828" height="818"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4o-N0-GlS" userLabel="Page1">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Boarding" translatesAutoresizingMaskIntoConstraints="NO" id="6el-fG-Bxn">
-                                                        <rect key="frame" x="24" y="128" width="272" height="272"/>
+                                                        <rect key="frame" x="57" y="300" width="300" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="6el-fG-Bxn" secondAttribute="height" multiplier="1:1" id="F1e-2Y-gAC"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9d-2u-avR">
-                                                        <rect key="frame" x="137" y="430" width="46" height="30"/>
+                                                        <rect key="frame" x="184" y="768" width="46" height="30"/>
                                                         <state key="normal" title="Button"/>
                                                         <connections>
                                                             <action selector="nextPage:" destination="DQT-Xo-1oR" eventType="touchUpInside" id="BZo-Tq-Qfv"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCc-ab-yqf">
-                                                        <rect key="frame" x="23" y="26" width="274" height="28"/>
+                                                        <rect key="frame" x="70" y="26" width="274" height="28"/>
                                                         <color key="tintColor" name="ConvivaTextColor"/>
                                                         <string key="text">Bem vindo(a) ao Conviva,
 </string>
@@ -1045,7 +1031,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui queremos que você se conecte com os vizinhos próximos a você através de iniciativas em espaços públicos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O37-qq-MdT">
-                                                        <rect key="frame" x="20" y="70" width="280" height="75"/>
+                                                        <rect key="frame" x="20" y="70" width="374" height="56.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                         <color key="textColor" name="ConvivaTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1067,30 +1053,29 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRs-yz-C35" userLabel="Page2">
-                                                <rect key="frame" x="320" y="0.0" width="320" height="480"/>
+                                                <rect key="frame" x="414" y="0.0" width="414" height="818"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Boarding" translatesAutoresizingMaskIntoConstraints="NO" id="GWO-T6-5SS">
-                                                        <rect key="frame" x="24" y="128" width="272" height="272"/>
+                                                        <rect key="frame" x="57" y="300" width="300" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="GWO-T6-5SS" secondAttribute="height" multiplier="1:1" id="Nd7-Na-bFj"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qo-p9-Nxa">
-                                                        <rect key="frame" x="137" y="430" width="46" height="30"/>
+                                                        <rect key="frame" x="184" y="768" width="46" height="30"/>
                                                         <state key="normal" title="Button"/>
                                                         <connections>
                                                             <action selector="nextPage:" destination="DQT-Xo-1oR" eventType="touchUpInside" id="FAh-yQ-fuI"/>
-                                                            <segue destination="Tfz-VQ-UJC" kind="modal" identifier="fromTutorial" modalPresentationStyle="fullScreen" id="Log-Qn-U3E"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajude a unir seu bairro, apoie e colabore com vizinhos e compartilhe suas ideias" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M30-Mw-erP">
-                                                        <rect key="frame" x="20" y="70" width="280" height="56.5"/>
+                                                        <rect key="frame" x="20" y="70" width="374" height="37.5"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                         <color key="textColor" name="ConvivaTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crie, Colabore e Compartilhe!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="884-pu-Z8K">
-                                                        <rect key="frame" x="1.5" y="26" width="317.5" height="28"/>
+                                                        <rect key="frame" x="48.5" y="26" width="317.5" height="28"/>
                                                         <color key="tintColor" name="ConvivaTextColor"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                                         <color key="textColor" name="ConvivaTextColor"/>
@@ -1159,7 +1144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFV-xD-kVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10648.125" y="-1415"/>
+            <point key="canvasLocation" x="-10873" y="-1414"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="RSv-Fr-dbj">
@@ -1190,7 +1175,7 @@
                         <color key="badgeColor" name="ConvivaPink"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Y9-xP-hiK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1209,7 +1194,7 @@
                         <color key="badgeColor" name="ConvivaPink"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FHr-DG-4S2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1227,7 +1212,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Fn3-TO-tnt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FfP-d1-7nm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1252,7 +1237,7 @@
         <image name="person.crop.circle" catalog="system" width="32" height="32"/>
         <image name="pinAndCircle" width="1024" height="1024"/>
         <namedColor name="ConvivaBackground">
-            <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaOrange">
             <color red="0.9309999942779541" green="0.61500000953674316" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1261,20 +1246,19 @@
             <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPink">
-            <color red="0.8880000114440918" green="0.25200000405311584" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.81000000238418579" green="0.082999996840953827" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPurple">
-            <color red="0.44800001382827759" green="0.29800000786781311" blue="0.61599999666213989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.2199999988079071" green="0.0" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ConvivaTextColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.2199999988079071" green="0.0" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UoY-Oe-OfM"/>
+        <segue reference="BBF-TP-Vix"/>
         <segue reference="6sH-ch-kbJ"/>
         <segue reference="tfg-0Z-VcM"/>
         <segue reference="er6-84-3WR"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" name="ConvivaPink"/>
 </document>
