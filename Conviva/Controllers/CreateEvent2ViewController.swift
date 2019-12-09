@@ -27,6 +27,7 @@ class CreateEvent2ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.costIniciative.textField.placeholder = "Qual valor necessita para a iniciativa?"
+        self.costIniciative.textField.keyboardType = .decimalPad
         self.helpersIniciative.textField.placeholder = "De que ajuda a iniciativa irá precisar?"
         self.itemsIniciative.textField.placeholder = "Quais itens a iniciativa vai precisar?"
     }

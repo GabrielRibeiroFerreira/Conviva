@@ -39,6 +39,9 @@ class MyInitiativesViewController: UIViewController, UITableViewDelegate, UITabl
         makeAPIrequest()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        Setup.setupViewController(self)
+    }
     
     func makeAPIrequest() {
         let getRequest = APIRequest(endpoint: "events")

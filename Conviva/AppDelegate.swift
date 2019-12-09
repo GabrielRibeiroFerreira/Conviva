@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let email = "joy@com.br"
 //        let id = 5
         userDefault.set(email, forKey: "Email")
-        userDefault.set(nil, forKey: "ID")
+        userDefault.set(1, forKey: "ID")
         userDefault.synchronize()
         return true
     }

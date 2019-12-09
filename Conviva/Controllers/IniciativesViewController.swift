@@ -27,7 +27,6 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Setup.setupViewController(self)
         
         self.eventTable.delegate = self
         self.eventTable.dataSource = self
@@ -37,6 +36,9 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        Setup.setupViewController(self)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

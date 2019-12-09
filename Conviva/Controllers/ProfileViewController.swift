@@ -52,6 +52,7 @@ class ProfileViewController: UIViewController {
                     self.emailProfile.textField.text = profileData.email
                     self.addressProfile.textField.text = profileData.address
                     self.contactProfile.textField.text = profileData.contact
+                    self.contactProfile.textField.keyboardType = .phonePad
                     self.skillsProfile.textField.text = profileData.description
                     
                     self.loggedUser = profileData

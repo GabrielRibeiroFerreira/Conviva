@@ -38,7 +38,9 @@ class RegisterViewController: UIViewController {
         }
         self.nameProfile.textField.placeholder = "Nome Completo"
         self.emailProfile.textField.placeholder = "Email"
+        self.emailProfile.textField.keyboardType = .emailAddress
         self.contactProfile.textField.placeholder = "Contato"
+        self.contactProfile.textField.keyboardType = .phonePad
         self.skillsProfile.textField.placeholder = "Habilidades"
         self.passwordProfile.textField.placeholder = "Senha"
         
