@@ -22,6 +22,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     var latitude: Double = -20.0
     var radius: Double = 10000.0
     
+    var isFromTutorial: Bool = false
     var selectEvent : Event?
     
     override func viewDidLoad() {
@@ -47,7 +48,6 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
     }
-    
 
     func makeAPIrequest() {
         let getRequest = APIRequest(endpoint: "events")
