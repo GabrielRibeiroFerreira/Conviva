@@ -13,6 +13,7 @@ class CreateEvent2ViewController: UIViewController {
     @IBOutlet weak var helpersIniciative: TextFieldView!
     @IBOutlet weak var itemsIniciative: TextFieldView!
     @IBOutlet weak var confirme: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var event: Event!
     
@@ -22,6 +23,8 @@ class CreateEvent2ViewController: UIViewController {
         Setup.setupViewController(self)
         Setup.setupButton(confirme, withText: "Finalizar")
         Setup.setupDissmiss(self.view)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.costIniciative.textField.placeholder = "Qual valor necessita para a iniciativa?"
         self.helpersIniciative.textField.placeholder = "De que ajuda a iniciativa irá precisar?"
@@ -76,4 +79,17 @@ class CreateEvent2ViewController: UIViewController {
         return textfieldView.emptyTextndicator.isHidden
     }
     
+    //MARK: Methods to manage keybaord
+    @objc func keyboardDidShow(notification: NSNotification) {
+        let info = notification.userInfo
+        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+    }
+
+    @objc func keyboardDidHide(notification: NSNotification) {
+
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
 }
