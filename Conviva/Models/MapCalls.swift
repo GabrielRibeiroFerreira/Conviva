@@ -12,4 +12,5 @@ enum MapCalls {
     case initialScreen // qd pessoa está deslogada
     case createEvent
     case createProfile
+    case editProfile
 }

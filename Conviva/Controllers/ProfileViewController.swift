@@ -30,8 +30,8 @@ class ProfileViewController: UIViewController {
         self.contactProfile.textField.placeholder = "Contato"
         self.skillsProfile.textField.placeholder = "Habilidades"
         
+        self.addressProfile.isUserInteractionEnabled = false
         makeAPIRequest()
-        
     }
     
     func makeAPIRequest() {
@@ -98,13 +98,17 @@ class ProfileViewController: UIViewController {
         return changed
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editProfileToMap" {
+            let destination = segue.destination as! MapViewController
+            destination.latitude = loggedUser!.latitude!
+            destination.longitude = loggedUser!.longitude!
+        }
+    }
     
     //Limpar UserDefaults quando deslogar
     @IBAction func logout(_ sender: Any) {
         UserDefaults.standard.set("", forKey: "Email")
         UserDefaults.standard.set("", forKey: "ID")
     }
-    
-    
 }
