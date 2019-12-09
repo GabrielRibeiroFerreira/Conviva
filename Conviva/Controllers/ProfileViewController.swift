@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     var loggedUser: Profile?
+    var addressEditedProfile: Profile? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +63,15 @@ class ProfileViewController: UIViewController {
 
     @IBAction func saveEdit(_ sender: Any) {
         if self.loggedUser != nil && checkForChanges() {
+            
             let newProfile = Profile(name: self.nameProfile.textField.text!, email: self.emailProfile.textField.text!, password: self.loggedUser!.password!, contact: self.contactProfile.textField.text!, address: self.addressProfile.textField.text!, description: self.skillsProfile.textField.text!, latitude: self.loggedUser!.latitude!, longitude: self.loggedUser!.longitude!, radius: self.loggedUser!.radius!)
+            
+            if self.addressEditedProfile != nil {
+                newProfile.address = self.addressEditedProfile?.address
+                newProfile.longitude = self.addressEditedProfile?.longitude
+                newProfile.latitude = self.addressEditedProfile?.latitude
+                newProfile.radius = self.addressEditedProfile?.radius
+            }
 
             //Chamada do método POST para profile
             if let id = self.loggedUser?.id {
@@ -101,6 +110,7 @@ class ProfileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editProfileToMap" {
             let destination = segue.destination as! MapViewController
+            destination.isCalledIn = .editProfile
             destination.latitude = loggedUser!.latitude!
             destination.longitude = loggedUser!.longitude!
         }

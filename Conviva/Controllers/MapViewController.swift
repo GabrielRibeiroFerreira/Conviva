@@ -43,12 +43,6 @@ class MapViewController: UIViewController {
         self.radiusView.isUserInteractionEnabled = false
         self.auxView.isUserInteractionEnabled = false
         
-        //Se usuario estiver logado email esta salvo no UserDefaults
-        let email = UserDefaults.standard.string(forKey: "Email")
-        if email != "" {
-            self.isCalledIn = .createEvent
-        }
-        
         switch self.isCalledIn {
         case .initialScreen:
             Setup.setupButton(self.nextButton, withText: "Entrar")
@@ -138,7 +132,7 @@ class MapViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let radius = self.radius < 20000 ? 20000 : self.radius
+        let radius = self.radius < 20 ? 20 : self.radius
         
         if segue.identifier == "mapToProfileRegistration" {
             let destination = segue.destination as! RegisterViewController
@@ -155,10 +149,11 @@ class MapViewController: UIViewController {
         }
         else if segue.identifier == "mapToFinishEditingProfile" {
             let destination = segue.destination as! ProfileViewController
-            destination.loggedUser!.radius = radius
-            destination.loggedUser!.latitude = self.latitude
-            destination.loggedUser!.longitude = self.longitude
-            destination.loggedUser!.address = self.address
+            destination.addressEditedProfile = Profile()
+            destination.addressEditedProfile!.radius = radius
+            destination.addressEditedProfile!.latitude = self.latitude
+            destination.addressEditedProfile!.longitude = self.longitude
+            destination.addressEditedProfile!.address = self.address
         }
     }
 }
