@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQT-Xo-1oR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQT-Xo-1oR">
     <device id="retina3_5" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -307,7 +307,6 @@
                                         <color key="backgroundColor" name="ConvivaBackground"/>
                                         <constraints>
                                             <constraint firstItem="CdM-3g-dbc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VuN-5L-uio" secondAttribute="trailing" constant="8" symbolic="YES" id="0Oo-Zj-Daz"/>
-                                            <constraint firstItem="sSg-oL-yJv" firstAttribute="top" secondItem="ZL5-lM-14h" secondAttribute="top" id="0u0-0N-KFY"/>
                                             <constraint firstItem="3nn-M3-JWx" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="1dN-4q-Ded"/>
                                             <constraint firstItem="VuN-5L-uio" firstAttribute="centerX" secondItem="sq8-hs-pfD" secondAttribute="centerX" id="2sP-fA-XT4"/>
                                             <constraint firstItem="sSg-oL-yJv" firstAttribute="height" secondItem="WLh-tq-rc8" secondAttribute="height" id="3Bn-gz-X5F"/>
@@ -315,11 +314,9 @@
                                             <constraint firstItem="J82-IT-27o" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="5mC-Cz-8tX"/>
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="7Z2-xU-B9F"/>
                                             <constraint firstItem="sSg-oL-yJv" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="HNb-Lh-DbX"/>
-                                            <constraint firstItem="sSg-oL-yJv" firstAttribute="bottom" secondItem="ZL5-lM-14h" secondAttribute="bottom" id="MnY-qs-UhK"/>
                                             <constraint firstAttribute="bottom" secondItem="4oc-7w-Rdm" secondAttribute="bottom" constant="70" id="QKV-Cl-IWP"/>
                                             <constraint firstItem="VuN-5L-uio" firstAttribute="top" secondItem="sq8-hs-pfD" secondAttribute="top" constant="16" id="S9O-c9-kuK"/>
                                             <constraint firstItem="WLh-tq-rc8" firstAttribute="top" secondItem="VuN-5L-uio" secondAttribute="bottom" constant="16" id="StK-K0-E7J"/>
-                                            <constraint firstItem="ZL5-lM-14h" firstAttribute="leading" secondItem="sSg-oL-yJv" secondAttribute="leading" id="TLl-IL-A0B"/>
                                             <constraint firstItem="3nn-M3-JWx" firstAttribute="top" secondItem="sSg-oL-yJv" secondAttribute="bottom" constant="24" id="XIT-Zv-6Sa"/>
                                             <constraint firstItem="J82-IT-27o" firstAttribute="height" secondItem="WLh-tq-rc8" secondAttribute="height" id="c33-xE-irL"/>
                                             <constraint firstItem="J82-IT-27o" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="d4H-jw-Mef"/>
@@ -330,15 +327,15 @@
                                             <constraint firstItem="3nn-M3-JWx" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="mxz-wc-cOS"/>
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="qf9-h3-oEK"/>
                                             <constraint firstAttribute="trailing" secondItem="CdM-3g-dbc" secondAttribute="trailing" constant="20" id="r5r-m1-vEw"/>
-                                            <constraint firstItem="ZL5-lM-14h" firstAttribute="trailing" secondItem="sSg-oL-yJv" secondAttribute="trailing" id="rqw-ZP-Tcy"/>
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="top" secondItem="3nn-M3-JWx" secondAttribute="bottom" constant="24" id="sFU-xj-h2g"/>
                                             <constraint firstItem="CdM-3g-dbc" firstAttribute="top" secondItem="sq8-hs-pfD" secondAttribute="top" constant="16" id="tEd-Zd-8Vb"/>
+                                            <constraint firstItem="VuN-5L-uio" firstAttribute="top" secondItem="sq8-hs-pfD" secondAttribute="top" constant="16" id="vu1-e3-tpY"/>
                                             <constraint firstItem="sSg-oL-yJv" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="wVL-3B-8kV"/>
                                             <constraint firstItem="J82-IT-27o" firstAttribute="top" secondItem="WLh-tq-rc8" secondAttribute="bottom" constant="24" id="zWW-fM-nai"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-Zf-LuB">
-                                        <rect key="frame" x="137" y="355" width="46" height="30"/>
+                                        <rect key="frame" x="137" y="449" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="saveEdit:" destination="mpp-AP-IOr" eventType="touchUpInside" id="r6A-GU-lTi"/>
@@ -761,7 +758,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufy-6G-8ZO">
-                                        <rect key="frame" x="137" y="331" width="46" height="30"/>
+                                        <rect key="frame" x="137" y="337" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="confirmeClick:" destination="iZo-g3-A80" eventType="touchUpInside" id="om8-2G-ZvC"/>
@@ -1254,22 +1251,22 @@
         <image name="person.crop.circle" catalog="system" width="32" height="32"/>
         <image name="pinAndCircle" width="1024" height="1024"/>
         <namedColor name="ConvivaBackground">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaOrange">
             <color red="0.9309999942779541" green="0.61500000953674316" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaOrange">
-            <color red="0.9309999942779541" green="0.61500000953674316" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPink">
-            <color red="0.81000000238418579" green="0.082999996840953827" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.8880000114440918" green="0.25200000405311584" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPurple">
-            <color red="0.2199999988079071" green="0.0" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.44800001382827759" green="0.29800000786781311" blue="0.61599999666213989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaTextColor">
-            <color red="0.2199999988079071" green="0.0" blue="0.29399999976158142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
