@@ -15,7 +15,6 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var radiusView: UIImageView!
-    @IBOutlet weak var radiusLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var auxView: UIView!
     
@@ -45,12 +44,6 @@ class MapViewController: UIViewController {
         self.radiusView.isUserInteractionEnabled = false
         self.auxView.isUserInteractionEnabled = false
         
-        //Se usuario estiver logado email esta salvo no UserDefaults
-        let email = UserDefaults.standard.string(forKey: "Email")
-        if email != "" {
-            self.isCalledIn = .createEvent
-        }
-        
         switch self.isCalledIn {
         case .initialScreen:
             Setup.setupButton(self.nextButton, withText: "Entrar")
@@ -61,12 +54,13 @@ class MapViewController: UIViewController {
             navigationItem.title = "Local da iniciativa"
             Setup.setupButton(self.nextButton, withText: "Avançar")
         case .createProfile:
-            navigationItem.title = "Sua região"
+            navigationItem.title = "Selecione sua região"
             radiusView.image = UIImage(named: "pinAndCircle")
             Setup.setupButton(self.nextButton, withText: "Avançar")
-        default:
-            Setup.setupButton(self.nextButton, withText: "Avançar")
+        case .editProfile:
+            navigationItem.title = "Edite sua região"
             radiusView.image = UIImage(named: "pinAndCircle")
+            Setup.setupButton(self.nextButton, withText: "Salvar alterações")
         }
         
         // MARK: Adress Search configuration
@@ -102,7 +96,12 @@ class MapViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.centerMapOnUserLocation()
+        if isCalledIn == .editProfile {
+            self.zoomMapTo(location: CLLocation(latitude: CLLocationDegrees(self.latitude), longitude: CLLocationDegrees(self.longitude)))
+        }
+        else {
+            self.centerMapOnUserLocation()
+        }
     }
     
     @IBAction func nextButton(_ sender: Any) {
@@ -123,8 +122,10 @@ class MapViewController: UIViewController {
                     self.performSegue(withIdentifier: "mapToCreateEvent", sender: self)
                 case .createProfile:
                     self.performSegue(withIdentifier: "mapToProfileRegistration", sender: self)
-                default:
+                case .initialScreen:
                     self.performSegue(withIdentifier: "mapToTabBar", sender: self)
+                case .editProfile:
+                    self.performSegue(withIdentifier: "mapToFinishEditingProfile", sender: self)
                 }
             }
         }
@@ -132,7 +133,7 @@ class MapViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let radius = self.radius < 20000 ? 20000 : self.radius
+        let radius = self.radius < 20 ? 20 : self.radius
         
         if segue.identifier == "mapToProfileRegistration" {
             let destination = segue.destination as! RegisterViewController
@@ -146,6 +147,14 @@ class MapViewController: UIViewController {
             destination.event.latitude = self.latitude
             destination.event.longitude = self.longitude
             destination.event.address = self.address
+        }
+        else if segue.identifier == "mapToFinishEditingProfile" {
+            let destination = segue.destination as! ProfileViewController
+            destination.addressEditedProfile = Profile()
+            destination.addressEditedProfile!.radius = radius
+            destination.addressEditedProfile!.latitude = self.latitude
+            destination.addressEditedProfile!.longitude = self.longitude
+            destination.addressEditedProfile!.address = self.address
         }
     }
 }
@@ -167,7 +176,7 @@ extension MapViewController: MKMapViewDelegate {
         let edge = CLLocation(latitude: edge2D.latitude, longitude: edge2D.longitude)
         let center = CLLocation(latitude: center2D.latitude, longitude: center2D.longitude)
         
-        self.radius = center.distance(from: edge)
+        self.radius = center.distance(from: edge)/1000
         self.latitude = center.coordinate.latitude
         self.longitude = center.coordinate.longitude
     }
@@ -185,7 +194,8 @@ extension MapViewController: CLLocationManagerDelegate {
             placemark = placemarks?[0]
             
             var addressList: [String?] = []
-            addressList.append(placemark.name) // name
+            
+//            addressList.append(placemark.name) // name
             addressList.append(placemark.thoroughfare) // street
             addressList.append(placemark.subThoroughfare) // number
             addressList.append(placemark.subAdministrativeArea) // city

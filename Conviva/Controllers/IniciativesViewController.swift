@@ -161,9 +161,14 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "toEventSegue"{
             let destination = segue.destination as! EventViewController
             destination.event = self.selectEvent!
+        }
+        else if segue.identifier == "createEventToMap" {
+            let destination = segue.destination as! MapViewController
+            destination.isCalledIn = .createEvent
         }
     }
     
@@ -176,7 +181,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
                 self.present(vc, animated: true)
             }
         } else {
-            performSegue(withIdentifier: "createSegue", sender: self)
+            performSegue(withIdentifier: "createEventToMap", sender: self)
         }
     }
     
