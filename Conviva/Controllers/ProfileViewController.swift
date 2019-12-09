@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     var loggedUser: Profile?
+    var addressEditedProfile: Profile? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,8 @@ class ProfileViewController: UIViewController {
         self.contactProfile.textField.placeholder = "Contato"
         self.skillsProfile.textField.placeholder = "Habilidades"
         
+        self.addressProfile.isUserInteractionEnabled = false
         makeAPIRequest()
-        
     }
     
     func makeAPIRequest() {
@@ -48,9 +49,16 @@ class ProfileViewController: UIViewController {
                 //Dispatch the call to update the label text to the main thread.
                 //Reload must only be called on the main thread
                 DispatchQueue.main.async{
+                    
                     self.nameProfile.textField.text = profileData.name
                     self.emailProfile.textField.text = profileData.email
-                    self.addressProfile.textField.text = profileData.address
+                    
+                    if self.addressEditedProfile == nil {
+                        self.addressProfile.textField.text = profileData.address
+                    } else {
+                        self.addressProfile.textField.text = self.addressEditedProfile!.address
+                    }
+                    
                     self.contactProfile.textField.text = profileData.contact
                     self.contactProfile.textField.keyboardType = .phonePad
                     self.skillsProfile.textField.text = profileData.description
@@ -67,7 +75,15 @@ class ProfileViewController: UIViewController {
 
     @IBAction func saveEdit(_ sender: Any) {
         if self.loggedUser != nil && checkForChanges() {
+            
             let newProfile = Profile(name: self.nameProfile.textField.text!, email: self.emailProfile.textField.text!, password: self.loggedUser!.password!, contact: self.contactProfile.textField.text!, address: self.addressProfile.textField.text!, description: self.skillsProfile.textField.text!, latitude: self.loggedUser!.latitude!, longitude: self.loggedUser!.longitude!, radius: self.loggedUser!.radius!)
+            
+            if self.addressEditedProfile != nil {
+                newProfile.address = self.addressEditedProfile?.address
+                newProfile.longitude = self.addressEditedProfile?.longitude
+                newProfile.latitude = self.addressEditedProfile?.latitude
+                newProfile.radius = self.addressEditedProfile?.radius
+            }
 
             //Chamada do método POST para profile
             if let id = self.loggedUser?.id {
@@ -103,7 +119,14 @@ class ProfileViewController: UIViewController {
         return changed
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editProfileToMap" {
+            let destination = segue.destination as! MapViewController
+            destination.isCalledIn = .editProfile
+            destination.latitude = loggedUser!.latitude!
+            destination.longitude = loggedUser!.longitude!
+        }
+    }
     
     //Limpar UserDefaults quando deslogar
     @IBAction func logout(_ sender: Any) {
