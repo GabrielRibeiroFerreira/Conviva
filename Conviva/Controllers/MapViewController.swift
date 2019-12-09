@@ -194,7 +194,8 @@ extension MapViewController: CLLocationManagerDelegate {
             placemark = placemarks?[0]
             
             var addressList: [String?] = []
-            addressList.append(placemark.name) // name
+            
+//            addressList.append(placemark.name) // name
             addressList.append(placemark.thoroughfare) // street
             addressList.append(placemark.subThoroughfare) // number
             addressList.append(placemark.subAdministrativeArea) // city

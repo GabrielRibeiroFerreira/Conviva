@@ -49,9 +49,16 @@ class ProfileViewController: UIViewController {
                 //Dispatch the call to update the label text to the main thread.
                 //Reload must only be called on the main thread
                 DispatchQueue.main.async{
+                    
                     self.nameProfile.textField.text = profileData.name
                     self.emailProfile.textField.text = profileData.email
-                    self.addressProfile.textField.text = profileData.address
+                    
+                    if self.addressEditedProfile == nil {
+                        self.addressProfile.textField.text = profileData.address
+                    } else {
+                        self.addressProfile.textField.text = self.addressEditedProfile!.address
+                    }
+                    
                     self.contactProfile.textField.text = profileData.contact
                     self.skillsProfile.textField.text = profileData.description
                     
