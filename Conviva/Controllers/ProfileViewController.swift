@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var skillsProfile: TextFieldView!
     @IBOutlet weak var saveButton: UIButton!
     
+    var loggedUser: Profile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,16 +39,18 @@ class ProfileViewController: UIViewController {
         let getRequest = APIRequest(endpoint: "profiles/id?id=\(id)")
         getRequest.getProfileResponse() { result in
             switch result {
-            case .success(let eventsData):
-                print("Lista de eventos: \(String(describing: eventsData))")
+            case .success(let profileData):
+                print("Lista de eventos: \(String(describing: profileData))")
                 //Dispatch the call to update the label text to the main thread.
                 //Reload must only be called on the main thread
                 DispatchQueue.main.async{
-                    self.nameProfile.textField.placeholder = eventsData.name
-                    self.emailProfile.textField.placeholder = eventsData.email
-                    self.addressProfile.textField.placeholder = eventsData.address
-                    self.contactProfile.textField.placeholder = eventsData.contact
-                    self.skillsProfile.textField.placeholder = eventsData.description
+                    self.nameProfile.textField.text = profileData.name
+                    self.emailProfile.textField.text = profileData.email
+                    self.addressProfile.textField.text = profileData.address
+                    self.contactProfile.textField.text = profileData.contact
+                    self.skillsProfile.textField.text = profileData.description
+                    
+                    self.loggedUser = profileData
 
                 }
             case .failure(let error):
@@ -57,14 +61,49 @@ class ProfileViewController: UIViewController {
   
 
     @IBAction func saveEdit(_ sender: Any) {
-        UserDefaults.standard.set(nil, forKey: "Email")
+        if self.loggedUser != nil && checkForChanges() {
+            let newProfile = Profile(name: self.nameProfile.textField.text!, email: self.emailProfile.textField.text!, password: self.loggedUser!.password!, contact: self.contactProfile.textField.text!, address: self.addressProfile.textField.text!, description: self.skillsProfile.textField.text!, latitude: self.loggedUser!.latitude!, longitude: self.loggedUser!.longitude!, radius: self.loggedUser!.radius!)
 
+            //Chamada do método POST para profile
+            if let id = self.loggedUser?.id {
+                let postRequest = APIRequest(endpoint: "profiles/\(id)")
+                postRequest.saveProfile(newProfile, httpMethod: "PUT") { result in
+                    switch result {
+                        case .success(let newProfile):
+                        DispatchQueue.main.async {
+                            print("O perfil foi salvo \(String(describing: newProfile.name))")
+                            self.dismiss(animated: true)
+                        }
+                      case .failure(let error):
+                         print("Ocorreu um erro \(error)")
+                         //UIALERT
+                     }
+                 }
+            }
+
+        }
     }
+    
+    func checkForChanges() -> Bool {
+        var changed = false
+
+        if self.loggedUser != nil {
+            changed = self.loggedUser!.name == self.nameProfile.textField.text ?  false : true
+            changed = (self.loggedUser!.email == self.emailProfile.textField.text ?  false : true) || changed
+            changed = (self.loggedUser!.address == self.addressProfile.textField.text ?  false : true) || changed
+            changed = (self.loggedUser!.contact == self.contactProfile.textField.text ?  false : true) || changed
+            changed = (self.loggedUser!.description == self.skillsProfile.textField.text ?  false : true) || changed
+        }
+        
+        return changed
+    }
+    
+    
     
     //Limpar UserDefaults quando deslogar
     @IBAction func logout(_ sender: Any) {
-        UserDefaults.standard.set(nil, forKey: "Email")
-        UserDefaults.standard.set(nil, forKey: "ID")
+        UserDefaults.standard.set("", forKey: "Email")
+        UserDefaults.standard.set("", forKey: "ID")
     }
     
     
