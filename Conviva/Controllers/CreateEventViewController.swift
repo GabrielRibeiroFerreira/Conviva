@@ -92,17 +92,6 @@ class CreateEventViewController: UIViewController {
         return textfieldView.emptyTextndicator.isHidden
     }
     
-//    func getLatLongByAddress(address: String) {
-//        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-//            let placemark = placemarks?.first
-//            let lat = placemark?.location?.coordinate.latitude
-//            let lon = placemark?.location?.coordinate.longitude
-//            print("Lat: \(String(describing: lat)), Lon: \(String(describing: lon))")
-//
-//            self.event.latitude = lat
-//            self.event.longitude = lon
-//        }
-//    }
     
     @objc func showDatePicker(_ textField: UITextField){
         //Formate Date
