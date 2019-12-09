@@ -35,14 +35,14 @@ class CreateEvent2ViewController: UIViewController {
     // MARK: - Navigation
     @IBAction func confirmeClick(_ sender: Any) {
         self.event.cost = Int(self.costIniciative.textField.text ?? "0")
-        self.event.helpers = self.helpersIniciative.textField.text
-        self.event.items = self.itemsIniciative.textField.text
+        self.event.people = self.helpersIniciative.textField.text
+        self.event.item = self.itemsIniciative.textField.text
 
         
         if checkEmprtyTextField() {
             //Criação de um evento de teste, mas aqui passaria as informações dos textFields
             let loggedUser = UserDefaults.standard.integer(forKey: "ID")
-            let eventTestPOST = Event(name: self.event.name!, description: self.event.description!, address: self.event.address!, cost: self.event.cost! , justification: self.event.justification!, date: self.event.date!, complaint: 0, adm: loggedUser, latitude: -20.7865, longitude: 34.7654)
+            let eventTestPOST = Event(name: self.event.name!, description: self.event.description!, address: self.event.address!, cost: self.event.cost! , justification: self.event.justification!, date: self.event.date!, complaint: 0, adm: loggedUser, latitude: -20.7865, longitude: 34.7654, item: self.event.item!, people: self.event.people!)
 
            //Chamada do método POST para evento
             let postRequest = APIRequest(endpoint: "events")

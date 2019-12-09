@@ -30,8 +30,8 @@ class EventViewController: UIViewController {
         self.addressLabel.text = self.event.address
         self.dateLabel.text = self.event.date
         self.descriptionLabel.text = self.event.description
-        self.itemsLabel.text = self.event.items
-        self.helpersLabel.text = self.event.helpers
+        self.itemsLabel.text = self.event.item
+        self.helpersLabel.text = self.event.people
         self.costLabel.text = self.event.cost?.description
         
     }
