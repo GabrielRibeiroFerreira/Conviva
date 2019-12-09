@@ -64,12 +64,11 @@ class RegisterViewController: UIViewController {
       
     func makeAPIRequest() {
         if checkForEmptyTextField() {
-            //Ver forma de pegar lat/long/rad da seleção inicial
             let newProfile = Profile(name: self.nameProfile.textField.text!, email: self.emailProfile.textField.text!, password: self.passwordProfile.textField.text!, contact: self.contactProfile.textField.text!, address: self.addressProfile.textField.text!, description: self.skillsProfile.textField.text!, latitude: self.latitude, longitude: self.longitude, radius: self.radius)
 
             //Chamada do método POST para profile
             let postRequest = APIRequest(endpoint: "profiles")
-            postRequest.saveProfile(newProfile) { result in
+            postRequest.saveProfile(newProfile, httpMethod: "POST") { result in
                 switch result {
                     case .success(let newProfile):
                     DispatchQueue.main.async {

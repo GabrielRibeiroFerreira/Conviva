@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "place-light.png"
+      "filename" : "boarding-art-white.pdf"
     },
     {
       "idiom" : "universal",
-      "filename" : "place-dark.png",
+      "filename" : "boarding-art-dark.pdf",
       "appearances" : [
         {
           "appearance" : "luminosity",

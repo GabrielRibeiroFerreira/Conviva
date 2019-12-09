@@ -127,10 +127,10 @@ struct APIRequest {
     }
     
     //Metodo POST cadastro de perfil
-    func saveProfile(_ profileToBeSave: Profile, completion: @escaping(Result<Profile, APIError>) -> Void){
+    func saveProfile(_ profileToBeSave: Profile, httpMethod: String, completion: @escaping(Result<Profile, APIError>) -> Void){
         do {
             var urlRequest = URLRequest(url: resourceURL)
-            urlRequest.httpMethod = "POST"
+            urlRequest.httpMethod = httpMethod
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.httpBody = try JSONEncoder().encode(profileToBeSave)
             
@@ -198,7 +198,47 @@ struct APIRequest {
         }
         dataTask.resume()
     }
+    
 
+
+    //Metodo PUT cadastro de perfil
+    func editProfile(_ profileToBeSave: Profile, completion: @escaping(Result<Profile, APIError>) -> Void){
+        do {
+            var urlRequest = URLRequest(url: resourceURL)
+            urlRequest.httpMethod = "PUT"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try JSONEncoder().encode(profileToBeSave)
+            
+            // Verifica se houve resposta válida do servidor
+            let dataTask = URLSession.shared.dataTask(with: urlRequest){ data, response, _ in
+                
+                guard let jsonData = data else {
+                    completion(.failure(.noDataAvailable))
+                    return
+                }
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    if httpResponse.statusCode != 200 {
+                        let strData = String(data: jsonData, encoding: .utf8)
+                        print(strData ?? "Erro de resposta")
+                        completion(.failure(.responseProblem))
+                        return
+                    }
+                }
+                
+                //Método de decode da classe evento para JSON
+                do {
+                    let profileData = try JSONDecoder().decode(Profile.self, from: jsonData)
+                    completion(.success(profileData))
+                } catch {
+                    completion(.failure(.decodingProblem))
+                }
+            }
+            dataTask.resume()
+        } catch {
+            completion(.failure(.encodingProblem))
+        }
+    }
     
 
 }
