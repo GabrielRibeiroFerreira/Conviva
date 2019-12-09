@@ -34,6 +34,8 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
            
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
+        
+        makeAPIrequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
