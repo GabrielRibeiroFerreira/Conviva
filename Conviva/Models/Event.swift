@@ -23,6 +23,9 @@ class Event: Codable {
     var longitude: Double?
     var adm: Int?
     
+    var item: String?
+    var people: String?
+    
     public var dateFormatted: Date? {
         return getDateFormatted(dateStr: date!)
     }
@@ -31,10 +34,10 @@ class Event: Codable {
 // Acho que existe uma forma de conter array mas não me preocupei no inicio
 //    var manager : Profile?
 //    var interested : [Profile]?
-    var helpers : String? //Será junto de items
-    var items : String? //[Item]?
+//    var helpers : String? //Será junto de items
+//    var items : String? //[Item]?
     
-    init(name: String, description: String, address: String, cost: Int, justification: String, date: String, complaint: Int, adm: Int, latitude: Double, longitude: Double) {
+    init(name: String, description: String, address: String, cost: Int, justification: String, date: String, complaint: Int, adm: Int, latitude: Double, longitude: Double, item: String, people: String) {
         self.name = name
         self.description = description
         self.address = address
@@ -45,6 +48,8 @@ class Event: Codable {
         self.adm = adm
         self.latitude = latitude
         self.longitude = longitude
+        self.item = item
+        self.people = people
     }
     
     init() {

@@ -17,6 +17,7 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var descriptionIniciative: TextFieldView!
     @IBOutlet weak var justificativeIniciative: TextFieldView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let datePicker = UIDatePicker()
     
@@ -34,6 +35,9 @@ class CreateEventViewController: UIViewController {
         
         Setup.setupViewController(self)
         Setup.setupButton(self.nextButton, withText: "Avançar")
+        Setup.setupDissmiss(self.view)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.titleIniciative.textField.placeholder = "O que é a iniciativa? (Título)"
         self.dateIniciative.textField.placeholder = "Em qual data?"
@@ -157,5 +161,18 @@ class CreateEventViewController: UIViewController {
         timeIniciative.textField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-                             
+    
+    //MARK: Methods to manage keybaord
+    @objc func keyboardDidShow(notification: NSNotification) {
+        let info = notification.userInfo
+        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+    }
+
+    @objc func keyboardDidHide(notification: NSNotification) {
+
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
 }

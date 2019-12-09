@@ -13,6 +13,7 @@ class CreateEvent2ViewController: UIViewController {
     @IBOutlet weak var helpersIniciative: TextFieldView!
     @IBOutlet weak var itemsIniciative: TextFieldView!
     @IBOutlet weak var confirme: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var event: Event!
     
@@ -21,6 +22,9 @@ class CreateEvent2ViewController: UIViewController {
         
         Setup.setupViewController(self)
         Setup.setupButton(confirme, withText: "Finalizar")
+        Setup.setupDissmiss(self.view)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.costIniciative.textField.placeholder = "Qual valor necessita para a iniciativa?"
         self.helpersIniciative.textField.placeholder = "De que ajuda a iniciativa irá precisar?"
@@ -31,14 +35,14 @@ class CreateEvent2ViewController: UIViewController {
     // MARK: - Navigation
     @IBAction func confirmeClick(_ sender: Any) {
         self.event.cost = Int(self.costIniciative.textField.text ?? "0")
-        self.event.helpers = self.helpersIniciative.textField.text
-        self.event.items = self.itemsIniciative.textField.text
+        self.event.people = self.helpersIniciative.textField.text
+        self.event.item = self.itemsIniciative.textField.text
 
         
         if checkEmprtyTextField() {
             //Criação de um evento de teste, mas aqui passaria as informações dos textFields
             let loggedUser = UserDefaults.standard.integer(forKey: "ID")
-            let eventTestPOST = Event(name: self.event.name!, description: self.event.description!, address: self.event.address!, cost: self.event.cost! , justification: self.event.justification!, date: self.event.date!, complaint: 0, adm: loggedUser, latitude: -20.7865, longitude: 34.7654)
+            let eventTestPOST = Event(name: self.event.name!, description: self.event.description!, address: self.event.address!, cost: self.event.cost! , justification: self.event.justification!, date: self.event.date!, complaint: 0, adm: loggedUser, latitude: -20.7865, longitude: 34.7654, item: self.event.item!, people: self.event.people!)
 
            //Chamada do método POST para evento
             let postRequest = APIRequest(endpoint: "events")
@@ -75,4 +79,17 @@ class CreateEvent2ViewController: UIViewController {
         return textfieldView.emptyTextndicator.isHidden
     }
     
+    //MARK: Methods to manage keybaord
+    @objc func keyboardDidShow(notification: NSNotification) {
+        let info = notification.userInfo
+        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+    }
+
+    @objc func keyboardDidHide(notification: NSNotification) {
+
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
 }

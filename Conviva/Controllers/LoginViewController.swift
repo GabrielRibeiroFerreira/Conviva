@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailProfile: TextFieldView!
     @IBOutlet weak var passwordProfile: TextFieldView!
     @IBOutlet weak var signinButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var profile: Profile?
     
@@ -20,6 +21,10 @@ class LoginViewController: UIViewController {
 
         Setup.setupViewController(self)
         Setup.setupButton(self.signinButton, withText: "Entrar")
+        Setup.setupDissmiss(self.view)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         
         self.emailProfile.textField.placeholder = "email"
         self.passwordProfile.textField.placeholder = "senha"
@@ -83,6 +88,18 @@ class LoginViewController: UIViewController {
             makeLoginRequest()
         }
     }
-    
-    
+
+    //MARK: Methods to manage keybaord
+    @objc func keyboardDidShow(notification: NSNotification) {
+        let info = notification.userInfo
+        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+    }
+
+    @objc func keyboardDidHide(notification: NSNotification) {
+
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
 }

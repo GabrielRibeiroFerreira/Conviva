@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var contactProfile: TextFieldView!
     @IBOutlet weak var skillsProfile: TextFieldView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var loggedUser: Profile?
     var addressEditedProfile: Profile? = nil
@@ -24,6 +25,9 @@ class ProfileViewController: UIViewController {
         
         Setup.setupViewController(self)
         Setup.setupButton(self.saveButton, withText: "Salvar")
+        Setup.setupDissmiss(self.view)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.nameProfile.textField.placeholder = "Nome"
         self.emailProfile.textField.placeholder = "Email"
@@ -120,5 +124,19 @@ class ProfileViewController: UIViewController {
     @IBAction func logout(_ sender: Any) {
         UserDefaults.standard.set("", forKey: "Email")
         UserDefaults.standard.set("", forKey: "ID")
+    }
+    
+    //MARK: Methods to manage keybaord
+    @objc func keyboardDidShow(notification: NSNotification) {
+        let info = notification.userInfo
+        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+    }
+
+    @objc func keyboardDidHide(notification: NSNotification) {
+
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 }
