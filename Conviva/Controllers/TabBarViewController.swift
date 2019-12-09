@@ -34,7 +34,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let email = UserDefaults.standard.string(forKey: "Email")
-        if (viewController is MyInitiativesViewController || viewController is ProfileViewController) && email == nil {
+        if (viewController is NavMyIniciativesViewController || viewController is NavProfileViewController) && email == "" {
             if let storyboard = self.storyboard {
                  let vc  = storyboard.instantiateViewController(identifier: "loginStoryboard")
                  self.present(vc, animated: true)

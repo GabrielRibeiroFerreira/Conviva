@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let userDefault = UserDefaults.standard
         let email = ""
+//        let id = 5
         userDefault.set(email, forKey: "Email")
+        userDefault.set(nil, forKey: "ID")
         userDefault.synchronize()
         return true
     }

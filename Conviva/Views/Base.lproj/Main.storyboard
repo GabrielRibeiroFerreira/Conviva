@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQT-Xo-1oR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tfz-VQ-UJC">
     <device id="retina3_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -297,7 +300,6 @@
                                                 <color key="tintColor" name="ConvivaPink"/>
                                                 <state key="normal" title="Button" image="Out"/>
                                                 <connections>
-                                                    <action selector="logout:" destination="mpp-AP-IOr" eventType="touchUpInside" id="Xxf-zJ-aRI"/>
                                                     <segue destination="40r-00-Ptv" kind="unwind" unwindAction="unwindToIniciativesWithSegue:" id="2Ra-Qu-yZg"/>
                                                 </connections>
                                             </button>
@@ -361,7 +363,14 @@
                         <viewLayoutGuide key="safeArea" id="JbG-rr-LW2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" image="ProfileStoke" selectedImage="ProfileFill" id="ocU-kl-w0l"/>
-                    <navigationItem key="navigationItem" title="Perfil" id="qSJ-TI-ULu"/>
+                    <navigationItem key="navigationItem" title="Perfil" id="qSJ-TI-ULu">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Out" id="zYZ-oN-1tB">
+                            <color key="tintColor" name="ConvivaPink"/>
+                            <connections>
+                                <segue destination="40r-00-Ptv" kind="unwind" unwindAction="unwindToIniciativesWithSegue:" id="AsA-GL-cOh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressProfile" destination="sSg-oL-yJv" id="bdU-JD-6Wo"/>
                         <outlet property="contactProfile" destination="3nn-M3-JWx" id="9kR-pb-g8O"/>
@@ -375,7 +384,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQf-SP-eUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="40r-00-Ptv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-5991" y="564"/>
+            <point key="canvasLocation" x="-5992.5" y="563.75"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="GFh-Eh-2JE">
@@ -1181,7 +1190,7 @@
         <!--Item-->
         <scene sceneID="zTi-0d-QXJ">
             <objects>
-                <navigationController id="eva-WK-jl0" sceneMemberID="viewController">
+                <navigationController id="eva-WK-jl0" customClass="NavProfileViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="ProfileStoke" selectedImage="ProfileFill" id="sZG-nq-zs2">
                         <color key="badgeColor" name="ConvivaPink"/>
                     </tabBarItem>
@@ -1200,7 +1209,7 @@
         <!--Item-->
         <scene sceneID="pdX-Lz-7la">
             <objects>
-                <navigationController id="3lJ-cX-uf6" sceneMemberID="viewController">
+                <navigationController id="3lJ-cX-uf6" customClass="NavMyIniciativesViewController" customModule="Conviva" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="HeartStoke" selectedImage="HeartFill" id="1SG-y0-R35">
                         <color key="badgeColor" name="ConvivaPink"/>
                     </tabBarItem>
@@ -1242,7 +1251,7 @@
         <image name="FeedStoke" width="34" height="34"/>
         <image name="HeartFill" width="34" height="34"/>
         <image name="HeartStoke" width="34" height="34"/>
-        <image name="Out" width="512" height="512"/>
+        <image name="Out" width="25" height="25"/>
         <image name="ProfileFill" width="34" height="34"/>
         <image name="ProfileStoke" width="34" height="34"/>
         <image name="person.crop.circle" catalog="system" width="32" height="32"/>
@@ -1269,6 +1278,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="a92-4h-TSx"/>
         <segue reference="6sH-ch-kbJ"/>
+        <segue reference="BBF-TP-Vix"/>
+        <segue reference="zkS-yc-Kc3"/>
         <segue reference="tfg-0Z-VcM"/>
     </inferredMetricsTieBreakers>
 </document>
