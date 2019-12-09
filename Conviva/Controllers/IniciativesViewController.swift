@@ -37,6 +37,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
         self.eventTable.register(nib, forCellReuseIdentifier: eventCell)
         
         makeAPIrequest()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,11 +47,23 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let email = UserDefaults.standard.string(forKey: "Email")
-        if email == "" {
-            self.performSegue(withIdentifier: "toMap", sender: self)
-        }
-        
+        //Ver forma melhor de atualizar a lista de eventos
+        callMap()
+    }
+    
+    func callMap() {
+         let lat = UserDefaults.standard.double(forKey: "Latitude")
+         let lon = UserDefaults.standard.double(forKey: "Longitude")
+         let rad = UserDefaults.standard.double(forKey: "Radius")
+         
+         if lat == 0 || lon == 0 || rad == 0 {
+             self.performSegue(withIdentifier: "toMap", sender: self)
+         } else {
+             self.latitude = lat
+             self.longitude = lon
+             self.radius = rad
+             makeAPIrequest()
+         }
     }
 
     func makeAPIrequest() {
@@ -179,7 +192,7 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - Navigation
     @IBAction func createIniciative(_ sender: Any) {
         let email = UserDefaults.standard.string(forKey: "Email")
-        if email == "" {
+        if email == nil {
             if let storyboard = self.storyboard {
                 let vc  = storyboard.instantiateViewController(identifier: "loginStoryboard")
                 self.present(vc, animated: true)

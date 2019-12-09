@@ -291,22 +291,9 @@
                                                 <rect key="frame" x="20" y="448" width="280" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdM-3g-dbc">
-                                                <rect key="frame" x="270" y="16" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="0Kg-XG-2Pj"/>
-                                                    <constraint firstAttribute="width" secondItem="CdM-3g-dbc" secondAttribute="height" multiplier="1:1" id="TTR-7u-g6q"/>
-                                                </constraints>
-                                                <color key="tintColor" name="ConvivaPink"/>
-                                                <state key="normal" title="Button" image="Out"/>
-                                                <connections>
-                                                    <segue destination="40r-00-Ptv" kind="unwind" unwindAction="unwindToIniciativesWithSegue:" id="2Ra-Qu-yZg"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="ConvivaBackground"/>
                                         <constraints>
-                                            <constraint firstItem="CdM-3g-dbc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VuN-5L-uio" secondAttribute="trailing" constant="8" symbolic="YES" id="0Oo-Zj-Daz"/>
                                             <constraint firstItem="3nn-M3-JWx" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="1dN-4q-Ded"/>
                                             <constraint firstItem="VuN-5L-uio" firstAttribute="centerX" secondItem="sq8-hs-pfD" secondAttribute="centerX" id="2sP-fA-XT4"/>
                                             <constraint firstItem="sSg-oL-yJv" firstAttribute="height" secondItem="WLh-tq-rc8" secondAttribute="height" id="3Bn-gz-X5F"/>
@@ -326,16 +313,14 @@
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="height" secondItem="WLh-tq-rc8" secondAttribute="height" id="jBc-p9-Soe"/>
                                             <constraint firstItem="3nn-M3-JWx" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="mxz-wc-cOS"/>
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="centerX" secondItem="WLh-tq-rc8" secondAttribute="centerX" id="qf9-h3-oEK"/>
-                                            <constraint firstAttribute="trailing" secondItem="CdM-3g-dbc" secondAttribute="trailing" constant="20" id="r5r-m1-vEw"/>
                                             <constraint firstItem="4oc-7w-Rdm" firstAttribute="top" secondItem="3nn-M3-JWx" secondAttribute="bottom" constant="24" id="sFU-xj-h2g"/>
-                                            <constraint firstItem="CdM-3g-dbc" firstAttribute="top" secondItem="sq8-hs-pfD" secondAttribute="top" constant="16" id="tEd-Zd-8Vb"/>
                                             <constraint firstItem="VuN-5L-uio" firstAttribute="top" secondItem="sq8-hs-pfD" secondAttribute="top" constant="16" id="vu1-e3-tpY"/>
                                             <constraint firstItem="sSg-oL-yJv" firstAttribute="width" secondItem="WLh-tq-rc8" secondAttribute="width" id="wVL-3B-8kV"/>
                                             <constraint firstItem="J82-IT-27o" firstAttribute="top" secondItem="WLh-tq-rc8" secondAttribute="bottom" constant="24" id="zWW-fM-nai"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WM-Zf-LuB">
-                                        <rect key="frame" x="137" y="526" width="46" height="30"/>
+                                        <rect key="frame" x="137" y="349" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="saveEdit:" destination="mpp-AP-IOr" eventType="touchUpInside" id="r6A-GU-lTi"/>
@@ -369,7 +354,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Out" id="zYZ-oN-1tB">
                             <color key="tintColor" name="ConvivaPink"/>
                             <connections>
-                                <segue destination="40r-00-Ptv" kind="unwind" unwindAction="unwindToIniciativesWithSegue:" id="AsA-GL-cOh"/>
+                                <action selector="logout:" destination="mpp-AP-IOr" id="1AZ-Fa-tS0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -381,6 +366,7 @@
                         <outlet property="saveButton" destination="0WM-Zf-LuB" id="EHU-Hw-zhY"/>
                         <outlet property="scrollView" destination="86Z-2k-943" id="Li8-oL-E3I"/>
                         <outlet property="skillsProfile" destination="4oc-7w-Rdm" id="usH-Sk-aS6"/>
+                        <segue destination="40r-00-Ptv" kind="unwind" identifier="unwindToIniciatives" unwindAction="unwindToIniciativesWithSegue:" id="fU4-dT-ghr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQf-SP-eUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -521,7 +507,7 @@
                         <color key="badgeColor" name="ConvivaPink"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ubt-Ho-IiR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1190,7 +1176,7 @@
                         <color key="badgeColor" name="ConvivaPink"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Y9-xP-hiK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1257,7 +1243,7 @@
             <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaOrange">
-            <color red="0.9309999942779541" green="0.61500000953674316" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.89999997615814209" green="0.64999997615814209" blue="0.3529999852180481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ConvivaPink">
             <color red="0.8880000114440918" green="0.25200000405311584" blue="0.44699999690055847" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

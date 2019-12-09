@@ -130,8 +130,9 @@ class ProfileViewController: UIViewController {
     
     //Limpar UserDefaults quando deslogar
     @IBAction func logout(_ sender: Any) {
-        UserDefaults.standard.set("", forKey: "Email")
-        UserDefaults.standard.set("", forKey: "ID")
+        UserDefaults.standard.set(nil, forKey: "Email")
+        UserDefaults.standard.set(nil, forKey: "ID")
+        self.performSegue(withIdentifier: "unwindToIniciatives", sender: self)
     }
     
     //MARK: Methods to manage keybaord

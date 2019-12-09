@@ -123,6 +123,9 @@ class MapViewController: UIViewController {
                 case .createProfile:
                     self.performSegue(withIdentifier: "mapToProfileRegistration", sender: self)
                 case .initialScreen:
+                    UserDefaults.standard.set(self.latitude, forKey: "Latitude")
+                    UserDefaults.standard.set(self.longitude, forKey: "Longitude")
+                    UserDefaults.standard.set(self.radius, forKey: "Radius")
                     self.performSegue(withIdentifier: "mapToTabBar", sender: self)
                 case .editProfile:
                     self.performSegue(withIdentifier: "mapToFinishEditingProfile", sender: self)
