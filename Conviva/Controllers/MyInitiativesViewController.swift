@@ -35,12 +35,11 @@ class MyInitiativesViewController: UIViewController, UITableViewDelegate, UITabl
            
         let nib = UINib.init(nibName: eventCell, bundle: nil)
         self.myEventsTable.register(nib, forCellReuseIdentifier: eventCell)
-        
-        makeAPIrequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         Setup.setupViewController(self)
+        makeAPIrequest()
     }
     
     func makeAPIrequest() {

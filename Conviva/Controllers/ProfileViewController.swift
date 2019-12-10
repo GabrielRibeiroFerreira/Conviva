@@ -31,11 +31,17 @@ class ProfileViewController: UIViewController {
         
         self.nameProfile.textField.placeholder = "Nome"
         self.emailProfile.textField.placeholder = "Email"
+        self.emailProfile.textField.keyboardType = .emailAddress
         self.addressProfile.textField.placeholder = "Endereço"
         self.contactProfile.textField.placeholder = "Contato"
+        self.contactProfile.textField.keyboardType = .phonePad
         self.skillsProfile.textField.placeholder = "Habilidades"
         
         self.addressProfile.isUserInteractionEnabled = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         makeAPIRequest()
     }
     
@@ -45,7 +51,7 @@ class ProfileViewController: UIViewController {
         getRequest.getProfileResponse() { result in
             switch result {
             case .success(let profileData):
-                print("Lista de eventos: \(String(describing: profileData))")
+                print("Perfil recuperado: \(String(describing: profileData))")
                 //Dispatch the call to update the label text to the main thread.
                 //Reload must only be called on the main thread
                 DispatchQueue.main.async{
@@ -130,8 +136,9 @@ class ProfileViewController: UIViewController {
     
     //Limpar UserDefaults quando deslogar
     @IBAction func logout(_ sender: Any) {
-        UserDefaults.standard.set("", forKey: "Email")
-        UserDefaults.standard.set("", forKey: "ID")
+        UserDefaults.standard.set(nil, forKey: "Email")
+        UserDefaults.standard.set(nil, forKey: "ID")
+        self.performSegue(withIdentifier: "unwindToIniciatives", sender: self)
     }
     
     //MARK: Methods to manage keybaord
