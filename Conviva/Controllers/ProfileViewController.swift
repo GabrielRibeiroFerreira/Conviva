@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
         getRequest.getProfileResponse() { result in
             switch result {
             case .success(let profileData):
-                print("Lista de eventos: \(String(describing: profileData))")
+                print("Perfil recuperado: \(String(describing: profileData))")
                 //Dispatch the call to update the label text to the main thread.
                 //Reload must only be called on the main thread
                 DispatchQueue.main.async{

@@ -52,18 +52,20 @@ class IniciativesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func callMap() {
-         let lat = UserDefaults.standard.double(forKey: "Latitude")
-         let lon = UserDefaults.standard.double(forKey: "Longitude")
-         let rad = UserDefaults.standard.double(forKey: "Radius")
+        
+        let lat = UserDefaults.standard.double(forKey: "Latitude")
+        let lon = UserDefaults.standard.double(forKey: "Longitude")
+        let rad = UserDefaults.standard.double(forKey: "Radius")
+        let email = UserDefaults.standard.string(forKey: "Email")
          
-         if lat == 0 || lon == 0 || rad == 0 {
-             self.performSegue(withIdentifier: "toMap", sender: self)
-         } else {
-             self.latitude = lat
-             self.longitude = lon
-             self.radius = rad
-             makeAPIrequest()
-         }
+        if email == nil && (lat == 0 || lon == 0 || rad == 0) {
+            self.performSegue(withIdentifier: "toMap", sender: self)
+        } else {
+            self.latitude = lat
+            self.longitude = lon
+            self.radius = rad
+            makeAPIrequest()
+        }
     }
 
     func makeAPIrequest() {
