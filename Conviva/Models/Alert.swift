@@ -37,4 +37,31 @@ class Alert: UIAlertController {
         
         return alertController
     }
+    
+    
+    func presentContactAlert() -> UIAlertController {
+        let alertController = UIAlertController (title: "Contato", message: "O administrador do evento não cadastrou um número válido para o contato", preferredStyle: .alert)
+                   
+               // Adds settings button action
+               let settingsAction = UIAlertAction(title: "Configurações", style: .default) { (_) -> Void in
+                       
+                   // Gets the URL for this app's Settings
+                   guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                       return
+                   }
+                   // Opens URL when clicking the button
+                   if UIApplication.shared.canOpenURL(settingsUrl) {
+                       UIApplication.shared.open(settingsUrl, completionHandler: { (sucess) in
+                           print("Settings opened: \(sucess)") // Prints true
+                       })
+                   }
+               }
+               
+               // Adds Cancel button action
+               alertController.addAction(settingsAction)
+               let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+               alertController.addAction(cancelAction)
+               
+               return alertController
+    }
 }

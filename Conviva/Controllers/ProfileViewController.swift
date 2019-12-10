@@ -31,8 +31,10 @@ class ProfileViewController: UIViewController {
         
         self.nameProfile.textField.placeholder = "Nome"
         self.emailProfile.textField.placeholder = "Email"
+        self.emailProfile.textField.keyboardType = .emailAddress
         self.addressProfile.textField.placeholder = "Endereço"
         self.contactProfile.textField.placeholder = "Contato"
+        self.contactProfile.textField.keyboardType = .phonePad
         self.skillsProfile.textField.placeholder = "Habilidades"
         
         self.addressProfile.isUserInteractionEnabled = false

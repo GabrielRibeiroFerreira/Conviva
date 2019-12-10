@@ -20,14 +20,16 @@ class TutorialViewController: UIViewController {
         Setup.setupButton(self.button1, withText: "Avançar")
         Setup.setupButton(self.button2, withText: "Começar")
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-//          let email = UserDefaults.standard.string(forKey: "Email")
-//
-//          if email != nil {
-//              self.performSegue(withIdentifier: "toTab", sender: self)
-//          }
+        let email = UserDefaults.standard.string(forKey: "Email")
         
-      
+        if email != nil {
+            self.performSegue(withIdentifier: "fromTutorial", sender: self)
+        }
     }
 
     @IBAction func nextPage(_ sender: Any) {
