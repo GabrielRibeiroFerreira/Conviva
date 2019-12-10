@@ -38,6 +38,10 @@ class ProfileViewController: UIViewController {
         self.skillsProfile.textField.placeholder = "Habilidades"
         
         self.addressProfile.isUserInteractionEnabled = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         makeAPIRequest()
     }
     
